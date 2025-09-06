@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 
-const TropheePage = ({ params }: { params: { id: string } }) => {
-  const project = projects.find((p) => p.id === params.id);
+const TropheePage =  ({ params }: { params: { id: string } }) => {
+  const project = projects.find((p) => p.id === Number(params.id));
 
   if (!project) {
     return <div>Projet non trouvé</div>;

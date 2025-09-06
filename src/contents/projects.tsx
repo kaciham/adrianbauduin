@@ -2,7 +2,7 @@ import { Projects } from '@/types';
 
 export const projects: Projects[] = [
     {
-        id: '1',
+        id: 1,
         title: 'E-commerce Platform',
         description: 'A full-stack e-commerce platform built with Next.js, TypeScript, and Tailwind CSS.',
         technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
@@ -11,7 +11,7 @@ export const projects: Projects[] = [
         image: '/projects/e-commerce-website.png',
       },
       {
-        id: '2',
+        id: 2,
         title: 'Task Management App',
         description: 'A collaborative task management application with real-time updates.',
         technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
@@ -20,7 +20,7 @@ export const projects: Projects[] = [
         image: '/projects/task-manager.webp',
       },
       {
-        id: '3',
+        id: 3,
         title: 'Portfolio Website',
         description: 'My personal portfolio website showcasing my projects and skills.',
         technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
@@ -29,7 +29,7 @@ export const projects: Projects[] = [
         image: '/projects/portfolio-website.jpg',
       },
       {
-        id: '4',
+        id: 4,
         title: 'Blog Platform',
         description: 'A blogging platform with user authentication and markdown support.',
         technologies: ['Gatsby', 'GraphQL', 'Contentful'],
@@ -38,7 +38,7 @@ export const projects: Projects[] = [
         image: '/projects/blog-website.jpeg',
       },
       {
-        id: '5',
+        id: 5,
         title: 'Weather App',
         description: 'A weather application that provides real-time weather updates.',
         technologies: ['React', 'OpenWeatherMap API'],
@@ -47,7 +47,7 @@ export const projects: Projects[] = [
         image: '/projects/weather-app.png',
       },
       {
-        id: '6',
+        id: 6,
         title: 'Chat Application',
         description: 'A real-time chat application using WebSocket technology.',
         technologies: ['React', 'Node.js', 'Socket.io'],
@@ -56,7 +56,7 @@ export const projects: Projects[] = [
         image: '/projects/chat-app.png',
       },
       {
-        id: '7',
+        id: 7,
         title: 'Recipe Finder',
         description: 'A recipe search application using the Edamam API.',
         technologies: ['React', 'Edamam API'],
@@ -65,7 +65,7 @@ export const projects: Projects[] = [
         image: '/projects/recipe-finder.png',
       },
       {
-        id: '8',
+        id: 8,
         title: 'Expense Tracker',
         description: 'A personal finance tracker to manage expenses and income.',
         technologies: ['React', 'Firebase'],
@@ -74,7 +74,7 @@ export const projects: Projects[] = [
         image: '/projects/expense-tracker.webp',
       },
       {
-        id: '9',
+        id: 9,
         title: 'Trophée en bois',
         description: 'Un trophée en bois personnalisé, gravé au laser.',
         technologies: ['Bois', 'Gravure Laser'],
