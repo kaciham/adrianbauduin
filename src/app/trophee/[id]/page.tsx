@@ -12,9 +12,9 @@ const TropheePage =  ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen bg-gray-100  text-black ">
       <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-white  rounded-lg shadow-lg overflow-hidden">
           <Image
             src={project.image}
             alt={project.title}
@@ -31,7 +31,7 @@ const TropheePage =  ({ params }: { params: { id: string } }) => {
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
+                    className="bg-gray-200  text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
                   >
                     {tech}
                   </span>
