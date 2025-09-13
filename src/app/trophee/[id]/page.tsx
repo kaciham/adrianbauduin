@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
+import Navbar from '../../components/Navbar';
+
 
 const TropheePage =  ({ params }: { params: { id: string } }) => {
   const project = projects.find((p) => p.id === Number(params.id));
@@ -13,7 +15,8 @@ const TropheePage =  ({ params }: { params: { id: string } }) => {
 
   return (
     <div className="min-h-screen bg-gray-100  text-black ">
-      <div className="container mx-auto px-4 py-8">
+      <Navbar />
+      <div className="container mx-auto px-4 py-8 h-[90vh] flex flex-col justify-center items-center">
         <div className="max-w-4xl mx-auto bg-white  rounded-lg shadow-lg overflow-hidden">
           <Image
             src={project.image}
@@ -23,7 +26,7 @@ const TropheePage =  ({ params }: { params: { id: string } }) => {
             className="w-full h-64 object-cover"
           />
           <div className="p-6">
-            <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
+            <h1 className="text-4xl font-extrabold  mb-4">{project.title}</h1>
             <p className="text-lg mb-6">{project.description}</p>
             <div className="flex flex-wrap items-center mb-6">
               <h2 className="text-2xl font-semibold mr-4">Technologies:</h2>

@@ -6,11 +6,11 @@ import React from 'react'
 const Realisation = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="font-bold text-2xl md:text-3xl mb-4 text-black text-center my-4 ">Réalisations</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      <h2 className="font-extrabold  text-2xl md:text-3xl mb-4 text-black text-center my-8 ">Réalisations</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mx-8">
         {projects.map((project) => (
           <Link href={`/trophee/${project.id}`} key={project.id}>
-            <div className="bg-white border-1 border-black rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 cursor-pointer">
+            <div className="bg-white  rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 cursor-pointer">
               <Image
                 src={project.image}
                 alt={project.title}

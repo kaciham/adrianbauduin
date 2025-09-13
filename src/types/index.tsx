@@ -15,3 +15,4 @@ export interface Blogs {
     readTime: string;
     slug: string;
 }   
+

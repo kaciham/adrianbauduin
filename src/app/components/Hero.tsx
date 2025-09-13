@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Hero = () => {
   return (
     <div
-      className="flex flex-col justify-center items-center gap-4 h-[90vh] bg-cover bg-center"
+      className="flex flex-col justify-center items-center gap-4 h-[90vh] bg-cover bg-center bg-fixed"
       style={{ backgroundImage: "url('/projects/trophée-design-contreplaqué-gravure-impression.webp')" }}
     >
       <div className="w-full max-w-[500px] px-4 flex flex-col items-center">
@@ -16,7 +16,7 @@ const Hero = () => {
           height={100}
           style={{ width: 'auto', height: 'auto' }}
           className='py-2'
-        />
+        /> 
         <h1 className="uppercase mt-2 py-2 text-center w-full text-lg sm:text-lg md:text-2xl lg:text-2xl tracking-widest text-bold" >
           trophées en bois sur mesure
         </h1>

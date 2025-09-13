@@ -1,15 +1,25 @@
 'use client'
 import Link from 'next/link'
-import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > window.innerHeight * 0.8)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
 
   const menuItems = [
     { href: '/', label: 'Accueil' },
@@ -18,35 +28,51 @@ export default function Navbar() {
     { href: '/collaboration', label: 'Collaboration' },
     { href: '/devis', label: 'Devis' },
     { href: '/', label: 'Contact' },
-  ];
+  ]
 
   return (
-    <nav className="fixed w-full bg-transparentz-50  qt">
+    <nav
+      className={`w-full fixed z-50 top-0 backdrop-blur-[3px]    text-border transition-colors duration-200 ${
+        scrolled ? 'bg-black/60' : 'bg-transparent'
+      }`}
+    >
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-            <motion.div
-            initial={false}
-            animate={{ opacity: typeof window !== 'undefined' && window.scrollY > 100 ? 0 : 1 }}
-            style={{ pointerEvents: typeof window !== 'undefined' && window.scrollY > 100 ? 'none' : 'auto' }}
-            >
-            <Link href="/" className="text-xl font-bold text-white">
-              Adrian Bauduin
-            </Link>
-            </motion.div>
+          <motion.div>
+
+            {scrolled && (
+              <motion.div
+                initial={{ opacity: 0, y: -15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link href="/" className="text-xl font-extrabold text-white">
+                      <Image
+                            src="/projects/logo_adrian_bauduin_blanc.svg"
+                            alt="Adrian Bauduin trophées en bois sur mesure"
+                            width={400}
+                            height={100}
+                            style={{ width: '100px', height: '100px' }}
+                            className='py-2'
+                          /> 
+                </Link>
+              </motion.div>
+            )}
+          </motion.div>
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-2">
             {menuItems.map((item) => (
-              <Link 
+              <Link
                 key={item.href + item.label}
-                href={item.href} 
-                className="  transition-colors"
+                href={item.href}
+                className="transition-colors opacity-70     px-2 py-1 rounded-sm text-white hover:bg-white hover:text-black"
                 aria-label={item.label}
               >
                 {item.label}
               </Link>
             ))}
           </div>
-
           {/* Mobile Menu Button */}
           <motion.button
             className="md:hidden p-2 rounded-lg transition-colors"
@@ -61,7 +87,6 @@ export default function Navbar() {
             )}
           </motion.button>
         </div>
-
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
@@ -75,14 +100,14 @@ export default function Navbar() {
               <div className="py-4 space-y-4 flex-col co">
                 {menuItems.map((item, index) => (
                   <motion.div
-                    key={item.href}
+                    key={item.href + item.label}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
                     <Link
                       href={item.href}
-                      className="block py-2  transition-colors"
+                      className="block py-2 transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.label}
@@ -93,9 +118,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: menuItems.length * 0.1 }}
-                >
-                
-                </motion.div>
+                ></motion.div>
               </div>
             </motion.div>
           )}
@@ -103,4 +126,4 @@ export default function Navbar() {
       </div>
     </nav>
   )
-} 
+}

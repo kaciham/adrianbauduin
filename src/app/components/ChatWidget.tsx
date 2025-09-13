@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 
+
 const ChatWidget = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<{ type: 'user' | 'bot' | 'waiting'; content: string | React.ReactNode }[]>([
@@ -41,8 +42,7 @@ const ChatWidget = () => {
         setInputValue('');
 
         const sessionId = getChatId();
-        const webhookUrl = 'https://n8n.hamroun.fr/webhook/560c7f0d-d11c-440a-a3ce-19fbbe37f7a4';
-
+        const webhookUrl: string = (typeof window !== "undefined" && (window as any).NEXT_PUBLIC_WEBHOOK_URL) || "";
         fetch(webhookUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
