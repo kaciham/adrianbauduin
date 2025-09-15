@@ -16,7 +16,7 @@ const TropheePage =  ({ params }: { params: { id: string } }) => {
   return (
     <div className="min-h-screen bg-gray-100  text-black ">
       <Navbar />
-      <div className="container mx-auto px-4 py-8 h-[90vh] flex flex-col justify-center items-center">
+      <div className="container mx-auto  py-8 h-[90vh] flex flex-col justify-center items-center">
         <div className="max-w-4xl mx-auto bg-white  rounded-lg shadow-lg overflow-hidden">
           <Image
             src={project.image}

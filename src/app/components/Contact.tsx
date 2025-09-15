@@ -3,23 +3,23 @@ import { ChevronDownIcon } from '@heroicons/react/16/solid';
 export default function Contact() {
   return (
     <>
-      <section className="bg-white justify-center items-center py-16 ">
-        <div className="flex flex-col px-6 lg:px-8 justify-center items-center">
+      <section className="bg-white justify-center items-center py-8 sm:py-12 lg:py-16">
+        <div className="flex flex-col px-4 sm:px-6 lg:px-8 justify-center items-center">
           <div className="max-w-2xl flex flex-col justify-center items-center">
-            <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-7xl m-4">Contact</h2>
-            <p className="mt-2 text-lg text-gray-600">Une idée ? Un projet ? N'hésitez pas à me contacter !</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-7xl font-semibold tracking-tight text-gray-900 m-4">Contact</h2>
+            <p className="mt-2 text-base sm:text-lg text-center text-gray-600 px-4">Une idées ? Un projet ? N'hésitez pas à me contacter !</p>
           </div>
 
-          <div className="mt-10 max-w-5xl">
-            <div className="flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-6 md:items-stretch">
+          <div className="mt-8 sm:mt-10 w-full max-w-5xl px-4 sm:px-0">
+            <div className="flex flex-col h-full items-center gap-4 sm:gap-6 lg:flex-row lg:justify-center lg:items-stretch">
               <a
                 href="tel:+060000000"
                 aria-label="Call us"
-                className="inline-flex h-full items-center justify-center rounded-md border border-black bg-white px-6 py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full md:w-1/3"
+                className="flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px]"
               >
                 <div className="text-left">
-                  <div className="text-xs text-gray-500">Téléphone</div>
-                  <div className="mt-1 text-sm font-medium">06 00 00 00 00</div>
+                  <div className="text-xs sm:text-sm text-gray-500">Téléphone</div>
+                  <div className="mt-1 text-base sm:text-lg font-medium">06 00 00 00 00</div>
                 </div>
               </a>
 
@@ -28,23 +28,23 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View address"
-                className="inline-flex h-full items-center justify-center rounded-md border border-black bg-white px-6 py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full md:w-1/3"
+                className="flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px]"
               >
                 <div className="text-left">
-                  <div className="text-xs text-gray-500">Adresse</div>
-                  <div className="mt-1 text-sm font-medium">123 Example St, City</div>
+                  <div className="text-xs sm:text-sm text-gray-500">Adresse</div>
+                  <div className="mt-1 text-base sm:text-lg font-medium">123 Example St, City</div>
                 </div>
               </a>
-               <a
+              <a
                 href="mailto:adrian@ebeniste.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View address"
-                className="inline-flex h-full items-center justify-center rounded-md border border-black bg-white px-6 py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full md:w-1/3"
+                className="flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px]"
               >
                 <div className="text-left">
-                  <div className="text-xs text-gray-500">Email</div>
-                  <div className="mt-1 text-sm font-medium">123 Example St, City</div>
+                  <div className="text-xs sm:text-sm text-gray-500">Email</div>
+                  <div className="mt-1 text-base sm:text-lg font-medium">adrian@ebeniste.com</div>
                 </div>
               </a>
             </div>
@@ -52,7 +52,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <div className="flex flex-col w-full bg-white px-6 py-24 sm:py-12 lg:px-8">
+      <div className="flex flex-col w-full bg-white px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -63,101 +63,96 @@ export default function Contact() {
         </div>
 
         {/* CONTACT FORM */}
-        <div className="flex flex-col w-full px-6 lg:px-8 justify-center items-center">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <div className="flex flex-col w-full max-w-4xl mx-auto justify-center items-center">
+          <div className="grid grid-cols-1 gap-x-6 sm:gap-x-8 gap-y-4 sm:gap-y-6 sm:grid-cols-2 w-full">
             <div>
-              <label htmlFor="first-name" className="block text-sm font-semibold text-gray-900">
-                First name
+              <label htmlFor="first-name" className="block text-sm sm:text-base font-semibold text-gray-900">
+                Prénom
               </label>
-              <div className="mt-2.5">
+              <div className="mt-2 sm:mt-2.5">
                 <input
                   id="first-name"
                   name="first-name"
                   type="text"
                   autoComplete="given-name"
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600"
+                  className="block w-full rounded-md bg-white px-3 sm:px-3.5 py-3 sm:py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600"
                 />
               </div>
             </div>
             <div>
-              <label htmlFor="last-name" className="block text-sm font-semibold text-gray-900">
-                Last name
+              <label htmlFor="last-name" className="block text-sm sm:text-base font-semibold text-gray-900">
+                Nom
               </label>
-              <div className="mt-2.5">
+              <div className="mt-2 sm:mt-2.5">
                 <input
                   id="last-name"
                   name="last-name"
                   type="text"
                   autoComplete="family-name"
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600"
+                  className="block w-full rounded-md bg-white px-3 sm:px-3.5 py-3 sm:py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600"
                 />
               </div>
             </div>
             <div>
-              <label htmlFor="company" className="block text-sm font-semibold text-gray-900">
-                Company
+              <label htmlFor="company" className="block text-sm sm:text-base font-semibold text-gray-900">
+                Entreprise / Organisation
               </label>
-              <div className="mt-2.5">
+              <div className="mt-2 sm:mt-2.5">
                 <input
                   id="company"
                   name="company"
                   type="text"
                   autoComplete="organization"
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600"
+                  className="block w-full rounded-md bg-white px-3 sm:px-3.5 py-3 sm:py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600"
                 />
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-900">
+              <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-900">
                 Email
               </label>
-              <div className="mt-2.5">
+              <div className="mt-2 sm:mt-2.5">
                 <input
                   id="email"
                   name="email"
                   type="email"
                   autoComplete="email"
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600"
+                  className="block w-full rounded-md bg-white px-3 sm:px-3.5 py-3 sm:py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600"
                 />
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="phone-number" className="block text-sm font-semibold text-gray-900">
-                Phone number
+              <label htmlFor="phone-number" className="block text-sm sm:text-base font-semibold text-gray-900">
+                Numéro de téléphone
               </label>
-              <div className="mt-2.5">
-                <div className="flex rounded-md bg-white outline-1 outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:outline-black-600">
-                  <div className="grid shrink-0 grid-cols-1 focus-within:relative">
-                  </div>
-                  <input
-                    id="phone-number"
-                    name="phone-number"
-                    type="text"
-                    placeholder="123-456-7890"
-                    className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm"
-                  />
-                </div>
+              <div className="mt-2 sm:mt-2.5">
+                <input
+                  id="phone-number"
+                  name="phone-number"
+                  type="tel"
+                  className="block w-full rounded-md bg-white px-3 sm:px-3.5 py-3 sm:py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600"
+                />
               </div>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="message" className="block text-sm font-semibold text-gray-900">
+              <label htmlFor="message" className="block text-sm sm:text-base font-semibold text-gray-900">
                 Message
               </label>
-              <div className="mt-2.5">
+              <div className="mt-2 sm:mt-2.5">
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
-                  className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600"
+                  className="block w-full rounded-md bg-white px-3 sm:px-3.5 py-3 sm:py-2 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-black-600 resize-none"
                   defaultValue={''}
                 />
-              </div>
+              </div>  
             </div>
           </div>
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10 w-full flex justify-center">
             <button
               type="submit"
-              className="block bg-white md:w-auto text-black px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest cursor-pointer"
+              className="w-full sm:w-auto bg-white text-black px-6 sm:px-8 lg:px-12 py-3 sm:py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white text-center uppercase text-base sm:text-sm lg:text-lg font-semibold tracking-widest cursor-pointer min-w-[200px]"
             >
               Envoyer
             </button>
