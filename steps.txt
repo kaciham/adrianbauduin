@@ -1,0 +1,10 @@
+- Texte en plus sur troisieme partie encadré vert
+- taille police 
+
+- maquette collaboration 
+- maquette devis 
+
+intégration collab page d'accueil entre réalisations et contact
+maquette page collab avec lien vers l'éditeur de devis
+devis et lien vers contact 
+

@@ -7,44 +7,46 @@ export default function Contact() {
         <div className="flex flex-col px-4 sm:px-6 lg:px-8 justify-center items-center">
           <div className="max-w-2xl flex flex-col justify-center items-center">
             <h2 className="text-3xl sm:text-4xl lg:text-7xl font-semibold tracking-tight text-gray-900 m-4">Contact</h2>
-            <p className="mt-2 text-base sm:text-lg text-center text-gray-600 px-4">Une idées ? Un projet ? N'hésitez pas à me contacter !</p>
+            <p className="mt-2 text-base sm:text-lg text-center text-gray-600 px-4">Une idée ? Un projet ? N'hésitez pas à me contacter !</p>
           </div>
 
           <div className="mt-8 sm:mt-10 w-full max-w-5xl px-4 sm:px-0">
             <div className="flex flex-col h-full items-center gap-4 sm:gap-6 lg:flex-row lg:justify-center lg:items-stretch">
               <a
-                href="tel:+060000000"
-                aria-label="Call us"
+                href="tel:+33623284237"
+                aria-label="Téléphone"
                 className="flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px]"
               >
                 <div className="text-left">
                   <div className="text-xs sm:text-sm text-gray-500">Téléphone</div>
-                  <div className="mt-1 text-base sm:text-lg font-medium">06 00 00 00 00</div>
+                  <div className="mt-1 text-base sm:text-lg font-medium">0623284237</div>
                 </div>
               </a>
 
               <a
-                href="https://www.google.com/maps/search/123+Example+St,+City,+Country"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View address"
+                href="https://www.google.com/maps/place/30+Rue+Henri+Regnault,+59000+Lille/@50.6327953,3.0294016,18z/data=!3m1!4b1!4m6!3m5!1s0x47c2d566f100c38b:0x24fd3694b442e8f8!8m2!3d50.6327942!4d3.0302126!16s%2Fg%2F11cpq18dmb?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" 
+                rel="noopener nore  ferrer"
+                aria-label="Adresse"
                 className="flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px]"
               >
                 <div className="text-left">
                   <div className="text-xs sm:text-sm text-gray-500">Adresse</div>
-                  <div className="mt-1 text-base sm:text-lg font-medium">123 Example St, City</div>
+                  <div className="mt-1 text-base sm:text-lg font-medium"><span className="font-bold">Ateliers LIDD</span><br />
+30 rue henri regnault
+<br/> 59000 LILLE</div>
                 </div>
               </a>
               <a
-                href="mailto:adrian@ebeniste.com"
+                href="mailto:bauduin.adrian@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="View address"
+                aria-label="Email"
                 className="flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px]"
               >
                 <div className="text-left">
                   <div className="text-xs sm:text-sm text-gray-500">Email</div>
-                  <div className="mt-1 text-base sm:text-lg font-medium">adrian@ebeniste.com</div>
+                  <div className="mt-1 text-base sm:text-lg font-medium">bauduin.adrian@gmail.com</div>
                 </div>
               </a>
             </div>
@@ -52,7 +54,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <div className="flex flex-col w-full bg-white px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+      <div className="flex flex-col w-full bg-white px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-12">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -162,4 +164,3 @@ export default function Contact() {
     </>
   );
 }
-  

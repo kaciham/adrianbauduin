@@ -39,7 +39,6 @@ export default function Navbar() {
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <motion.div>
-
             {scrolled && (
               <motion.div
                 initial={{ opacity: 0, y: -15 }}
@@ -48,14 +47,14 @@ export default function Navbar() {
                 transition={{ duration: 0.2 }}
               >
                 <Link href="/" className="text-xl font-extrabold text-white">
-                      <Image
-                            src="/projects/logo_adrian_bauduin_blanc.svg"
-                            alt="Adrian Bauduin trophées en bois sur mesure"
-                            width={400}
-                            height={100}
-                            style={{ width: '100px', height: '100px' }}
-                            className='py-2'
-                          /> 
+                  <Image
+                    src="/projects/logo_adrian_bauduin_blanc.svg"
+                    alt="Adrian Bauduin trophées en bois sur mesure"
+                    width={400}
+                    height={100}
+                    style={{ width: '100px', height: '100px' }}
+                    className="py-2"
+                  />
                 </Link>
               </motion.div>
             )}

@@ -48,11 +48,11 @@ const About = () => {
           
           <div className="text-center w-full md:w-auto">
              <h2 className="font-extrabold text-2xl md:text-3xl m-4 mb-8">Un trophée pour chaque occasion</h2>
-            <h3 className="font-bold text-xl mb-2">entreprise</h3>
+            <h3 className="font-bold text-xl mb-2 uppercase">entreprise</h3>
             <p className='md:px-8 px-4 sm:px-6'>récompenses personnalisées pour valoriser vos collaborateurs ou partenaires.</p>
           </div>
           <div className="text-center w-full md:w-auto">
-            <h3 className="font-bold text-xl mb-2">sport</h3>
+            <h3 className="font-bold text-xl mb-2 uppercase">sport</h3>
             <p  className='md:px-8 px-4 sm:px-6'>
           trophées sportifs
           gravés ou imprimés,
@@ -60,7 +60,7 @@ const About = () => {
             </p>
           </div>
           <div className="text-center w-full md:w-auto">
-            <h3 className="font-bold text-xl mb-2">événementiel</h3>
+            <h3 className="font-bold text-xl mb-2 uppercase">événementiel</h3>
             <p  className='md:px-8 px-4 sm:px-6'>
           cérémonies, mariages,
           commémorations,
@@ -128,9 +128,9 @@ reproduits directement sur le bois, pour un rendu moderne et durable.</p>
           style={{ backgroundImage: "url('/projects/trophees-bois-design-start-innovation-2024.webp')" }}
         >
           <div className="flex-1" />
-          <div className="flex-col justify-end items-end bg-opacity-90 p-6 rounded-lg max-w-2xl text-black m-4 w-full md:w-1/3 self-end md:self-auto">
-           <h3 className='font-extrabold text-2xl text-center md:text-3xl m-4 mb-8'>Matériaux nobles & durables</h3>  
-            <p className='text-justify px-4 sm:px-6 md:px-10'>
+          <div className="flex-col justify-end items-end bg-opacity-90 p-6 rounded-lg max-w-2xl text-black m-4 w-full md:w-1/3 self-end md:self-auto bg-transparent ">
+             <h3 className='font-extrabold text-2xl text-center md:text-3xl m-4 mb-8 bg-white-50'>Matériaux nobles & durables</h3>  
+            <p className='text-justify px-4 sm:px-6 md:px-10 '>
               J’utilise principalement du bois massif (chêne, hêtre, érable, noyer) ainsi que du contreplaqué de qualité selon
               les besoins esthétiques et techniques. Chaque essence de bois est choisie pour son grain, sa teinte et sa durabilité.
               <br /><br />
