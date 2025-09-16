@@ -17,17 +17,39 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    const handleScroll = (event: Event) => {
+      const targetId = (event.currentTarget as HTMLElement).getAttribute('href')
+      if (targetId) {
+        const targetElement = document.getElementById(targetId)
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+    }
+
+    const links = document.querySelectorAll('a[href^="#"]')
+    links.forEach((link) => {
+      link.addEventListener('click', handleScroll)
+    })
+
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener('click', handleScroll)
+      })
+    }
+  }, [])
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
   const menuItems = [
-    { href: '/', label: 'Accueil' },
-    { href: '/', label: 'À propos' },
-    { href: '/', label: 'Réalisations' },
-    { href: '/collaboration', label: 'Collaboration' },
-    { href: '/devis', label: 'Devis' },
-    { href: '/', label: 'Contact' },
+    { href: '#hero', label: 'Accueil' },
+    { href: '#realisations', label: 'Réalisations' },
+    { href: '#collaborations', label: 'Collaborations' },
+    { href: '/devis  ', label: 'Devis' },
+    { href: '#contact', label: 'Contact' },
   ]
 
   return (

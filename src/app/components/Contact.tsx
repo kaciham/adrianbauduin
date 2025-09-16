@@ -1,9 +1,10 @@
 import { ChevronDownIcon } from '@heroicons/react/16/solid';
 
 export default function Contact() {
+  //contact navigation
   return (
     <>
-      <section className="bg-white justify-center items-center py-8 sm:py-12 lg:py-16">
+      <section id="contact" className="bg-white justify-center items-center py-8 sm:py-12 lg:py-16">
         <div className="flex flex-col px-4 sm:px-6 lg:px-8 justify-center items-center">
           <div className="max-w-2xl flex flex-col justify-center items-center">
             <h2 className="text-3xl sm:text-4xl lg:text-7xl font-semibold tracking-tight text-gray-900 m-4">Contact</h2>

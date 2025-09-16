@@ -4,10 +4,8 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <div
-      className="flex flex-col justify-center items-center gap-4 h-[90vh] bg-cover bg-center bg-fixed"
-      style={{ backgroundImage: "url('/projects/trophée-design-contreplaqué-gravure-impression.webp')" }}
-    >
+    //accueil navigation
+    <section id="hero" className="flex flex-col justify-center items-center gap-4 h-[90vh] bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/projects/trophée-design-contreplaqué-gravure-impression.webp')" }}>
       <div className="w-full max-w-[500px] px-4 flex flex-col items-center">
         <Image
           src="./projects/logo_adrian_bauduin_blanc.svg"
@@ -27,7 +25,7 @@ const Hero = () => {
       >
      Contactez-moi
       </Link>
-    </div>
+    </section>
     )
 }
 
