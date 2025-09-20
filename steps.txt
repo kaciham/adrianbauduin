@@ -6,5 +6,10 @@
 
 intégration collab page d'accueil entre réalisations et contact
 maquette page collab avec lien vers l'éditeur de devis
-devis et lien vers contact 
+devis et lien vers contact *
 
+
+
+
+- nav mobile menu (plus gros avec fond flou)
+- 

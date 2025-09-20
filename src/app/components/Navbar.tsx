@@ -12,6 +12,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > window.innerHeight * 0.8)
+      // window.scrollTo({ top: window.scrollY, behavior: 'smooth' });
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -45,21 +46,21 @@ export default function Navbar() {
   }
 
   const menuItems = [
-    { href: '#hero', label: 'Accueil' },
-    { href: '#realisations', label: 'Réalisations' },
-    { href: '#collaborations', label: 'Collaborations' },
+    { href: '/#hero', label: 'Accueil' },
+    { href: '/#realisations', label: 'Réalisations' },
+    { href: '/#collaborations', label: 'Collaborations' },
     { href: '/devis  ', label: 'Devis' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/#contact', label: 'Contact' },
   ]
 
   return (
     <nav
-      className={`w-full fixed z-50 top-0 backdrop-blur-[3px]    text-border transition-colors duration-200 ${
+      className={`w-full fixed z-50 top-0 backdrop-blur-[3px] text-border transition-colors duration-200 ${
         scrolled ? 'bg-black/60' : 'bg-transparent'
       }`}
     >
       <div className="container max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-30 sm:h-[10vh]">
           <motion.div>
             {scrolled && (
               <motion.div
@@ -128,7 +129,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
-                      className="block py-2 transition-colors"
+                      className="block pl-2 py-2 transition-colors rounded-2xl font-bold bg-black/60"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.label}

@@ -4,14 +4,14 @@ export default function Contact() {
   //contact navigation
   return (
     <>
-      <section id="contact" className="bg-white justify-center items-center py-8 sm:py-12 lg:py-16">
+      <section id="contact" className="bg-white justify-center items-center py-8 ">
         <div className="flex flex-col px-4 sm:px-6 lg:px-8 justify-center items-center">
           <div className="max-w-2xl flex flex-col justify-center items-center">
             <h2 className="text-3xl sm:text-4xl lg:text-7xl font-semibold tracking-tight text-gray-900 m-4">Contact</h2>
             <p className="mt-2 text-base sm:text-lg text-center text-gray-600 px-4">Une idée ? Un projet ? N'hésitez pas à me contacter !</p>
           </div>
 
-          <div className="mt-8 sm:mt-10 w-full max-w-5xl px-4 sm:px-0">
+          <div className="mt-8 sm:mt-10 w-full max-w-5xl  sm:px-0">
             <div className="flex flex-col h-full items-center gap-4 sm:gap-6 lg:flex-row lg:justify-center lg:items-stretch">
               <a
                 href="tel:+33623284237"
@@ -55,7 +55,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <div className="flex flex-col w-full bg-white px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-12">
+      <div className="flex flex-col w-full bg-white px-6 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-12">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"

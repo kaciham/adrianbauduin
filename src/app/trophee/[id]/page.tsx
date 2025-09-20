@@ -14,27 +14,31 @@ const TropheePage =  ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100  text-black ">
+    <div className="min-h-screen bg-gray-100 text-black">
       <Navbar />
-      <div className="container mx-auto  py-8 h-[90vh] flex flex-col justify-center items-center">
-        <div className="max-w-4xl mx-auto bg-white  rounded-lg shadow-lg overflow-hidden">
+      <div className="container mx-auto py-8 h-[90vh] flex flex-col justify-center items-center">
+        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
           <Image
-            src={project.image}
+            src={Array.isArray(project.image) ? project.image[0] : project.image}
             alt={project.title}
             width={800}
             height={400}
             className="w-full h-64 object-cover"
           />
           <div className="p-6">
-            <h1 className="text-4xl font-extrabold  mb-4">{project.title}</h1>
-            <p className="text-lg mb-6">{project.description}</p>
+            <h1 className="text-4xl font-extrabold mb-4 text-black">{project.title}</h1>
+            <p className="text-lg mb-6 text-black">{project.description}</p>
+            <div className="text-black mb-2 text-sm"><span className="font-bold">Année:</span> {project.year}</div>
+            <div className="text-black mb-2 text-sm"><span className="font-bold">Matériaux:</span> {project.materials?.join(', ')}</div>
+            <div className="text-black mb-2 text-sm"><span className="font-bold">Techniques:</span> {project.techniques?.join(', ')}</div>
+            <div className="text-black mb-2 text-sm"><span className="font-bold">Partenaires:</span> {project.partenaires?.join(', ')}</div>
             <div className="flex flex-wrap items-center mb-6">
-              <h2 className="text-2xl font-semibold mr-4">Technologies:</h2>
+              <h2 className="text-2xl font-semibold mr-4 text-black">Technologies:</h2>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="bg-gray-200  text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm"
+                    className="bg-gray-200 text-black px-3 py-1 rounded-full text-sm"
                   >
                     {tech}
                   </span>

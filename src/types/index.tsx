@@ -2,10 +2,15 @@ export interface Projects {
     id: number;
     title: string;
     description: string;
+    project: string;
+    year?: number;
+    materials?: string[];
+    techniques?: string[];
+    partenaires?: string[];
     technologies: string[];
     githubLink?: string;
     demoLink?: string;
-    image: string;
+    image: string[] | string;
 }
 
 export interface Blogs {
