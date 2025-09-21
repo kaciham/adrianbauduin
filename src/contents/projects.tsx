@@ -11,7 +11,8 @@ export const projects: Projects[] = [
       techniques: ['impression uv', 'laquage bombe', 'découpe laser'],
       partenaires: ['ECOPOSS'],
       technologies: [],
-  image: ['/projects/BIENNALE_ECOPOSS/trophee-ecoposs-osons-leloge-concours-bleu.webp', '/projects/BIENNALE_ECOPOSS/trophee-ecoposs-osons-leloge-concours.webp', '/projects/BIENNALE_ECOPOSS/trophees-ecoposs-concours-nouvelles-osons-leloge-du-futur.webp'],
+  imageProject: ['/projects/BIENNALE_ECOPOSS/trophee-ecoposs-osons-leloge-concours-bleu.webp', '/projects/BIENNALE_ECOPOSS/trophee-ecoposs-osons-leloge-concours.webp', '/projects/BIENNALE_ECOPOSS/trophees-ecoposs-concours-nouvelles-osons-leloge-du-futur.webp'],
+  imagePartner: '/projects/BIENNALE_ECOPOSS/logo-ecoposs-osons-eloge-du-futur.webp',
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ export const projects: Projects[] = [
       techniques: ['raboteuse', 'dégauchisseuse', 'Fraiseuse numérique', 'impression uv', 'gravure laser sur socle'],
       partenaires: ['CPAM LILLE DOUAI'],
       technologies: [],
-  image: ['/projects/concours_court_metrage_CPAM/trophee-artistique-bois-grave-incrustation.webp', '/projects/concours_court_metrage_CPAM/zoom-trophee-design-bois-ruban-pellicule.webp'],
+  imageProject: ['/projects/concours_court_metrage_CPAM/trophee-artistique-bois-grave-incrustation.webp', '/projects/concours_court_metrage_CPAM/zoom-trophee-design-bois-ruban-pellicule.webp'],
+  imagePartner: '/projects/concours_court_metrage_CPAM/logo-cpam-lille-douai.webp',
     },
     {
       id: 3,
@@ -35,7 +37,8 @@ export const projects: Projects[] = [
       techniques: ['scie à chantourner', 'impression uv', 'gravure sur socle'],
       partenaires: ['LA VOIX DU NORD'],
       technologies: [],
-  image: ['/projects/LES_FORMIDABLES/ambiance-trophee-design-bois-formidables-nord-pas-de-calais.webp', '/projects/LES_FORMIDABLES/trophee-design-bois-formidables-nord-pas-de-calais.webp', '/projects/LES_FORMIDABLES/zoom-trophee-design-bois-formidables-nord-pas-de-calais.webp'],
+  imageProject: ['/projects/LES_FORMIDABLES/ambiance-trophee-design-bois-formidables-nord-pas-de-calais.webp', '/projects/LES_FORMIDABLES/atelier-fabrication-trophees-personnalises-formidables-2021.webp', '/projects/LES_FORMIDABLES/laureat-trophee-les-formidables-16-30-ans-2021.jpg.webp', '/projects/LES_FORMIDABLES/trophee-design-bois-formidables-nord-pas-de-calais.webp', '/projects/LES_FORMIDABLES/trophee-les-formidables-16-30-ans-2025-categorie-entrepreneurs.webp', '/projects/LES_FORMIDABLES/zoom-trophee-design-bois-formidables-nord-pas-de-calais.webp'],
+  imagePartner: '/projects/LES_FORMIDABLES/logo-lavoixdunord.webp',
     },
     {
       id: 4,
@@ -47,7 +50,8 @@ export const projects: Projects[] = [
       techniques: ['Fraiseuse numérique', 'impression UV', 'gravure laser'],
       partenaires: ['LMC'],
       technologies: [],
-  image: ['/projects/LMC_100_ans_de_vie_commune/trophee-100-ans-de-vie-commune-2025-face.jpg.webp'],
+  imageProject: ['/projects/LMC_100_ans_de_vie_commune/fabrication-trophees-100-ans-de-vie-commune-2025.webp', '/projects/LMC_100_ans_de_vie_commune/trophee-100-ans-de-vie-commune-2025-cote-jaune.jpg.webp', '/projects/LMC_100_ans_de_vie_commune/trophee-100-ans-de-vie-commune-2025-cote.webp', '/projects/LMC_100_ans_de_vie_commune/trophee-100-ans-de-vie-commune-2025-face-jaune.jpg.webp', '/projects/LMC_100_ans_de_vie_commune/trophee-100-ans-de-vie-commune-2025-face.jpg.webp', '/projects/LMC_100_ans_de_vie_commune/trophée-design-contreplaqué-gravure-impression.webp'],
+  imagePartner: '/projects/LMC_100_ans_de_vie_commune/logo-quincaillerie-lmc.webp',
     },
     {
       id: 5,
@@ -59,7 +63,8 @@ export const projects: Projects[] = [
       techniques: ['raboteuse', 'dégauchisseuse', 'scie sur table', 'ciseaux à bois', 'gravure laser', 'laquage bombe pour le chant'],
       partenaires: ['CIC NORD OUEST'],
       technologies: [],
-  image: ['/projects/mon heros local - CIC/trophees-bois-design-mon-heros-local-2024-normandie-seul.webp', '/projects/mon heros local - CIC/trophees-bois-design-mon-heros-local-2024-normandie.webp'],
+  imageProject: ['/projects/mon heros local - CIC/prix-entrepreneurs-bois-mon-heros-local-2025.webp', '/projects/mon heros local - CIC/recompenses-bois-cic-nord-ouest-2025.webp', '/projects/mon heros local - CIC/trophee-bois-mon-heros-local-2025-cic-nord-ouest.webp', '/projects/mon heros local - CIC/trophees-bois-design-mon-heros-local-2024-normandie-seul.webp', '/projects/mon heros local - CIC/trophees-bois-design-mon-heros-local-2024-normandie.webp', '/projects/mon heros local - CIC/zoom-trophee-bois-grave-hauts-de-france-2025.webp'],
+  imagePartner: '/projects/mon heros local - CIC/logo-cic-nord-ouest.webp',
     },
     {
       id: 6,
@@ -71,7 +76,8 @@ export const projects: Projects[] = [
       techniques: ['raboteuse', 'dégauchisseuse', 'scie sur table', 'gravure laser', 'petits éléments insérés découpés à la laser puis imprimés à l’uv'],
       partenaires: ['CIC NORD OUEST'],
       technologies: [],
-  image: ['/projects/START INNOVATION/trophees-bois-design-start-innovation-2024.webp'],
+  imageProject: ['/projects/START_INNOVATION/20221117_165354.webp', '/projects/START_INNOVATION/trophees-bois-design-start-innovation-2024.webp', '/projects/START_INNOVATION/trophees-start-innovation-cic-business-awards-2021-zoom.webp', '/projects/START_INNOVATION/trophees-start-innovation-cic-business-awards-2021.webp', '/projects/START_INNOVATION/trophees-start-innovation-cic-business-awards-2024.webp'],
+  imagePartner: '/projects/START_INNOVATION/logo-cic-nord-ouest.webp',
     },
     {
       id: 7,
@@ -83,7 +89,8 @@ export const projects: Projects[] = [
       techniques: ['gravure laser', 'découpe à la scie à chantourner', 'fraiseuse numérique si grande série'],
       partenaires: ['energic'],
       technologies: [],
-  image: ['/projects/TOTEMS ENERGIC/trophee-bois-totem-design-grave.webp'],
+  imageProject: [ '/projects/TOTEMS_ENERGIC/trophee-bois-gravure-laser-forme-totem.jpg.webp', '/projects/TOTEMS_ENERGIC/trophee-bois-totem-design-grave.webp', '/projects/TOTEMS_ENERGIC/trophees-bois-oiseau-totem.webp', '/projects/TOTEMS_ENERGIC/trophees-ecoresponsables-totem-bois.webp'],
+  imagePartner: '/projects/TOTEMS_ENERGIC/energic-Logo-baseline.webp',
     },
     {
       id: 8,
@@ -95,6 +102,7 @@ export const projects: Projects[] = [
       techniques: ['raboteuse', 'dégauchisseuse', 'fraiseuse numérique', 'gravure laser', 'éléments insérés découpés à la laser puis imprimés à l’uv'],
       partenaires: ['DFCG', 'CIC NORD OUEST', 'EY'],
       technologies: [],
-  image: ['/projects/TROPHEES DFCG/trophees-bois-design-dfcg-hauts-de-france-2025.webp'],
+  imageProject: ['/projects/TROPHEES_DFCG/trophee-dfcg-hauts-de-france-2023-prix-laureats.webp', '/projects/TROPHEES_DFCG/remise-trophee-dfcg-hauts-de-france-2025.webp', '/projects/TROPHEES_DFCG/trophee-dfcg-hauts-de-france-2025-prix-finance.webp', '/projects/TROPHEES_DFCG/trophees-bois-design-dfcg-hauts-de-france-2025.webp', '/projects/TROPHEES_DFCG/zoom-trophee-bois-design-dfcg-hauts-de-france-2023.webp'],
+  imagePartner: '/projects/TROPHEES_DFCG/logo-dfcg.webp',
     },
   ];

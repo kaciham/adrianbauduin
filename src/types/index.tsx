@@ -10,7 +10,8 @@ export interface Projects {
     technologies: string[];
     githubLink?: string;
     demoLink?: string;
-    image: string[] | string;
+    imageProject: string[] | string;
+    imagePartner: string;
 }
 
 export interface Blogs {
