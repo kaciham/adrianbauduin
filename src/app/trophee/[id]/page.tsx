@@ -1,9 +1,13 @@
+"use client";
+
+import { useState } from 'react';
 import { projects } from '@/contents/projects';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
-import Navbar from '../../components/Navbar';
+import NavbarFixed from '@/app/components/NavbarFixed';
+import Footer from '@/app/components/Footer';
 
 
 const TropheePage = ({ params }: { params: { id: string } }) => {
@@ -11,44 +15,82 @@ const TropheePage = ({ params }: { params: { id: string } }) => {
 
   if (!project) return <div>Projet non trouvé</div>;
 
-  const mainImage = Array.isArray(project.imageProject) ? project.imageProject[0] : <Image src={project.imageProject} alt={project.title || project.project} fill style={{ objectFit: 'cover' }} />;
+  // ensure we have an array of image paths
+  const images: string[] = Array.isArray(project.imageProject)
+    ? project.imageProject
+    : project.imageProject
+    ? [project.imageProject]
+    : [];
+
+  const [current, setCurrent] = useState(0);
+  const length = images.length;
+
+  const prev = () => setCurrent((c) => (c - 1 + length) % length);
+  const next = () => setCurrent((c) => (c + 1) % length);
 
   return (
     <div className="min-h-screen bg-gray-100 text-black">
-      <Navbar />
-      <div className="container mx-auto py-8">
+      <NavbarFixed />
+      <div className="container mx-auto py-34  md:py-30  sm:py-30">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row">
           {/* Left: big image */}
-          <div className="lg:w-1/2 w-full h-96 lg:h-[80vh] relative">
-            <Image
-              src={mainImage}
-              alt={project.title || project.project}
-              fill
-              style={{ objectFit: 'cover' }}
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              priority
-            />
+          <div className="lg:w-1/2 w-full h-96 lg:h-[80vh] relative bg-gray-200">
+            {length > 0 ? (
+              <>
+                <Image
+                  src={images[current]}
+                  alt={`${project.title || project.project} - ${current + 1}`}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  priority
+                />
+
+                {/* Left arrow */}
+                <button
+                  onClick={prev}
+                  aria-label="Précédent"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white px-3 py-2 rounded-full shadow-md cursor-pointer"
+                >
+                  ‹
+                </button>
+
+                {/* Right arrow */}
+                <button
+                  onClick={next}
+                  aria-label="Suivant"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white px-3 py-2 rounded-full shadow-md cursor-pointer"
+                >
+                  ›
+                </button>
+
+                {/* simple counter */}
+                <div className="absolute left-1/2 -translate-x-1/2 bottom-4 bg-black/50 text-white text-sm px-3 py-1 rounded">{current + 1} / {length}</div>
+              </>
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-gray-500">No image</div>
+            )}
           </div>
 
           {/* Right: attributes and overview */}
           <div className="lg:w-1/2 w-full p-10">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-4">
               <div>
                 <div className="text-sm text-gray-600">Client:</div>
                 <div className="text-xl font-semibold mt-2">{project.partenaires?.join(', ') || '-'}</div>
               </div>
 
               <div>
-                <div className="text-sm text-gray-600">Year:</div>
+                <div className="text-sm text-gray-600">Année:</div>
                 <div className="text-xl font-semibold mt-2">{project.year || '-'}</div>
               </div>
 
               <div>
-                <div className="text-sm text-gray-600">Project:</div>
+                <div className="text-sm text-gray-600">Projet:</div>
                 <div className="text-xl font-semibold mt-2">{project.project || project.title}</div>
               </div>
             </div>
-
+{/* 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
               <div>
                 <div className="text-sm text-gray-600">Scope:</div>
@@ -59,17 +101,17 @@ const TropheePage = ({ params }: { params: { id: string } }) => {
                 <div className="text-sm text-gray-600">&nbsp;</div>
                 <div className="text-xl font-semibold mt-2">&nbsp;</div>
               </div>
-            </div>
+            </div> */}
 
             <div className="mt-6">
-              <h3 className="text-lg font-medium mb-4">Overview:</h3>
+              <h3 className="text-lg font-medium mb-4">Description:</h3>
               <p className="text-base text-gray-800">{project.description}</p>
             </div>
 
             {/* Optional extra details */}
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <div className="text-sm text-gray-600">Materials</div>
+                <div className="text-sm text-gray-600">Matériaux</div>
                 <div className="mt-2">{project.materials?.join(', ') || '-'}</div>
               </div>
 
@@ -106,6 +148,7 @@ const TropheePage = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

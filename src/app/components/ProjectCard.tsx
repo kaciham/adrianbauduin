@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: { project: typeof projects[0] }
             {shortDesc}
             {project.description.length > MAX_DESC_LENGTH && !expanded && (
               <button
-                className="text-black underline ml-2 text-sm"
+                className="text-black underline ml-2 text-sm cursor-pointer"
                 type="button"
                 onClick={e => {
                   e.preventDefault();

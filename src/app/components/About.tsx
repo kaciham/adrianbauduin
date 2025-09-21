@@ -95,7 +95,7 @@ const About = () => {
         <div className="text-black mx-4 sm:mx-8 md:mx-12">
             <div className="flex flex-col sm:flex-row justify-evenly items-center gap-4 my-4 px-4 md:px-0 text-black w-full max-w-7xl mx-auto">
             <div className="w-full sm:w-2/3 h-48 md:h-64 lg:h-80 overflow-hidden rounded-lg">
-              <Image src="/projects/creation-artistique-bois-gravure-laser-design.webp" alt="Découpe laser" width={400} height={100} className='w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110 shadow-xl' />
+              <Image src="/projects/creation-artistique-bois-gravure-laser-design.webp" alt="Découpe laser" width={400} height={100} className='w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-98 shadow-xl' />
             </div>
               <div className='bg-[#5A6A4F] bg-opacity-10 p-6 rounded-lg max-w-2xl sm:w-1/3 text-white h-48 md:h-64 lg:h-80 flex flex-col justify-around items-center sm:justify-center sm:gap-4'> 
                 <h3 className='text-lg sm:text-xl md:text-xl lg:text-2xl font-bolder text-center uppercase md:m-2'>Gravure Laser</h3>
@@ -104,7 +104,7 @@ const About = () => {
             </div>  
             <div className="flex flex-col sm:flex-row-reverse justify-center items-center gap-4 my-4  px-4 md:px-0 text-black w-full max-w-7xl mx-auto">
             <div className="w-full sm:w-2/3 h-48 md:h-64 lg:h-80 overflow-hidden rounded-lg">
-              <Image src="/projects/BIENNALEECOPOSS/trophees-ecoposs-concours-nouvelles-osons-leloge-du-futur.webp" alt="Découpe laser" width={400} height={100} className='w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110 shadow-xl' />
+              <Image src="/projects/BIENNALEECOPOSS/trophees-ecoposs-concours-nouvelles-osons-leloge-du-futur.webp" alt="Découpe laser" width={400} height={100} className='w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-98 shadow-xl' />
             </div>
               <div className='bg-[#5A6A4F] bg-opacity-10 p-6 rounded-lg max-w-2xl sm:w-1/3 text-white h-48 md:h-64 lg:h-80 flex flex-col justify-around items-center sm:justify-center sm:gap-4'>
                 <h3 className='text-lg sm:text-xl md:text-xl lg:text-2xl font-bolder text-center uppercase md:m-2'>Impression UV</h3>
@@ -114,7 +114,7 @@ const About = () => {
             </div>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 my-4  px-4 md:px-0 text-black w-full max-w-7xl mx-auto">
             <div className="w-full sm:w-2/3 h-48 md:h-64 lg:h-80 overflow-hidden rounded-lg">
-              <Image src="/projects/concours_court_metrage_securite_sociale/trophee-artistique-bois-grave-incrustation.webp" alt="Découpe laser" width={400} height={100} className='w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110 shadow-xl' />
+              <Image src="/projects/concours_court_metrage_securite_sociale/trophee-artistique-bois-grave-incrustation.webp" alt="Découpe laser" width={400} height={100} className='w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-98 shadow-xl' />
             </div>
               <div className='bg-[#5A6A4F] bg-opacity-10 p-6 rounded-lg max-w-2xl sm:w-1/3 text-white h-48 md:h-64 lg:h-80 flex flex-col justify-around items-center sm:justify-center sm:gap-4'>
                 <h3 className='text-lg sm:text-xl md:text-xl lg:text-2xl font-bolder text-center uppercase md:m-2'>USINAGE CNC</h3>
