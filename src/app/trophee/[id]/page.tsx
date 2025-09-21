@@ -1,51 +1,127 @@
+"use client";
+
+import { useState } from 'react';
 import { projects } from '@/contents/projects';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
-import Navbar from '../../components/Navbar';
+import NavbarFixed from '@/app/components/NavbarFixed';
+import Footer from '@/app/components/Footer';
 
 
-const TropheePage =  ({ params }: { params: { id: string } }) => {
+const TropheePage = ({ params }: { params: { id: string } }) => {
   const project = projects.find((p) => p.id === Number(params.id));
 
-  if (!project) {
-    return <div>Projet non trouvé</div>;
-  }
+  if (!project) return <div>Projet non trouvé</div>;
+
+  // ensure we have an array of image paths
+  const images: string[] = Array.isArray(project.imageProject)
+    ? project.imageProject
+    : project.imageProject
+    ? [project.imageProject]
+    : [];
+
+  const [current, setCurrent] = useState(0);
+  const length = images.length;
+
+  const prev = () => setCurrent((c) => (c - 1 + length) % length);
+  const next = () => setCurrent((c) => (c + 1) % length);
 
   return (
     <div className="min-h-screen bg-gray-100 text-black">
-      <Navbar />
-      <div className="container mx-auto py-8 h-[90vh] flex flex-col justify-center items-center">
-        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-          <Image
-            src={Array.isArray(project.image) ? project.image[0] : project.image}
-            alt={project.title}
-            width={800}
-            height={400}
-            className="w-full h-64 object-cover"
-          />
-          <div className="p-6">
-            <h1 className="text-4xl font-extrabold mb-4 text-black">{project.title}</h1>
-            <p className="text-lg mb-6 text-black">{project.description}</p>
-            <div className="text-black mb-2 text-sm"><span className="font-bold">Année:</span> {project.year}</div>
-            <div className="text-black mb-2 text-sm"><span className="font-bold">Matériaux:</span> {project.materials?.join(', ')}</div>
-            <div className="text-black mb-2 text-sm"><span className="font-bold">Techniques:</span> {project.techniques?.join(', ')}</div>
-            <div className="text-black mb-2 text-sm"><span className="font-bold">Partenaires:</span> {project.partenaires?.join(', ')}</div>
-            <div className="flex flex-wrap items-center mb-6">
-              <h2 className="text-2xl font-semibold mr-4 text-black">Technologies:</h2>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="bg-gray-200 text-black px-3 py-1 rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
+      <NavbarFixed />
+      <div className="container mx-auto py-34  md:py-30  sm:py-30">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row">
+          {/* Left: big image */}
+          <div className="lg:w-1/2 w-full h-96 lg:h-[80vh] relative bg-gray-200">
+            {length > 0 ? (
+              <>
+                <Image
+                  src={images[current]}
+                  alt={`${project.title || project.project} - ${current + 1}`}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  priority
+                />
+
+                {/* Left arrow */}
+                <button
+                  onClick={prev}
+                  aria-label="Précédent"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white px-3 py-2 rounded-full shadow-md cursor-pointer"
+                >
+                  ‹
+                </button>
+
+                {/* Right arrow */}
+                <button
+                  onClick={next}
+                  aria-label="Suivant"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white px-3 py-2 rounded-full shadow-md cursor-pointer"
+                >
+                  ›
+                </button>
+
+                {/* simple counter */}
+                <div className="absolute left-1/2 -translate-x-1/2 bottom-4 bg-black/50 text-white text-sm px-3 py-1 rounded">{current + 1} / {length}</div>
+              </>
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-gray-500">No image</div>
+            )}
+          </div>
+
+          {/* Right: attributes and overview */}
+          <div className="lg:w-1/2 w-full p-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-4">
+              <div>
+                <div className="text-sm text-gray-600">Client:</div>
+                <div className="text-xl font-semibold mt-2">{project.partenaires?.join(', ') || '-'}</div>
+              </div>
+
+              <div>
+                <div className="text-sm text-gray-600">Année:</div>
+                <div className="text-xl font-semibold mt-2">{project.year || '-'}</div>
+              </div>
+
+              <div>
+                <div className="text-sm text-gray-600">Projet:</div>
+                <div className="text-xl font-semibold mt-2">{project.project || project.title}</div>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+{/* 
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+              <div>
+                <div className="text-sm text-gray-600">Scope:</div>
+                <div className="text-xl font-semibold mt-2">{project.techniques?.slice(0, 3).join(', ') || '-'}</div>
+              </div>
+
+              <div>
+                <div className="text-sm text-gray-600">&nbsp;</div>
+                <div className="text-xl font-semibold mt-2">&nbsp;</div>
+              </div>
+            </div> */}
+
+            <div className="mt-6">
+              <h3 className="text-lg font-medium mb-4">Description:</h3>
+              <p className="text-base text-gray-800">{project.description}</p>
+            </div>
+
+            {/* Optional extra details */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <div className="text-sm text-gray-600">Matériaux</div>
+                <div className="mt-2">{project.materials?.join(', ') || '-'}</div>
+              </div>
+
+              <div>
+                <div className="text-sm text-gray-600">Techniques</div>
+                <div className="mt-2">{project.techniques?.join(', ') || '-'}</div>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-4 mt-8">
               {project.githubLink && (
                 <Link
                   href={project.githubLink}
@@ -72,6 +148,7 @@ const TropheePage =  ({ params }: { params: { id: string } }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

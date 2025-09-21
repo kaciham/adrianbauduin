@@ -15,7 +15,7 @@ export default function ProjectCard({ project }: { project: typeof projects[0] }
     <Link href={`/trophee/${project.id}`}>
       <div className="bg-white  rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 cursor-pointer">
         <Image
-          src={Array.isArray(project.image) ? project.image[0] : project.image}
+          src={Array.isArray(project.imageProject) ? project.imageProject[0] : project.imageProject}
           alt={project.title}
           width={300}
           height={250}
@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: { project: typeof projects[0] }
             {shortDesc}
             {project.description.length > MAX_DESC_LENGTH && !expanded && (
               <button
-                className="text-black underline ml-2 text-sm"
+                className="text-black underline ml-2 text-sm cursor-pointer"
                 type="button"
                 onClick={e => {
                   e.preventDefault();
