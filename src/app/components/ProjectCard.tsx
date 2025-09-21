@@ -13,13 +13,13 @@ export default function ProjectCard({ project }: { project: typeof projects[0] }
 
   return (
     <Link href={`/trophee/${project.id}`}>
-      <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 cursor-pointer">
+      <div className="bg-white  rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 cursor-pointer">
         <Image
           src={Array.isArray(project.image) ? project.image[0] : project.image}
           alt={project.title}
-          width={400}
+          width={300}
           height={250}
-          className="w-full h-48 object-cover"
+          className="w-full h-120 object-cover"
         />
         <div className="p-4">
           <h3 className="text-black text-lg font-semibold mb-2">{project.title}</h3>
