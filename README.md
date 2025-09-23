@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Environment variables
+
+This project requires a public webhook URL for the chat widget. In development, create a file named `.env.local` at the project root and set:
+
+```
+NEXT_PUBLIC_WEBHOOK_URL=https://your-host.example/webhook/your-id
+```
+
+Use `NEXT_PUBLIC_` prefix so Next.js will expose the variable to client-side code. For security, avoid committing `.env.local` to version control.
