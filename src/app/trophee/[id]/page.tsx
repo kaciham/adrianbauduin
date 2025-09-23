@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { projects } from '@/contents/projects';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,10 +10,40 @@ import NavbarFixed from '@/app/components/NavbarFixed';
 import Footer from '@/app/components/Footer';
 
 
-const TropheePage = ({ params }: { params: { id: string } }) => {
-  const project = projects.find((p) => p.id === Number(params.id));
+const TropheePage = ({ params }: { params: Promise<{ id: string }> | { id: string } }) => {
+  // Next.js may provide params as a Promise in newer versions; unwrap with React.use()
+  // React.use will resolve the promise at render time in server components, but
+  // since this is a client component we call React.use to unwrap any potential promise.
+  // Accept either a plain object or a Promise for compatibility.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const unwrappedParams = (React as any).use ? (React as any).use(params) : params;
 
-  if (!project) return <div>Projet non trouvé</div>;
+  const id = typeof unwrappedParams === 'object' && unwrappedParams !== null ? (unwrappedParams.id as string) : String(unwrappedParams);
+
+  const project = projects.find((p) => p.id === Number(id));
+
+  if (!project) {
+    return (
+      <div className="min-h-screen bg-gray-100 text-black">
+        <NavbarFixed />
+        <main className="container mx-auto py-24 px-4">
+          <div className="bg-white rounded-lg shadow-lg p-12 text-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[80vh] flex items-center justify-center">
+        <div>
+          <h1 className="text-3xl font-bold mb-4">Projet non trouvé</h1>
+          <p className="text-gray-700 mb-6">Le projet que vous recherchez est introuvable ou n'existe pas.</p>
+          <Link
+            href="/#realisations"
+            className="inline-block bg-white md:w-auto text-black px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
+          >
+            Retour à la liste des trophées
+          </Link>
+        </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   // ensure we have an array of image paths
   const images: string[] = Array.isArray(project.imageProject)
