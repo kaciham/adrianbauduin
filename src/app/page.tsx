@@ -35,8 +35,10 @@ export default function Home() {
     <Realisation />
     <Collaborations />
     <Contact />
-    <Footer />
-       {scrolled && (
+    
+    
+      <Footer />
+         {scrolled && (
         <div
           className='w-14 h-14 sm:w-18 sm:h-18 fixed bottom-5 rounded-full right-5  bg-slate-200 opacity-90 border-4 p-2 shadow-custom cursor-pointer transition-transform duration-300 ease-in-out hover:delay-200 hover:-translate-y-2'
           onClick={scrollToTop}
