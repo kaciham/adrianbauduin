@@ -9,7 +9,9 @@ const ChatWidget: React.FC = () => {
         { type: "user" | "bot" | "waiting"; content: string | React.ReactNode }[]
     >([{ type: "bot", content: '<strong>Bonjour, comment puis-je vous aider dans la réalisation de votre devis ?</strong>' }]);
     const [inputValue, setInputValue] = useState("");
+    const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
     const chatBodyRef = useRef<HTMLDivElement | null>(null);
+    const copyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const getChatId = () => {
         let sessionId = sessionStorage.getItem("sessionId");
@@ -25,6 +27,43 @@ const ChatWidget: React.FC = () => {
             chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
         }
     }, [messages]);
+
+    useEffect(() => {
+        return () => {
+            if (copyTimeoutRef.current) {
+                clearTimeout(copyTimeoutRef.current);
+            }
+        };
+    }, []);
+
+    const handleCopyMessage = async (rawContent: string, index: number) => {
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = rawContent;
+        const textToCopy = tempDiv.textContent ?? tempDiv.innerText ?? rawContent;
+
+        try {
+            if (navigator.clipboard?.writeText) {
+                await navigator.clipboard.writeText(textToCopy);
+            } else {
+                const textarea = document.createElement("textarea");
+                textarea.value = textToCopy;
+                textarea.setAttribute("readonly", "");
+                textarea.style.position = "fixed";
+                textarea.style.opacity = "0";
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+            }
+            setCopiedIndex(index);
+            if (copyTimeoutRef.current) {
+                clearTimeout(copyTimeoutRef.current);
+            }
+            copyTimeoutRef.current = setTimeout(() => setCopiedIndex(null), 2000);
+        } catch (err) {
+            console.error("Failed to copy message", err);
+        }
+    };
 
     const handleSendMessage = async () => {
         if (inputValue.trim() === "") return;
@@ -107,21 +146,60 @@ const ChatWidget: React.FC = () => {
 
                 {/* Inline chat content */}
                 <div className={`${isOpen ? "block" : "hidden"}`}>
-                    <div className="flex h-[60vh] min-h-[300px] flex-col px-4 py-3 sm:h-[65vh]">
+                    <div className="flex h-[60vh] min-h-[300px] my-8 shadow-2xl flex-col px-4 py-3 sm:h-[65vh]">
                         <div ref={chatBodyRef} className="custom-scrollbar mb-3 flex-1 overflow-y-auto pr-2">
                             {messages.map((msg, i) => (
                                 <div key={i} className={`mb-3 flex ${msg.type === "user" ? "justify-end" : "justify-start"}`}>
-                                    <div
-                                        className={`max-w-[80%] rounded-lg px-4 py-2 text-sm leading-relaxed ${
-                                            msg.type === "user" ? "bg-gray-600 text-white" : "bg-gray-100 text-gray-800"
-                                        }`}
-                                    >
-                                        {typeof msg.content === "string" ? (
-                                            <div dangerouslySetInnerHTML={{ __html: msg.content }} />
-                                        ) : (
-                                            msg.content
-                                        )}
-                                    </div>
+                                    {msg.type === "bot" && typeof msg.content === "string" ? (
+                                        <div className="flex items-start gap-2">
+                                            <div className="max-w-[80%] rounded-lg bg-gray-100 px-4 py-2 text-sm leading-relaxed text-gray-800">
+                                                <div dangerouslySetInnerHTML={{ __html: msg.content }} />
+                                            </div>
+                                            <button
+                                            title="Copier la réponse"
+                                                type="button"
+                                                onClick={() => typeof msg.content === "string" && handleCopyMessage(msg.content, i)}
+                                                className="mt-1 text-gray-400 transition hover:text-gray-600 focus:outline-none cursor-pointer"
+                                                aria-label={copiedIndex === i ? "Réponse copiée" : "Copier la réponse"}
+                                            >
+                                                {copiedIndex === i ? (
+                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path
+                                                            fillRule="evenodd"
+                                                            d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 011.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z"
+                                                            clipRule="evenodd"
+                                                        />
+                                                    </svg>
+                                                ) : (
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        strokeWidth="1.8"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    >
+                                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                                                    </svg>
+                                                )}
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <div
+                                            className={`max-w-[80%] rounded-lg px-4 py-2 text-sm leading-relaxed ${
+                                                msg.type === "user" ? "bg-gray-600 text-white" : "bg-gray-100 text-gray-800"
+                                            }`}
+                                        >
+                                            {typeof msg.content === "string" ? (
+                                                <div dangerouslySetInnerHTML={{ __html: msg.content }} />
+                                            ) : (
+                                                msg.content
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                             ))}
                         </div>
@@ -150,5 +228,4 @@ const ChatWidget: React.FC = () => {
 };
 
 export default ChatWidget;
-
 

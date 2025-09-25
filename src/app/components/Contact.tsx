@@ -115,7 +115,7 @@ export default function Contact() {
       <section id="contact" className="bg-white justify-center items-center py-30 ">
         <div className="flex flex-col  px-4 sm:px-6 lg:px-8 justify-center items-center">
           <div className="max-w-2xl flex flex-col justify-center items-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-7xl font-semibold tracking-tight text-gray-900 m-4">Contact</h2>
+            <h2 className="text-3xl sm:text-3xl lg:text-7xl font-semibold tracking-tight text-gray-900 m-4">Contact</h2>
             <p className="mt-2 text-base sm:text-lg text-center text-gray-600 px-4">Une idée ? Un projet ? N&apos;hésitez pas à me contacter !</p>
           </div>
 
@@ -168,10 +168,10 @@ export default function Contact() {
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         >
-          <div
+          {/* {/* <div
             className="relative left-1/2 -z-10 aspect-[1155/678] w-[144.5rem] max-w-none -translate-x-1/2 rotate-30 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[288.75rem]"
-          />
-        </div>
+          /> */}
+        </div> 
 
         {/* CONTACT FORM */}
         <div className="flex flex-col w-full max-w-4xl mx-auto justify-center items-center">
@@ -303,4 +303,4 @@ export default function Contact() {
       </div>
     </>
   );
-}cd   
+}

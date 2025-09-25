@@ -1,5 +1,4 @@
-- Texte en plus sur troisieme partie encadré vert
-- taille police 
+
 
 - maquette collaboration 
 - maquette devis 
