@@ -10,7 +10,7 @@ import NavbarFixed from '@/app/components/NavbarFixed';
 import Footer from '@/app/components/Footer';
 
 
-const TropheePage = ({ params }: { params: Promise<{ id: string }> | { id: string } }) => {
+const ProjectPage = ({ params }: { params: Promise<{ title: string }> | { title: string } }) => {
   // Next.js may provide params as a Promise in newer versions; unwrap with React.use()
   // React.use will resolve the promise at render time in server components, but
   // since this is a client component we call React.use to unwrap any potential promise.
@@ -18,9 +18,9 @@ const TropheePage = ({ params }: { params: Promise<{ id: string }> | { id: strin
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const unwrappedParams = (React as any).use ? (React as any).use(params) : params;
 
-  const id = typeof unwrappedParams === 'object' && unwrappedParams !== null ? (unwrappedParams.id as string) : String(unwrappedParams);
+  const title = typeof unwrappedParams === 'object' && unwrappedParams !== null ? (unwrappedParams.title as string) : String(unwrappedParams);
 
-  const project = projects.find((p) => p.id === Number(id));
+  const project = projects.find((p) => p.slug === title);
 
   if (!project) {
     return (
@@ -107,17 +107,28 @@ const TropheePage = ({ params }: { params: Promise<{ id: string }> | { id: strin
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-4">
               <div>
                 <div className="text-sm text-gray-600">Client:</div>
-                <div className="text-xl font-semibold mt-2">{project.partenaires?.join(', ') || '-'}</div>
+                <div className="flex flex-col items-center mt-2">
+                  {project.imagePartner && (
+                    <Image
+                      src={project.imagePartner}
+                      alt={`Logo ${project.partenaires?.join(', ')}`}
+                      width={100}
+                      height={100}
+                      className="rounded-xl mr-4 p-4"
+                    />
+                  )}
+                  {/* <div className="text-xl font-semibold">{project.partenaires?.join(', ') || '-'}</div> */}
+                </div>
               </div>
 
               <div>
                 <div className="text-sm text-gray-600">Année:</div>
-                <div className="text-xl font-semibold mt-2">{project.year || '-'}</div>
+                <div className="text-xl font-semibold mt-2 flex items-center justify-center h-full">{project.year || '-'}</div>
               </div>
 
               <div>
                 <div className="text-sm text-gray-600">Projet:</div>
-                <div className="text-xl font-semibold mt-2">{project.project || project.title}</div>
+                <div className="text-xl font-semibold mt-2 flex items-center justify-center h-full">{project.project || project.title}</div>
               </div>
             </div>
 {/* 
@@ -183,4 +194,4 @@ const TropheePage = ({ params }: { params: Promise<{ id: string }> | { id: strin
   );
 };
 
-export default TropheePage;
+export default ProjectPage;

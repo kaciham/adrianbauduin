@@ -1,6 +1,6 @@
 export interface Projects {
-    id: number;
     title: string;
+    slug: string;
     description: string;
     project: string;
     year?: number;

@@ -10,5 +10,7 @@ devis et lien vers contact *
 
 
 
-- nav mobile menu (plus gros avec fond flou)
-- 
+- logo partenaire dans page produit
+- logo partenaires dans collaborations avec effet slide
+- alt image pour SEO 
+
