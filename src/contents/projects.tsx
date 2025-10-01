@@ -24,7 +24,7 @@ export const projects: Projects[] = [
     techniques: ['Impression UV', 'Laquage bombe', 'Découpe laser'],
     partenaires: ['Ecoposs'],
     technologies: [],
-    imageProject: ['/projects/BIENNALE_ECOPOSS/trophee-ecoposs-osons-leloge-concours-bleu.webp', '/projects/BIENNALE_ECOPOSS/trophee-ecoposs-osons-leloge-concours.webp', '/projects/BIENNALE_ECOPOSS/trophees-ecoposs-concours-nouvelles-osons-leloge-du-futur.webp'],
+    imageProject: ['/projects/BIENNALE_ECOPOSS/trophees-ecoposs-concours-nouvelles-osons-leloge-du-futur.webp','/projects/BIENNALE_ECOPOSS/trophee-ecoposs-osons-leloge-concours-bleu.webp', '/projects/BIENNALE_ECOPOSS/trophee-ecoposs-osons-leloge-concours.webp'],
     imagePartner: '/projects/BIENNALE_ECOPOSS/logo-ecoposs-osons-eloge-du-futur.webp',
   },
   {
@@ -50,7 +50,7 @@ export const projects: Projects[] = [
     techniques: ['Scie à chantourner', 'Impression UV', 'Gravure sur socle'],
     partenaires: ['La Voix Du Nord'],
     technologies: [],
-    imageProject: ['/projects/LES_FORMIDABLES/ambiance-trophee-design-bois-formidables-nord-pas-de-calais.webp', '/projects/LES_FORMIDABLES/atelier-fabrication-trophees-personnalises-formidables-2021.webp', '/projects/LES_FORMIDABLES/laureat-trophee-les-formidables-16-30-ans-2021.jpg.webp', '/projects/LES_FORMIDABLES/trophee-design-bois-formidables-nord-pas-de-calais.webp', '/projects/LES_FORMIDABLES/trophee-les-formidables-16-30-ans-2025-categorie-entrepreneurs.webp', '/projects/LES_FORMIDABLES/zoom-trophee-design-bois-formidables-nord-pas-de-calais.webp'],
+    imageProject: ['/projects/LES_FORMIDABLES/ambiance-trophee-design-bois-formidables-nord-pas-de-calais.webp', '/projects/LES_FORMIDABLES/laureat-trophee-les-formidables-16-30-ans-2021.jpg.webp', '/projects/LES_FORMIDABLES/trophee-design-bois-formidables-nord-pas-de-calais.webp', '/projects/LES_FORMIDABLES/trophee-les-formidables-16-30-ans-2025-categorie-entrepreneurs.webp', '/projects/LES_FORMIDABLES/zoom-trophee-design-bois-formidables-nord-pas-de-calais.webp','/projects/LES_FORMIDABLES/atelier-fabrication-trophees-personnalises-formidables-2021.webp'],
     imagePartner: '/projects/LES_FORMIDABLES/logo-lavoixdunord.webp',
   },
   {
@@ -79,19 +79,7 @@ export const projects: Projects[] = [
   imageProject: ['/projects/mon_heros_local_CIC/prix-entrepreneurs-bois-mon-heros-local-2025.webp', '/projects/mon_heros_local_CIC/recompenses-bois-cic-nord-ouest-2025.webp', '/projects/mon_heros_local_CIC/trophee-bois-mon-heros-local-2025-cic-nord-ouest.webp', '/projects/mon_heros_local_CIC/trophees-bois-design-mon-heros-local-2024-normandie-seul.webp', '/projects/mon_heros_local_CIC/trophees-bois-design-mon-heros-local-2024-normandie.webp', '/projects/mon_heros_local_CIC/zoom-trophee-bois-grave-hauts-de-france-2025.webp'],
   imagePartner: '/projects/mon_heros_local_CIC/cic-nord-ouest-logo.webp',
     },
-    {
-      project: 'Start Innovation',
-      title: 'Trophée Start Innovation CIC Business Awards',
-      slug: 'start-innovation-cic-business-awards',
-      description: "Le concours Start Innovation CIC Business Awards, porté par le Cic Nord Ouest, met chaque année en lumière les start-ups et entreprises innovantes des Hauts-de-France et de Normandie. Les lauréats sont récompensés par un trophée unique en bois massif, au design moderne et durable. Gravés et colorés de flèches dynamiques symbolisant la croissance et l’élan entrepreneurial, ces trophées incarnent audace, innovation et ancrage territorial. Ce partenariat durable avec le Cic en fait un rendez-vous majeur de l’écosystème entrepreneurial régional.",
-      year: 2024,
-      materials: ['Chêne upcyclé', 'Huile Osmo', 'Bouleau 1 mm pour insert'],
-      techniques: ['Raboteuse', 'Dégauchisseuse', 'Scie sur table', 'Gravure laser', 'Petits éléments insérés découpés à la laser puis imprimés à l’UV'],
-      partenaires: ['Cic Nord Ouest'],
-      technologies: [],
-  imageProject: ['/projects/START_INNOVATION/20221117_165354.webp', '/projects/START_INNOVATION/trophees-bois-design-start-innovation-2024.webp', '/projects/START_INNOVATION/trophees-start-innovation-cic-business-awards-2021-zoom.webp', '/projects/START_INNOVATION/trophees-start-innovation-cic-business-awards-2021.webp', '/projects/START_INNOVATION/trophees-start-innovation-cic-business-awards-2024.webp'],
-  imagePartner: '/projects/START_INNOVATION/cic-nord-ouest-logo.webp',
-    },
+
     {
       project: 'Energic',
       title: 'Trophée Energic',
@@ -102,7 +90,7 @@ export const projects: Projects[] = [
       techniques: ['Gravure laser', 'Découpe à la scie à chantourner', 'Fraiseuse numérique si grande série'],
       partenaires: ['Energic'],
       technologies: [],
-  imageProject: [ '/projects/TOTEMS_ENERGIC/trophee-bois-gravure-laser-forme-totem.jpg.webp', '/projects/TOTEMS_ENERGIC/trophee-bois-totem-design-grave.webp', '/projects/TOTEMS_ENERGIC/trophees-bois-oiseau-totem.webp', '/projects/TOTEMS_ENERGIC/trophees-ecoresponsables-totem-bois.webp'],
+  imageProject: [ '/projects/TOTEMS_ENERGIC/trophee-bois-totem-design-grave.webp', '/projects/TOTEMS_ENERGIC/trophee-bois-gravure-laser-forme-totem.jpg.webp', '/projects/TOTEMS_ENERGIC/trophees-bois-oiseau-totem.webp', '/projects/TOTEMS_ENERGIC/trophees-ecoresponsables-totem-bois.webp'],
   imagePartner: '/projects/TOTEMS_ENERGIC/energic-Logo-baseline.webp',
     },
     {
@@ -117,5 +105,18 @@ export const projects: Projects[] = [
       technologies: [],
   imageProject: ['/projects/TROPHEES_DFCG/trophee-dfcg-hauts-de-france-2023-prix-laureats.webp', '/projects/TROPHEES_DFCG/remise-trophee-dfcg-hauts-de-france-2025.webp', '/projects/TROPHEES_DFCG/trophee-dfcg-hauts-de-france-2025-prix-finance.webp', '/projects/TROPHEES_DFCG/trophees-bois-design-dfcg-hauts-de-france-2025.webp', '/projects/TROPHEES_DFCG/zoom-trophee-bois-design-dfcg-hauts-de-france-2023.webp'],
   imagePartner: '/projects/TROPHEES_DFCG/logo-dfcg.webp',
+    },
+        {
+      project: 'Start Innovation',
+      title: 'Trophée Start Innovation CIC Business Awards',
+      slug: 'start-innovation-cic-business-awards',
+      description: "Le concours Start Innovation CIC Business Awards, porté par le Cic Nord Ouest, met chaque année en lumière les start-ups et entreprises innovantes des Hauts-de-France et de Normandie. Les lauréats sont récompensés par un trophée unique en bois massif, au design moderne et durable. Gravés et colorés de flèches dynamiques symbolisant la croissance et l’élan entrepreneurial, ces trophées incarnent audace, innovation et ancrage territorial. Ce partenariat durable avec le Cic en fait un rendez-vous majeur de l’écosystème entrepreneurial régional.",
+      year: 2024,
+      materials: ['Chêne upcyclé', 'Huile Osmo', 'Bouleau 1 mm pour insert'],
+      techniques: ['Raboteuse', 'Dégauchisseuse', 'Scie sur table', 'Gravure laser', 'Petits éléments insérés découpés à la laser puis imprimés à l’UV'],
+      partenaires: ['Cic Nord Ouest'],
+      technologies: [],
+  imageProject: ['/projects/START_INNOVATION/trophees-start-innovation-cic-business-awards-2024.webp','/projects/START_INNOVATION/20221117_165354.webp', '/projects/START_INNOVATION/trophees-bois-design-start-innovation-2024.webp', '/projects/START_INNOVATION/trophees-start-innovation-cic-business-awards-2021-zoom.webp', '/projects/START_INNOVATION/trophees-start-innovation-cic-business-awards-2021.webp'],
+  imagePartner: '/projects/START_INNOVATION/cic-nord-ouest-logo.webp',
     },
   ];

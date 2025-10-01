@@ -9,7 +9,7 @@ const page = () => {
   return (
     <div>
       <NavbarFixed />
-        <h2 className="text-black text-4xl pt-12 text-center my-10">Devis</h2>
+        <h2 className="text-gray-900 text-4xl pt-12 text-center my-10">Devis</h2>
       <ChatWidget />
       <Contact />
       <Footer />

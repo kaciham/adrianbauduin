@@ -210,7 +210,7 @@ const ChatWidget: React.FC = () => {
                                 onChange={(e) => setInputValue(e.target.value)}
                                 onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
                                 placeholder="Tapez votre message..."
-                                className="w-full rounded-md border px-3 py-2 text-black text-sm focus:outline-none focus:ring-1 focus:ring-black"
+                                className="w-full rounded-md border px-3 py-2 text-gray-900 text-sm focus:outline-none focus:ring-1 focus:ring-black"
                                 style={{ color: "black" }}
                             />
                             <button

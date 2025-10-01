@@ -221,9 +221,9 @@ a {
 
 @keyframes scrollLeftToRight {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(100% - 100vw));
+        transform: translateX(calc(-50%));
     }
 }

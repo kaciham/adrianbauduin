@@ -6,11 +6,11 @@ const About = () => {
   return (
     <div className='bg-white'>
       <div className="flex flex-col justify-center items-center min-h-screen px-4 sm:px-6 md:px-8">
-        {/* <p className="text-black text-justify my-8 px-4 md:mx-4 max-w-4xl">
+        {/* <p className="text-gray-900 text-justify my-8 px-4 md:mx-4 max-w-4xl">
           Je suis designer ébéniste spécialisé dans la création de trophées sur mesure en bois. &nbsp;
           J'imagine et fabrique des pièces uniques qui allient artisanat traditionnel et technologies modernes comme la découpe laser, l'impression UV ou la fraiseuse numérique CNC. Que ce soit pour une entreprise, une compétition sportive ou un événement particulier, je conçois des trophées élégants, durables et personnalisés selon vos besoins.
         </p> */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 m-4 md:m-8 text-black w-full max-w-7xl">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 m-4 md:m-8 text-gray-900 w-full max-w-7xl">
           <Image
             src="/projects/createur-trophee-design-ecoposs.webp"
             alt="Atelier de fabrication"
@@ -26,7 +26,7 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row-reverse justify-center items-center gap-8 m-4 md:m-8 text-black w-full max-w-7xl">
+        <div className="flex flex-col md:flex-row-reverse justify-center items-center gap-8 m-4 md:m-8 text-gray-900 w-full max-w-7xl">
           <Image
             src="/projects/adrianprofile2.webp"
             alt="Atelier de fabrication"
@@ -44,7 +44,7 @@ const About = () => {
           </div>
         </div>
         <div className="flex flex-col-reverse justify-center items-center w-full md:flex-row-reverse md:py-8 gap-4 m-4 md:m-8 max-w-7xl">
-          <div className="flex flex-col justify-center items-center gap-8 text-black flex-1 w-full md:w-auto">
+          <div className="flex flex-col justify-center items-center gap-8 text-gray-900 flex-1 w-full md:w-auto">
           
           <div className="text-center w-full md:w-auto">
              <h2 className="font-extrabold text-2xl md:text-3xl m-4 mb-8">Un trophée pour chaque occasion</h2>
@@ -83,17 +83,17 @@ const About = () => {
       <div className="flex justify-center px-4 sm:px-6 md:px-8">
         <Link
           href="/#realisations"
-          className="inline-block bg-white md:w-auto text-black px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 uppercase text-sm md:text-lg font-semibold tracking-widest text-center mx-auto mb-10 w-full max-w-xs sm:max-w-sm md:max-w-md"
+          className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 uppercase text-sm md:text-lg font-semibold tracking-widest text-center mx-auto mb-10 w-full max-w-xs sm:max-w-sm md:max-w-md"
         > 
           Réalisations
         </Link>
       </div>
 
       <div>
-        {/* <h2 className="font-extrabold  text-2xl md:text-3xl mb-4 text-black text-center px-4 sm:px-6 md:px-8">Des techniques modernes</h2> */}
-    <h2 className="font-extrabold text-2xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 text-black text-center px-4 sm:px-6 md:px-8">Des techniques modernes</h2>
-        <div className="text-black mx-4 sm:mx-8 md:mx-12">
-            <div className="flex flex-col sm:flex-row justify-evenly items-center gap-4 my-4 px-4 md:px-0 text-black w-full max-w-7xl mx-auto">
+        {/* <h2 className="font-extrabold  text-2xl md:text-3xl mb-4 text-gray-900 text-center px-4 sm:px-6 md:px-8">Des techniques modernes</h2> */}
+    <h2 className="font-extrabold text-2xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 text-gray-900 text-center px-4 sm:px-6 md:px-8">Des techniques modernes</h2>
+        <div className="text-gray-900 mx-4 sm:mx-8 md:mx-12">
+            <div className="flex flex-col sm:flex-row justify-evenly items-center gap-4 my-4 px-4 md:px-0 text-gray-900 w-full max-w-7xl mx-auto">
             <div className="w-full sm:w-2/3 h-48 md:h-64 lg:h-80 overflow-hidden rounded-lg">
               <Image src="/projects/creation-artistique-bois-gravure-laser-design.webp" alt="Découpe laser" width={400} height={100} className='w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-98 shadow-xl' />
             </div>
@@ -102,7 +102,7 @@ const About = () => {
                 <p className="mx-2 sm:mx-4  text-sm sm:text-sm md:text-sm lg:text-sm text-justify">Textes, logos, motifs détaillés directement incrustés dans le bois</p>
               </div>
             </div>  
-            <div className="flex flex-col sm:flex-row-reverse justify-center items-center gap-4 my-4  px-4 md:px-0 text-black w-full max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row-reverse justify-center items-center gap-4 my-4  px-4 md:px-0 text-gray-900 w-full max-w-7xl mx-auto">
             <div className="w-full sm:w-2/3 h-48 md:h-64 lg:h-80 overflow-hidden rounded-lg">
               <Image src="/projects/BIENNALEECOPOSS/trophees-ecoposs-concours-nouvelles-osons-leloge-du-futur.webp" alt="Découpe laser" width={400} height={100} className='w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-98 shadow-xl' />
             </div>
@@ -112,7 +112,7 @@ const About = () => {
    reproduits directement sur le bois, pour un rendu moderne et durable.</p>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 my-4  px-4 md:px-0 text-black w-full max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 my-4  px-4 md:px-0 text-gray-900 w-full max-w-7xl mx-auto">
             <div className="w-full sm:w-2/3 h-48 md:h-64 lg:h-80 overflow-hidden rounded-lg">
               <Image src="/projects/concours_court_metrage_securite_sociale/trophee-artistique-bois-grave-incrustation.webp" alt="Découpe laser" width={400} height={100} className='w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-98 shadow-xl' />
             </div>
@@ -134,7 +134,7 @@ const About = () => {
           <div className="absolute inset-0 bg-white/60 md:bg-transparent" aria-hidden="true" />
 
           <div className="flex-1" />
-          <div className="relative z-10 flex flex-col justify-end items-end bg-opacity-50 p-6 rounded-lg max-w-2xl text-black m-4 w-full md:w-1/2 lg:w-1/3 sm:w-1/3 self-end md:self-auto">
+          <div className="relative z-10 flex flex-col justify-end items-end bg-opacity-50 p-6 rounded-lg max-w-2xl text-gray-900 m-4 w-full md:w-1/2 lg:w-1/3 sm:w-1/3 self-end md:self-auto">
           <div className='text-center w-full md:w-auto'>
  <h3 className='font-extrabold  text-2xl text-center md:text-3xl m-4 mb-8'>Matériaux nobles & durables</h3>
           </div>

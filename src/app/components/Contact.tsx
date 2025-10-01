@@ -112,52 +112,74 @@ export default function Contact() {
 
   return (
     <>
-      <section id="contact" className="bg-white justify-center items-center py-30 ">
+      <section id="contact" className="bg-white justify-center items-center py-18 ">
         <div className="flex flex-col  px-4 sm:px-6 lg:px-8 justify-center items-center">
           <div className="max-w-2xl flex flex-col justify-center items-center">
-            <h2 className="text-3xl sm:text-3xl lg:text-7xl font-semibold tracking-tight text-gray-900 m-4">Contact</h2>
+            <h2 className="text-3xl sm:text-3xl lg:text-6xl font-semibold tracking-tight text-gray-900 m-4">Contact</h2>
             <p className="mt-2 text-base sm:text-lg text-center text-gray-600 px-4">Une idée ? Un projet ? N&apos;hésitez pas à me contacter !</p>
           </div>
 
           <div className="mt-8 sm:mt-10 w-full max-w-5xl  sm:px-0">
             <div className="flex flex-col h-full items-center gap-4 sm:gap-6 lg:flex-row lg:justify-center lg:items-stretch">
-              <a
-                href="tel:+33623284237"
-                aria-label="Téléphone"
-                className="flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px]"
+              <div className="group relative flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-gray-900 transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px] cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  navigator.clipboard.writeText("0623284237");
+                  const el = document.getElementById("phone-copy-tooltip");
+                  if (el) {
+                    el.classList.remove("opacity-0");
+                    setTimeout(() => el.classList.add("opacity-0"), 1500);
+                  }
+                }}
               >
-                <div className="text-left">
-                  <div className="text-xs sm:text-sm text-gray-500">Téléphone</div>
+                <div className="text-left z-0">
+                  <div className="text-xs sm:text-sm text-gray-500 group-hover:text-gray-200">Téléphone</div>
                   <div className="mt-1 text-base sm:text-lg font-medium">0623284237</div>
                 </div>
-              </a>
+                <span id="phone-copy-tooltip" className="absolute top-0 right-0 mt-2 mr-2 px-2 py-1 text-xs bg-black text-white rounded opacity-0 transition-opacity">Copié!</span>
+              </div>
 
-              <a
-                href="https://www.google.com/maps/place/30+Rue+Henri+Regnault,+59000+Lille/@50.6327953,3.0294016,18z/data=!3m1!4b1!4m6!3m5!1s0x47c2d566f100c38b:0x24fd3694b442e8f8!8m2!3d50.6327942!4d3.0302126!16s%2Fg%2F11cpq18dmb?entry=ttu&g_ep=EgoyMDI1MDkxMC4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank" 
-                rel="noopener nore  ferrer"
-                aria-label="Adresse"
-                className="flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px]"
+              <div className="group relative flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-gray-900 transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px] cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  navigator.clipboard.writeText("Ateliers LIDD, 30 rue Henri Regnault, 59000 LILLE");
+                  const el = document.getElementById("address-copy-tooltip");
+                  if (el) {
+                    el.classList.remove("opacity-0");
+                    setTimeout(() => el.classList.add("opacity-0"), 1500);
+                  }
+                }}
               >
-                <div className="text-left">
-                  <div className="text-xs sm:text-sm text-gray-500">Adresse</div>
-                  <div className="mt-1 text-base sm:text-lg font-medium"><span className="font-bold">Ateliers LIDD</span><br />
-30 rue henri regnault
-<br/> 59000 LILLE</div>
+                <div className="text-left z-0">
+                  <div className="text-xs sm:text-sm text-gray-500 group-hover:text-gray-200">Adresse</div>
+                  <div className="mt-1 text-base sm:text-lg font-medium">
+                    <span className="font-bold">Ateliers LIDD</span><br />
+                    30 rue Henri Regnault<br /> 59000 LILLE
+                  </div>
                 </div>
-              </a>
-              <a
-                href="mailto:bauduin.adrian@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Email"
-                className="flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-black transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px]"
+                <span id="address-copy-tooltip" className="absolute top-0 right-0 mt-2 mr-2 px-2 py-1 text-xs bg-black text-white rounded opacity-0 transition-opacity">Copié!</span>
+              </div>
+
+              <div className="group relative flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-gray-900 transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px] cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  navigator.clipboard.writeText("bauduin.adrian@gmail.com");
+                  const el = document.getElementById("email-copy-tooltip");
+                  if (el) {
+                    el.classList.remove("opacity-0");
+                    setTimeout(() => el.classList.add("opacity-0"), 1500);
+                  }
+                }}
               >
-                <div className="text-left">
-                  <div className="text-xs sm:text-sm text-gray-500">Email</div>
+                <div className="text-left z-0">
+                  <div className="text-xs sm:text-sm text-gray-500 group-hover:text-gray-200">Email</div>
                   <div className="mt-1 text-base sm:text-lg font-medium">bauduin.adrian@gmail.com</div>
                 </div>
-              </a>
+                <span id="email-copy-tooltip" className="absolute top-0 right-0 mt-2 mr-2 px-2 py-1 text-xs bg-black text-white rounded opacity-0 transition-opacity">Copié!</span>
+              </div>
             </div>
           </div>
         </div>
@@ -180,7 +202,7 @@ export default function Contact() {
               <label htmlFor="first-name" className="block text-sm sm:text-base font-semibold text-gray-900">
                 Prénom <span className='text-red'>*</span>
               </label>
-              <div className="mt-2 sm:mt-2.5">
+              <div className="mt-2 sm:mt-[2.5]">
                 <input
                   ref={fname}
                   id="first-name"
@@ -196,7 +218,7 @@ export default function Contact() {
               <label htmlFor="last-name" className="block text-sm sm:text-base font-semibold text-gray-900">
                 Nom <span className='text-red'>*</span>
               </label>
-              <div className="mt-2 sm:mt-2.5">
+              <div className="mt-2 sm:mt-[2.5]">
                 <input
                 ref={lname}
                   id="last-name"
@@ -212,7 +234,7 @@ export default function Contact() {
               <label htmlFor="company" className="block text-sm sm:text-base font-semibold text-gray-900">
                 Entreprise / Organisation
               </label>
-              <div className="mt-2 sm:mt-2.5">
+              <div className="mt-2 sm:mt-[2.5]">
                 <input
                 ref={companyName}
                   id="company"
@@ -228,7 +250,7 @@ export default function Contact() {
               <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-900">
                 Email <span className='text-red'>*</span>
               </label>
-              <div className="mt-2 sm:mt-2.5">
+              <div className="mt-2 sm:mt-[2.5]">
                 <input
                   ref={email}
                   id="email"
@@ -244,7 +266,7 @@ export default function Contact() {
               <label htmlFor="phone-number" className="block text-sm sm:text-base font-semibold text-gray-900">
                 Numéro de téléphone
               </label>
-              <div className="mt-2 sm:mt-2.5">
+              <div className="mt-2 sm:mt-[2.5]">
                 <input
                   ref={phone}
                   id="phone-number"
@@ -259,7 +281,7 @@ export default function Contact() {
               <label htmlFor="message" className="block text-sm sm:text-base font-semibold text-gray-900">
                 Message <span className='text-red'>*</span>
               </label>
-              <div className="mt-2 sm:mt-2.5">
+              <div className="mt-2 sm:mt-[2.5]">
                 <textarea
                   ref={message}
                   id="message"
@@ -292,7 +314,7 @@ export default function Contact() {
               value="Send Message"
               onClick={() => { handleSubmit(); }}
               disabled={isLoading}
-              className={`w-full sm:w-auto px-6 sm:px-8 lg:px-12 py-3 sm:py-2 rounded-full transition-colors border-2 text-center uppercase text-base sm:text-sm lg:text-lg font-semibold tracking-widest cursor-pointer min-w-[200px] ${isLoading ? 'bg-gray-200 text-gray-600 border-gray-300' : 'bg-white text-black border-black hover:bg-black hover:text-white'}`}
+              className={`w-full sm:w-auto px-6 sm:px-8 lg:px-12 py-3 sm:py-2 rounded-full transition-colors border-2 text-center uppercase text-base sm:text-sm lg:text-lg font-semibold tracking-widest cursor-pointer min-w-[200px] ${isLoading ? 'bg-gray-200 text-gray-600 border-gray-300' : 'bg-white text-gray-900 border-black hover:bg-black hover:text-white'}`}
             >
               {isLoading ? 'Envoi...' : 'Envoyer'}
             </button>

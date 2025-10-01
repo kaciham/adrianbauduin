@@ -21,7 +21,7 @@ const Hero = () => {
       </div>
       <Link
       href="/#contact"
-      className="inline-block bg-white md:w-auto text-black px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
+      className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
       >
      Contactez-moi
       </Link>

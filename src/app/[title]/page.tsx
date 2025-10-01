@@ -24,7 +24,7 @@ const ProjectPage = ({ params }: { params: Promise<{ title: string }> | { title:
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-gray-100 text-black">
+      <div className="min-h-screen bg-gray-100 text-gray-900">
         <NavbarFixed />
         <main className="container mx-auto py-24 px-4">
           <div className="bg-white rounded-lg shadow-lg p-12 text-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[80vh] flex items-center justify-center">
@@ -33,7 +33,7 @@ const ProjectPage = ({ params }: { params: Promise<{ title: string }> | { title:
           <p className="text-gray-700 mb-6">Le projet que vous recherchez est introuvable ou n'existe pas.</p>
           <Link
             href="/#realisations"
-            className="inline-block bg-white md:w-auto text-black px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
+            className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
           >
             Retour à la liste des trophées
           </Link>
@@ -59,9 +59,10 @@ const ProjectPage = ({ params }: { params: Promise<{ title: string }> | { title:
   const next = () => setCurrent((c) => (c + 1) % length);
 
   return (
-    <div className="min-h-screen bg-gray-100 text-black">
+    <div className="min-h-screen bg-gray-100 text-gray-900">
       <NavbarFixed />
-      <div className="container mx-auto py-34  md:py-30  sm:py-30">
+      <div className="container flex flex-col justify-center items-center mx-auto py-34  md:py-30  sm:py-30">
+      
         <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row">
           {/* Left: big image */}
           <div className="lg:w-1/2 w-full h-96 lg:h-[80vh] relative bg-gray-200">
@@ -72,7 +73,7 @@ const ProjectPage = ({ params }: { params: Promise<{ title: string }> | { title:
                   alt={`${project.title || project.project} - ${current + 1}`}
                   fill
                   style={{ objectFit: 'cover' }}
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 80vw, 100vw"
                   priority
                 />
 
@@ -100,6 +101,7 @@ const ProjectPage = ({ params }: { params: Promise<{ title: string }> | { title:
             ) : (
               <div className="w-full h-full flex items-center justify-center text-gray-500">No image</div>
             )}
+            
           </div>
 
           {/* Right: attributes and overview */}
@@ -188,7 +190,14 @@ const ProjectPage = ({ params }: { params: Promise<{ title: string }> | { title:
             </div>
           </div>
         </div>
+          <Link
+      href="/#realisations"
+      className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-8 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
+      >
+     Retour aux autres réalisations
+      </Link>
       </div>
+      
       <Footer />
     </div>
   );

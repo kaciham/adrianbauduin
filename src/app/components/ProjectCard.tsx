@@ -16,18 +16,18 @@ export default function ProjectCard({ project }: { project: typeof projects[0] }
       <div className="bg-white  rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-102 cursor-pointer">
         <Image
           src={Array.isArray(project.imageProject) ? project.imageProject[0] : project.imageProject}
-          alt={project.title}
-          width={300}
-          height={250}
-          className="w-full h-120 object-cover"
+          alt={project.slug}
+          width={250}
+          height={200}
+          className="w-full h-80 object-cover"
         />
         <div className="p-4">
-          <h3 className="text-black text-lg font-semibold mb-2">{project.title}</h3>
-          <p className="text-black mb-2">
+          <h3 className="text-gray-900 text-lg font-semibold mb-2">{project.title}</h3>
+          <p className="text-gray-900 mb-2">
             {shortDesc}
             {project.description.length > MAX_DESC_LENGTH && !expanded && (
               <button
-                className="text-black underline ml-2 text-sm cursor-pointer"
+                className="text-gray-900 underline ml-2 text-sm cursor-pointer"
                 type="button"
                 onClick={e => {
                   e.preventDefault();
@@ -38,10 +38,10 @@ export default function ProjectCard({ project }: { project: typeof projects[0] }
               </button>
             )}
           </p>
-          {/* <div className="text-sm text-black mb-1"><span className="font-bold">Année:</span> {project.year}</div>
-          <div className="text-sm text-black mb-1"><span className="font-bold">Matériaux:</span> {project.materials?.join(', ')}</div>
-          <div className="text-sm text-black mb-1"><span className="font-bold">Techniques:</span> {project.techniques?.join(', ')}</div>
-          <div className="text-sm text-black mb-1"><span className="font-bold">Partenaires:</span> {project.partenaires?.join(', ')}</div> */}
+          {/* <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Année:</span> {project.year}</div>
+          <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Matériaux:</span> {project.materials?.join(', ')}</div>
+          <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Techniques:</span> {project.techniques?.join(', ')}</div>
+          <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Partenaires:</span> {project.partenaires?.join(', ')}</div> */}
         </div>
       </div>
     </Link>

@@ -48,8 +48,7 @@ export default function Navbar() {
   const menuItems = [
     { href: '/#hero', label: 'Accueil' },
     { href: '/#realisations', label: 'Réalisations' },
-    { href: '/#collaborations', label: 'Collaborations' },
-    { href: '/devis  ', label: 'Devis' },
+    // { href: '/devis  ', label: 'Devis' },
     { href: '/#contact', label: 'Contact' },
   ]
 
@@ -88,7 +87,7 @@ export default function Navbar() {
               <Link
                 key={item.href + item.label}
                 href={item.href}
-                className="transition-colors opacity-70     px-2 py-1 rounded-sm text-white hover:bg-white hover:text-black"
+                className="transition-colors opacity-70     px-2 py-1 rounded-sm text-white hover:bg-white hover:text-gray-900"
                 aria-label={item.label}
               >
                 {item.label}
