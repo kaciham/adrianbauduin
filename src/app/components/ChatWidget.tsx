@@ -88,7 +88,7 @@ const ChatWidget: React.FC = () => {
             const sessionId = getChatId();
             // Prefer Next.js public env injected at build-time, fall back to window global (for dev/testing)
             const webhookUrl: string = (process.env.NEXT_PUBLIC_WEBHOOK_URL as string) ||
-                ((typeof window !== "undefined" && (window as any).NEXT_PUBLIC_WEBHOOK_URL) || "");
+                ((typeof window !== "undefined" && (window as unknown as Record<string, string>).NEXT_PUBLIC_WEBHOOK_URL) || "");
             console.log("Sending to webhook:", webhookUrl ? "[REDACTED]" : "(missing)", { sessionId, chatInput });
             if (!webhookUrl) {
                 // Show user-friendly message instead of throwing raw error

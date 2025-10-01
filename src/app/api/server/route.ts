@@ -2,10 +2,19 @@ import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 
 // POST /api/server
+interface ContactFormData {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+  phone?: string;
+  company?: string;
+}
+
 export async function POST(req: Request) {
   try {
     const contentType = req.headers.get('content-type') || '';
-    let data: any = {};
+    let data: ContactFormData = {};
 
     if (contentType.includes('application/json')) {
       data = await req.json();
@@ -91,7 +100,7 @@ export async function POST(req: Request) {
     };
 
   // send notification email to admin
-  const info = await transporter.sendMail(mailOptions as any);
+  const info = await transporter.sendMail(mailOptions);
   console.log('Notification email sent', { messageId: info.messageId, accepted: info.accepted, rejected: info.rejected });
 
   // send confirmation email to user if email is provided
@@ -128,7 +137,7 @@ export async function POST(req: Request) {
     };
 
     try {
-      const confirmationInfo = await transporter.sendMail(confirmationOptions as any);
+      const confirmationInfo = await transporter.sendMail(confirmationOptions);
       console.log('Confirmation email sent', { messageId: confirmationInfo.messageId, accepted: confirmationInfo.accepted, rejected: confirmationInfo.rejected });
     } catch (confirmationErr) {
       console.error('Failed to send confirmation email', confirmationErr);

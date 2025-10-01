@@ -10,17 +10,19 @@ import NavbarFixed from '@/app/components/NavbarFixed';
 import Footer from '@/app/components/Footer';
 
 
-const TropheePage = ({ params }: { params: Promise<{ title: string }> | { title: string } }) => {
+const TropheePage = ({ params }: { params: Promise<{ title: string }> }) => {
   // Next.js may provide params as a Promise in newer versions; unwrap with React.use()
   // React.use will resolve the promise at render time in server components, but
   // since this is a client component we call React.use to unwrap any potential promise.
-  // Accept either a plain object or a Promise for compatibility.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const unwrappedParams = (React as any).use ? (React as any).use(params) : params;
 
   const title = typeof unwrappedParams === 'object' && unwrappedParams !== null ? (unwrappedParams.title as string) : String(unwrappedParams);
 
   const project = projects.find((p) => p.slug === title);
+
+  // Initialize hooks before any conditional returns
+  const [current, setCurrent] = useState(0);
 
   if (!project) {
     return (
@@ -30,7 +32,7 @@ const TropheePage = ({ params }: { params: Promise<{ title: string }> | { title:
           <div className="bg-white rounded-lg shadow-lg p-12 text-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[80vh] flex items-center justify-center">
         <div>
           <h1 className="text-3xl font-bold mb-4">Projet non trouvé</h1>
-          <p className="text-gray-700 mb-6">Le projet que vous recherchez est introuvable ou n'existe pas.</p>
+          <p className="text-gray-700 mb-6">Le projet que vous recherchez est introuvable ou n&apos;existe pas.</p>
           <Link
             href="/#realisations"
             className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
@@ -52,7 +54,6 @@ const TropheePage = ({ params }: { params: Promise<{ title: string }> | { title:
     ? [project.imageProject]
     : [];
 
-  const [current, setCurrent] = useState(0);
   const length = images.length;
 
   const prev = () => setCurrent((c) => (c - 1 + length) % length);

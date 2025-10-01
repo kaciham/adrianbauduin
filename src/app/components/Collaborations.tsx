@@ -28,10 +28,6 @@ const Collaborations: React.FC = () => {
   useEffect(() => {
     // Adjust animation speed based on screen width for responsive behavior
     const handleResize = () => {
-      // Calculate speed based on content width for smoother scrolling
-      const contentWidth = logoRowRef.current?.scrollWidth || 0;
-      const viewportWidth = window.innerWidth;
-      
       // Base speed calculation - adjust the divisor for faster/slower scrolling
       // For a typical viewport, we want the animation to take about 30 seconds
       const baseSpeed = window.innerWidth > 1200 ? 30 : 
