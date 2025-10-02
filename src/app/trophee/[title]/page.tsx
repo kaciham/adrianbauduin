@@ -122,7 +122,7 @@ const TropheePage = ({ params }: { params: Promise<{ title: string }> }) => {
                   {project.imagePartner && (
                     <Image
                       src={project.imagePartner}
-                      alt={`Logo ${project.partenaires?.join(', ')}`}
+                      alt={typeof project.imageProject === 'string' ? project.imageProject : (Array.isArray(project.imageProject) ? project.imageProject[0] : '')}
                       width={100}
                       height={100}
                       className="rounded-xl mr-4 p-4"
