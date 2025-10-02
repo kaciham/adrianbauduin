@@ -29,8 +29,8 @@ export default function Contact() {
     if (messageVal) payload.message = messageVal;
     const phoneVal = read(phone);
     if (phoneVal) payload.phone = phoneVal;
-    // const companyVal = read(companyName);
-    // if (companyVal) payload.company = companyVal;
+    const companyVal = read(companyName);
+    if (companyVal) payload.company = companyVal;
 
     console.log('Submitting contact form', payload);
 
