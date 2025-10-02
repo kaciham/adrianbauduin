@@ -53,7 +53,7 @@ const Collaborations: React.FC = () => {
         
         {/* Animated logos row */}
         <div 
-          className="relative w-full overflow-hidden mb-12 h-28 bg-gray-50 rounded-lg p-4"
+          className="relative w-full overflow-hidden mb-12 h-28 rounded-lg p-4"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           style={{ position: 'relative' }}
