@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Adrian Bauduin - Trophées en bois sur mesure",
-  description: "Création de trophées en bois sur mesure",
+  description: "Création de trophées en bois sur mesure dans la région de Lille",
 };
+
 
 export default function RootLayout({
   children,
@@ -23,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-white`}
       >

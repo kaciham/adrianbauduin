@@ -1,16 +1,1 @@
 
-
-- maquette collaboration 
-- maquette devis 
-
-intégration collab page d'accueil entre réalisations et contact
-maquette page collab avec lien vers l'éditeur de devis
-devis et lien vers contact *
-
-
-
-
-- logo partenaire dans page produit
-- logo partenaires dans collaborations avec effet slide
-- alt image pour SEO 
-
