@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 
 // POST /api/server
-interface ContactFormData {
+type ContactFormData = {
   name?: string;
   email?: string;
   subject?: string;
@@ -107,9 +107,9 @@ export async function POST(req: Request) {
   if (email) {
     const firstName = name.split(' ')[0] || name;
     const confirmationOptions = {
-      from: process.env.SMTP_USER ? `Adrian Bauduin <${process.env.SMTP_USER}>` : 'Adrian Bauduin',
+      from:  `Adrian Bauduin - adrian.bauduin@gmail.com`,
       to: email,
-      subject: 'Confirmation de réception de votre message',
+      subject: 'Confirmation de réception de votre message - Adrian Bauduin',
       html: `
         <!DOCTYPE html>
         <html>
@@ -121,13 +121,15 @@ export async function POST(req: Request) {
                         <p style="font-size: 16px; color: #555;">
                             Un grand merci pour votre message. Je m’engage à prendre connaissance de votre projet au plus vite et je vous rappelle !
                         </p>
+                      
                         <p style="font-size: 16px; color: #333;">
-                            Cordialement, <br> 
+                            Cordialement,
+                             <br /> 
                             <strong>Adrian Bauduin</strong><br>
-                            <span style="color: #666; font-size: 14px;">Créateur de trophées et objets personnalisés</span>
+                            <span style="color: #666; font-size: 14px;">Trophée sur mesure</span>
                         </p>
                         <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0;">
-                        <p style="font-size: 12px; color: #999;">Ceci est une réponse automatique. Merci de ne pas répondre à cet e-mail.</p>
+                      
                     </td>
                 </tr>
             </table>
