@@ -1,4 +1,6 @@
-'use client'
+'use client';
+
+import { useState, useEffect } from 'react';
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -7,46 +9,70 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Collaborations from "./components/Collaborations";
 import TopIcon from "./components/TopIcon";
-import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
-   const [scrolled, setScrolled] = useState(false)
-     
-       useEffect(() => {
-         const handleScroll = () => {
-           setScrolled(window.scrollY > window.innerHeight * 0.2)
-         }
-         window.addEventListener('scroll', handleScroll)
-         return () => window.removeEventListener('scroll', handleScroll)
-       }, [])
- 
-     const scrollToTop = () => {
-         if (scrolled) {
-             window.scrollTo({ top: 0, behavior: 'smooth' });
-         }
-     };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  // JSON-LD pour la page d'accueil
+  const homePageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Adrian Bauduin - Ébéniste créateur de trophées sur mesure",
+    "description": "Ébéniste passionné spécialisé dans la création de trophées sur mesure, alliant savoir-faire traditionnel et design contemporain pour valoriser vos événements dans la région de Lille",
+    "url": "https://portfolio-adrianbauduin.vercel.app",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Adrian Bauduin - Ébéniste",
+      "description": "Création de trophées en bois sur mesure dans la région de Lille"
+    }
+  };
 
   return (
-    <div className="scroll-smooth">
-    <Navbar />
-    <Hero />
-    <About />
-    <Realisation />
-    <Collaborations />
-    <Contact />
-    
-    
-      <Footer />
-         {scrolled && (
-        <div
-          className='w-14 h-14 sm:w-18 sm:h-18 fixed bottom-5 rounded-full right-5  bg-slate-200 opacity-90 border-4 p-2 shadow-custom cursor-pointer transition-transform duration-300 ease-in-out hover:delay-200 hover:-translate-y-2'
-          onClick={scrollToTop}
-        >
-          <TopIcon />
-        </div>
-      )}
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }}
+      />
+      <div className="scroll-smooth">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Realisation />
+          <Collaborations />
+          <Contact />
+        </main>
+        <Footer />
+        {showScrollTop && (
+          <button
+            onClick={scrollToTop}
+            className='w-14 h-14 sm:w-18 sm:h-18 fixed bottom-5 rounded-full right-5 bg-slate-200 opacity-90 border-4 p-2 shadow-custom cursor-pointer transition-transform duration-300 ease-in-out hover:delay-200 hover:-translate-y-2'
+            aria-label="Retour en haut de la page"
+          >
+            <TopIcon />
+          </button>
+        )}
+      </div>
+    </>
   );
 }
-  

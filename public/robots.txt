@@ -1,4 +1,17 @@
+# *
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
 
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Host
+Host: https://portfolio-adrianbauduin.vercel.app
+
+# Sitemaps
 Sitemap: https://portfolio-adrianbauduin.vercel.app/sitemap.xml

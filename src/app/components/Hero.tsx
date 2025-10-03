@@ -15,7 +15,7 @@ const Hero = () => {
           style={{ width: 'auto', height: 'auto' }}
           className='py-2'
         /> 
-        <h1 className="uppercase mt-2 py-2 text-center w-full text-lg sm:text-lg md:text-2xl lg:text-2xl tracking-widest text-bold" >
+        <h1 className="uppercase mt-2 py-2 text-center w-full text-lg sm:text-lg md:text-2xl lg:text-2xl tracking-widest text-bold text-white" >
           trophées en bois sur mesure
         </h1>
       </div>

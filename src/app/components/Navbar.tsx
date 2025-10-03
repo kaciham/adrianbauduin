@@ -96,15 +96,15 @@ export default function Navbar() {
           </div>
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-2 rounded-lg transition-colors"
+            className="md:hidden p-2 rounded-lg transition-colors "
             onClick={toggleMobileMenu}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             {isMobileMenuOpen ? (
-              <XMarkIcon className="h-6 w-6" />
+              <XMarkIcon className="h-6 w-6 text-white" />
             ) : (
-              <Bars3Icon className="h-6 w-6" />
+              <Bars3Icon className="h-6 w-6 text-white" />
             )}
           </motion.button>
         </div>
@@ -128,7 +128,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
-                      className="block pl-2 py-2 transition-colors rounded-2xl font-bold bg-black/60"
+                      className="block pl-2 py-2 transition-colors rounded-2xl font-bold bg-black/60 text-white"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.label}
