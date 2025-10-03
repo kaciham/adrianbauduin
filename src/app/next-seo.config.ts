@@ -18,7 +18,7 @@ const businessInfo = {
     longitude: 3.0573
   },
   socialMedia: {
-    facebook: "https://www.facebook.com/adrianbauduin",
+    linkedin: "https://www.linkedin.com/in/adrian-bauduin-1b152b220/",
     instagram: "https://www.instagram.com/adrianbauduin/"
   }
 };
@@ -51,7 +51,7 @@ export const localBusinessSchema = {
   "priceRange": "€€",
   "hasMap": `https://www.google.com/maps/place/Lille/@${businessInfo.coordinates.latitude},${businessInfo.coordinates.longitude},17z`,
   "sameAs": [
-    businessInfo.socialMedia.facebook,
+    businessInfo.socialMedia.linkedin,
     businessInfo.socialMedia.instagram
   ],
   "openingHoursSpecification": {
@@ -64,7 +64,7 @@ export const localBusinessSchema = {
       "http://schema.org/Friday"
     ],
     "opens": "09:00",
-    "closes": "17:00"
+    "closes": "18:00"
   }
 };
 
