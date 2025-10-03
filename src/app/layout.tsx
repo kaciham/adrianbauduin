@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   other: {
     'preconnect': 'https://fonts.googleapis.com',
     'dns-prefetch': 'https://fonts.gstatic.com',
+    'google-site-verification': 'UqslgZcMdwsYWMCEZA7Ow8vu3bS79p75g_OEOxj6Kb0',
   },
 };
 
