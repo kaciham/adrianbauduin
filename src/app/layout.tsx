@@ -1,22 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { localBusinessSchema } from './next-seo.config';
+import { geistSans, geistMono } from './lib/fonts';
+import Analytics from './components/Analytics';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+// Metadata pour Next.js App Router
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-adrianbauduin.vercel.app"),
   title: "Adrian Bauduin - Trophées en bois sur mesure",
   description: "Création de trophées en bois sur mesure dans la région de Lille",
+  keywords: "trophée sur mesure, ébéniste Lille, trophée bois, création artisanale",
+  openGraph: {
+    title: "Adrian Bauduin - Ébéniste créateur de trophées sur mesure",
+    description: "Création de trophées en bois sur mesure dans la région de Lille",
+    url: "https://portfolio-adrianbauduin.vercel.app",
+    siteName: "Adrian Bauduin - Ébéniste",
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  // Preconnect pour améliorer LCP
+  other: {
+    'preconnect': 'https://fonts.googleapis.com',
+    'dns-prefetch': 'https://fonts.gstatic.com',
+  },
 };
-
 
 export default function RootLayout({
   children,
@@ -25,11 +35,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
-          
-          {children}
+        <Analytics />
+        {children}
       </body>
     </html>
   );

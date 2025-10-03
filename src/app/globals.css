@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-@theme {
+/* Optimisations Core Web Vitals */
+:root {
   --color-primary: #007AFF;
   --color-secondary: #6B7280;
   --color-dark: #1F2937;
@@ -12,6 +13,46 @@
 
   --animation-fade-in: fadeIn 0.5s ease-in-out;
   --animation-slide-up: slideUp 0.5s ease-in-out;
+  
+  /* Performance optimizations */
+  --image-placeholder-height: 400px;
+  --nav-height: 80px;
+}
+
+/* Amélioration LCP - Images critiques */
+.hero-image,
+.priority-image {
+  content-visibility: auto;
+  contain-intrinsic-size: var(--image-placeholder-height);
+}
+
+/* Optimisation FID */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Réduction CLS navigation */
+.navbar-fixed {
+  height: var(--nav-height);
+}
+
+/* Amélioration accessibilité et performance */
+.focus-visible:focus {
+  outline: 2px solid #d97706;
+  outline-offset: 2px;
+}
+
+/* Réduction motion pour accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .smooth-scroll {
+    scroll-behavior: auto;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 a {

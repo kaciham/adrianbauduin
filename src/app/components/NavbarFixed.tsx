@@ -65,9 +65,9 @@ export default function NavbarFixed() {
             whileTap={{ scale: 0.9 }}
           >
             {isMobileMenuOpen ? (
-              <XMarkIcon className="h-6 w-6" />
+              <XMarkIcon className="h-6 w-6 text-white" />
             ) : (
-              <Bars3Icon className="h-6 w-6" />
+              <Bars3Icon className="h-6 w-6 text-white" />
             )}
           </motion.button>
         </div>
