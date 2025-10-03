@@ -4,9 +4,9 @@ import { projects } from '@/contents/projects';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Trophées en Bois Sur Mesure | Adrian Bauduin - Ébéniste Lille',
+  title: 'Adrian bauduin - Trophées en bois sur mesure',
   description: 'Découvrez notre collection de trophées en bois sur mesure. Créations uniques alliant tradition et modernité pour récompenser vos événements dans les Hauts-de-France.',
-  keywords: 'trophée bois sur mesure, trophée personnalisé Lille, ébéniste créateur, récompense bois artisanal, trophée entreprise Nord',
+  keywords: 'trophée bois sur mesure, trophée personnalisé Lille, ébéniste créateur, récompense bois artisanal, trophée entreprise Nord, ébéniste Lille',
   openGraph: {
     title: 'Collection Trophées Bois Sur Mesure - Adrian Bauduin',
     description: 'Trophées en bois uniques créés sur mesure par un ébéniste passionné dans la région lilloise',
