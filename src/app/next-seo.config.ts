@@ -2,8 +2,8 @@ const url = 'https://portfolio-adrianbauduin.vercel.app';
 
 // Configuration centralisée des données business
 const businessInfo = {
-  name: "Adrian Bauduin - Ébéniste",
-  description: "Ébéniste passionné spécialisé dans la création de trophées sur mesure, alliant savoir-faire traditionnel et design contemporain",
+  name: "Adrian Bauduin - Trophées en bois sur mesure",
+  description: "Ébéniste passionné spécialisé dans la création de trophées en bois sur mesure, alliant savoir-faire traditionnel et design contemporain",
   image: `${url}/projects/adrianprofile2.webp`,
   url: url,
   telephone: "+33623284237",
@@ -37,7 +37,10 @@ export const localBusinessSchema = {
     "streetAddress": businessInfo.address.streetAddress,
     "addressLocality": businessInfo.address.addressLocality,
     "postalCode": businessInfo.address.postalCode,
-    "addressCountry": businessInfo.address.addressCountry
+    "addressCountry": {
+      "@type": "Country",
+      "name": "FR"
+    }
   },
   "description": businessInfo.description,
   "geo": {
@@ -54,11 +57,11 @@ export const localBusinessSchema = {
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday", 
-      "Friday"
+      "http://schema.org/Monday",
+      "http://schema.org/Tuesday",
+      "http://schema.org/Wednesday",
+      "http://schema.org/Thursday", 
+      "http://schema.org/Friday"
     ],
     "opens": "09:00",
     "closes": "17:00"

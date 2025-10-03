@@ -14,22 +14,15 @@ export const metadata: Metadata = {
 };
 
 export default function EbenisteLillePage() {
-  const localBusinessSchema = {
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Adrian Bauduin - Ébéniste",
-    "description": "Ébéniste créateur spécialisé dans les trophées sur mesure près de Lille",
+    "@type": "Service",
+    "name": "Création de trophées en bois sur mesure à Lille",
+    "description": "Service d'ébénisterie spécialisé dans les trophées sur mesure près de Lille",
     "url": "https://portfolio-adrianbauduin.vercel.app/ebeniste-lille",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lille",
-      "addressRegion": "Hauts-de-France",
-      "addressCountry": "FR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 50.6292,
-      "longitude": 3.0573
+    "provider": {
+      "@type": "Person",
+      "name": "Adrian Bauduin"
     },
     "areaServed": [
       "Lille",
@@ -40,21 +33,14 @@ export default function EbenisteLillePage() {
       "Hauts-de-France"
     ],
     "serviceType": "Ébénisterie sur mesure",
-    "makesOffer": {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Création de trophées en bois sur mesure",
-        "description": "Conception et fabrication artisanale de trophées personnalisés"
-      }
-    }
+    "category": "Artisanat"
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       
       <div className="min-h-screen bg-gray-50">

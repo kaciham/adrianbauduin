@@ -16,31 +16,25 @@ export const metadata: Metadata = {
 export default function LambersartPage() {
   const recentProjects = projects.slice(0, 3);
 
-  const localSchema = {
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Adrian Bauduin - Ébéniste Lambersart",
-    "description": "Ébéniste créateur spécialisé dans les trophées sur mesure à Lambersart",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lambersart",
-      "postalCode": "59130",
-      "addressRegion": "Nord",
-      "addressCountry": "FR"
+    "@type": "Service",
+    "name": "Création de trophées en bois sur mesure à Lambersart",
+    "description": "Service d'ébénisterie spécialisé dans les trophées sur mesure à Lambersart",
+    "provider": {
+      "@type": "Person",
+      "name": "Adrian Bauduin"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 50.6439,
-      "longitude": 3.0239
-    },
-    "areaServed": "Lambersart"
+    "areaServed": "Lambersart",
+    "serviceType": "Ébénisterie sur mesure",
+    "category": "Artisanat"
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       
       <div className="min-h-screen bg-gray-50">

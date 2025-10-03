@@ -39,12 +39,7 @@ export default function Home() {
     "@type": "WebPage",
     "name": "Adrian Bauduin - Ébéniste créateur de trophées sur mesure",
     "description": "Ébéniste passionné spécialisé dans la création de trophées sur mesure, alliant savoir-faire traditionnel et design contemporain pour valoriser vos événements dans la région de Lille",
-    "url": "https://portfolio-adrianbauduin.vercel.app",
-    "mainEntity": {
-      "@type": "LocalBusiness",
-      "name": "Adrian Bauduin - Ébéniste",
-      "description": "Création de trophées en bois sur mesure dans la région de Lille"
-    }
+    "url": "https://portfolio-adrianbauduin.vercel.app"
   };
 
   return (

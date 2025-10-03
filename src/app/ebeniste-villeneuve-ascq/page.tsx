@@ -24,31 +24,25 @@ export default function VilleneuveAscqPage() {
 
   const businessProjects = projects.filter(p => !universityProjects.includes(p)).slice(0, 2);
 
-  const localSchema = {
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Adrian Bauduin - Ébéniste Villeneuve d'Ascq",
-    "description": "Ébéniste créateur spécialisé dans les trophées sur mesure à Villeneuve d'Ascq",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Villeneuve-d'Ascq",
-      "postalCode": "59650",
-      "addressRegion": "Nord",
-      "addressCountry": "FR"
+    "@type": "Service",
+    "name": "Création de trophées en bois sur mesure à Villeneuve d'Ascq",
+    "description": "Service d'ébénisterie spécialisé dans les trophées sur mesure à Villeneuve d'Ascq",
+    "provider": {
+      "@type": "Person",
+      "name": "Adrian Bauduin"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 50.6292,
-      "longitude": 3.1547
-    },
-    "areaServed": "Villeneuve-d'Ascq"
+    "areaServed": "Villeneuve-d'Ascq",
+    "serviceType": "Ébénisterie sur mesure",
+    "category": "Artisanat"
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       
       <div className="min-h-screen bg-gray-50">
