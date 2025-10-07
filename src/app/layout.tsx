@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { localBusinessSchema } from './next-seo.config';
+import { localBusinessSchema, businessInfo } from './next-seo.config';
 import { geistSans, geistMono } from './lib/fonts';
 import Analytics from './components/Analytics';
 
@@ -17,9 +17,20 @@ export const metadata: Metadata = {
     siteName: "Adrian Bauduin - Trophées en bois sur mesure",
     locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: businessInfo.image,
+        width: 1200,
+        height: 630,
+        alt: "Adrian Bauduin - Ébéniste spécialisé dans les trophées en bois sur mesure",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    title: "Adrian Bauduin - trophées en bois sur mesure",
+    description: "Création de trophées en bois sur mesure dans la région de Lille",
+    images: [businessInfo.twitterImage],
   },
   // Preconnect pour améliorer LCP
   other: {

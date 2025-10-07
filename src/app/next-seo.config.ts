@@ -5,6 +5,7 @@ const businessInfo = {
   name: "Adrian Bauduin - Trophées en bois sur mesure",
   description: "Ébéniste passionné spécialisé dans la création de trophées en bois sur mesure, alliant savoir-faire traditionnel et design contemporain, opérant dans lille et sa région",
   image: `${url}/projects/adrianprofile2.webp`,
+  twitterImage: `${url}/projects/adrianprofile2.webp`,
   url: url,
   telephone: "+33623284237",
   address: {
@@ -67,4 +68,7 @@ export const localBusinessSchema = {
     "closes": "18:00"
   }
 };
+
+// Export des données business pour utilisation dans layout.tsx
+export { businessInfo };
 
