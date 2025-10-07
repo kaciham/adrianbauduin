@@ -3,7 +3,7 @@ import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className='flex flex-col items-center justify-center bg-black/60  backdrop-blur-[3px]     text-white py-8 px-4'>
+        <footer className='flex flex-col items-center justify-center bg-[#6E849A]  backdrop-blur-[3px]     text-white py-8 px-4'>
             <div className='w-full max-w-7xl flex flex-col sm:flex-row justify-between items-center sm:items-start gap-6'>
                 <div className='text-center sm:text-left'>
                     <h2 className='text-2xl font-bold'>Adrian BAUDUIN</h2>

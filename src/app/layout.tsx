@@ -6,14 +6,14 @@ import Analytics from './components/Analytics';
 
 // Metadata pour Next.js App Router
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-adrianbauduin.vercel.app"),
+  metadataBase: new URL("https://adrianbauduin.com"),
   title: "Adrian Bauduin - Trophées en bois sur mesure",
   description: "Création de trophées en bois sur mesure dans la région de Lille",
   keywords: "trophée sur mesure, ébéniste Lille, trophée bois, création artisanale",
   openGraph: {
     title: "Adrian Bauduin - Trophée en bois sur mesure",
     description: "Création de trophées en bois sur mesure dans la région de Lille",
-    url: "https://portfolio-adrianbauduin.vercel.app",
+    url: "https://adrianbauduin.com",
     siteName: "Adrian Bauduin - Tropshées en bois sur mesure",
     locale: "fr_FR",
     type: "website",

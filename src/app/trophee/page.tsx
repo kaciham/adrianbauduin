@@ -22,7 +22,7 @@ export default function TropheePage() {
     "@type": "CollectionPage",
     "name": "Trophées en Bois Sur Mesure",
     "description": "Collection de trophées en bois créés sur mesure par Adrian Bauduin, ébéniste spécialisé dans la région lilloise",
-    "url": "https://portfolio-adrianbauduin.vercel.app/trophee",
+    "url": "https://adrianbauduin.com/trophee",
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": projects.length,
@@ -36,7 +36,7 @@ export default function TropheePage() {
           "name": "Adrian Bauduin"
         },
         "material": project.materials?.join(', '),
-        "url": `https://portfolio-adrianbauduin.vercel.app/${project.slug}`
+        "url": `https://adrianbauduin.com/${project.slug}`
       }))
     }
   };

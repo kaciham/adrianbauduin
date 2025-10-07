@@ -61,13 +61,13 @@ const ProjectPageClient = ({ project, slug }: ProjectPageClientProps) => {
       "@type": "Person",
       "name": "Adrian Bauduin",
       "jobTitle": "Ébéniste",
-      "url": "https://portfolio-adrianbauduin.vercel.app"
+      "url": "https://adrianbauduin.com"
     },
     "dateCreated": `${project.year}-01-01`,
     "material": project.materials?.join(', '),
     "artMedium": project.techniques?.join(', '),
-    "image": images.map(img => `https://portfolio-adrianbauduin.vercel.app${img}`),
-    "mainEntityOfPage": `https://portfolio-adrianbauduin.vercel.app/${slug}`
+    "image": images.map(img => `https://adrianbauduin.com${img}`),
+    "mainEntityOfPage": `https://adrianbauduin.com/${slug}`
   };
 
   return (

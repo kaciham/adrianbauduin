@@ -62,10 +62,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: `SMTP verification failed: ${String(verifyErr)}` }, { status: 500 });
     }
 
-    const to= process.env.CONTACT_TO || '';
+    // Send notification email directly to SMTP_USER (same webmail)
     const mailOptions = {
-      from: process.env.SMTP_USER ? `${name} <${process.env.SMTP_USER}>` : `${name}`,
-      to,
+      from: `Adrian Bauduin Contact Form <${process.env.SMTP_USER}>`,
+      replyTo:  `${email}>`,
+      to: process.env.SMTP_USER,
       subject,
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\n\nMessage:\n${message}`,
       html: `
@@ -99,15 +100,36 @@ export async function POST(req: Request) {
       `,
     };
 
-  // send notification email to admin
-  const info = await transporter.sendMail(mailOptions);
-  console.log('Notification email sent', { messageId: info.messageId, accepted: info.accepted, rejected: info.rejected });
+  // send notification email to admin (same webmail as SMTP_USER)
+  console.log('Sending notification email to:', process.env.SMTP_USER);
+  console.log('Email content preview:', { name, email, subject, message: message.substring(0, 100) + '...' });
+  
+  let notificationSuccess = false;
+  let notificationError = null;
+  
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('✅ Notification email sent successfully', { 
+      messageId: info.messageId, 
+      accepted: info.accepted, 
+      rejected: info.rejected,
+      to: process.env.SMTP_USER 
+    });
+    notificationSuccess = true;
+  } catch (notificationErr) {
+    console.error('❌ Failed to send notification email:', notificationErr);
+    notificationError = String(notificationErr);
+    // Continue to try sending confirmation email
+  }
 
   // send confirmation email to user if email is provided
+  let confirmationSuccess = false;
+  let confirmationError = null;
+  
   if (email) {
     const firstName = name.split(' ')[0] || name;
     const confirmationOptions = {
-      from:  `Adrian Bauduin - adrian.bauduin@gmail.com`,
+      from: `Adrian Bauduin <${process.env.SMTP_USER}>`,
       to: email,
       subject: 'Confirmation de réception de votre message - Adrian Bauduin',
       html: `
@@ -126,7 +148,7 @@ export async function POST(req: Request) {
                             Cordialement,
                              <br /> 
                             <strong>Adrian Bauduin</strong><br>
-                            <span style="color: #666; font-size: 14px;">Trophée sur mesure</span>
+                            <span style="color: #666; font-size: 14px;">Trophées en bois sur mesure</span>
                         </p>
                         <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0;">
                       
@@ -140,22 +162,30 @@ export async function POST(req: Request) {
 
     try {
       const confirmationInfo = await transporter.sendMail(confirmationOptions);
-      console.log('Confirmation email sent', { messageId: confirmationInfo.messageId, accepted: confirmationInfo.accepted, rejected: confirmationInfo.rejected });
+      console.log('✅ Confirmation email sent successfully', { 
+        messageId: confirmationInfo.messageId, 
+        accepted: confirmationInfo.accepted, 
+        rejected: confirmationInfo.rejected 
+      });
+      confirmationSuccess = true;
     } catch (confirmationErr) {
-      console.error('Failed to send confirmation email', confirmationErr);
-      // Don't fail the whole request if confirmation email fails
+      console.error('❌ Failed to send confirmation email:', confirmationErr);
+      confirmationError = String(confirmationErr);
     }
   }
 
   return NextResponse.json({ 
     success: true, 
-    message: 'Email sent successfully', 
-    info: { 
-      messageId: info.messageId, 
-      accepted: info.accepted, 
-      rejected: info.rejected,
-      confirmationSent: !!email
-    } 
+    message: 'Emails processed', 
+    debug: {
+      notificationTo: process.env.SMTP_USER,
+      notificationSuccess,
+      notificationError,
+      confirmationSent: !!email,
+      confirmationSuccess,
+      confirmationError,
+      customerEmail: email
+    }
   });
   } catch (err) {
     console.error('Failed to send contact email', err);

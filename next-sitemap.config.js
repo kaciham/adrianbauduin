@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://portfolio-adrianbauduin.vercel.app',
+  siteUrl: process.env.SITE_URL || 'https://adrianbauduin.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   exclude: ['/api/*', '/admin/*'],
@@ -20,7 +20,7 @@ module.exports = {
       }
     ],
     additionalSitemaps: [
-      'https://portfolio-adrianbauduin.vercel.app/sitemap.xml',
+      'https://adrianbauduin.com/sitemap.xml',
     ],
   },
 
@@ -64,7 +64,7 @@ module.exports = {
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       alternateRefs: [
         {
-          href: `https://portfolio-adrianbauduin.vercel.app${path}`,
+          href: `https://adrianbauduin.com${path}`,
           hreflang: 'fr',
         },
       ],

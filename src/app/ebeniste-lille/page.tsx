@@ -19,7 +19,7 @@ export default function EbenisteLillePage() {
     "@type": "Service",
     "name": "Adrian Bauduin - trophées en bois sur mesure à Lille",
     "description": "Service d'ébénisterie spécialisé dans les trophées sur mesure près de Lille",
-    "url": "https://portfolio-adrianbauduin.vercel.app/ebeniste-lille",
+    "url": "https://adrianbauduin.com/ebeniste-lille",
     "provider": {
       "@type": "Person",
       "name": "Adrian Bauduin"

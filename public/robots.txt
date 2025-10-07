@@ -11,7 +11,7 @@ Disallow: /api/
 Disallow: /admin/
 
 # Host
-Host: https://portfolio-adrianbauduin.vercel.app
+Host: https://adrianbauduin.com
 
 # Sitemaps
-Sitemap: https://portfolio-adrianbauduin.vercel.app/sitemap.xml
+Sitemap: https://adrianbauduin.com/sitemap.xml

@@ -82,7 +82,7 @@ export const projects: Projects[] = [
     },
     {
       project: 'Trophées Dfcg',
-      title: 'Trophée Finance & Gestion Dfcg Hauts-De-France',
+      title: 'Trophée Finance & Gestion Dfcg HDF',
       slug: 'finance-gestion-dfcg-hauts-de-france',
       description: "Les trophées Finance & Gestion Dfcg Hauts-de-France récompensent chaque année les dirigeants financiers qui innovent et s’engagent dans la performance durable. En partenariat avec le Cic, l’événement met en lumière les talents de la région. J’ai conçu le design il y a 3 ans et depuis ils me font confiance pour la réalisation : des pièces uniques en bois massif, au design élégant et contemporain, associant gravure et couleurs sobres. Ces récompenses incarnent professionnalisme, excellence et innovation, valeurs partagées par la Dfcg, le Cic et l’écosystème financier régional.",
       year: 2025,

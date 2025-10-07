@@ -1,4 +1,4 @@
-const url = 'https://portfolio-adrianbauduin.vercel.app';
+const url = 'https://adrianbauduin.com';
 
 // Configuration centralisée des données business
 const businessInfo = {

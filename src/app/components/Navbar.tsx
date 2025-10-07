@@ -59,7 +59,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-30 sm:h-[10vh]">
+        <div className="flex items-center justify-between h-30 sm:h-20">
           <motion.div>
             {scrolled && (
               <motion.div
@@ -128,7 +128,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
-                      className="block pl-2 py-2 transition-colors rounded-2xl font-bold bg-black/60 text-white"
+                      className="block pl-2 py-2 transition-colors rounded-2xl font-bold bg-[#6E849A] text-white"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.label}
