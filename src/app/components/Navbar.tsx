@@ -19,10 +19,13 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    const handleScroll = (event: Event) => {
-      const targetId = (event.currentTarget as HTMLElement).getAttribute('href')
-      if (targetId) {
-        const targetElement = document.getElementById(targetId)
+    const handleLinkClick = (event: Event) => {
+      event.preventDefault()
+      const link = event.currentTarget as HTMLAnchorElement
+      const targetId = link.getAttribute('href')
+      if (targetId && targetId.startsWith('#')) {
+        const elementId = targetId.substring(1) // Remove the '#' character
+        const targetElement = document.getElementById(elementId)
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: 'smooth' })
         }
@@ -31,12 +34,12 @@ export default function Navbar() {
 
     const links = document.querySelectorAll('a[href^="#"]')
     links.forEach((link) => {
-      link.addEventListener('click', handleScroll)
+      link.addEventListener('click', handleLinkClick)
     })
 
     return () => {
       links.forEach((link) => {
-        link.removeEventListener('click', handleScroll)
+        link.removeEventListener('click', handleLinkClick)
       })
     }
   }, [])

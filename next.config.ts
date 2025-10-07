@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     // Temporairement désactivé pour les apostrophes
     dirs: ['pages', 'utils', 'lib'],
   },
+  outputFileTracingRoot: __dirname,
   /* config options here */
 };
 

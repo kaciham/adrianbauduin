@@ -48,7 +48,7 @@ function AnalyticsContent() {
   useEffect(() => {
     if (!GA_TRACKING_ID || GA_TRACKING_ID === 'G-XXXXXXXXXX') return;
 
-    const url = pathname + searchParams.toString();
+    const url = pathname + (searchParams ? searchParams.toString() : '');
     pageview(url);
   }, [pathname, searchParams]);
 
