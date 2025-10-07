@@ -128,7 +128,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
-                      className="block pl-2 py-2 transition-colors rounded-2xl font-bold bg-[#6E849A] text-white"
+                      className="block pl-2 py-2 transition-colors rounded-2xl font-bold bg-black/60 text-white"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.label}

@@ -22,7 +22,7 @@ const Footer = () => {
                 {/* Contact Info */}
                 <div className='flex flex-col items-center sm:items-start'>
                     <h3 className='text-lg font-semibold'>Contact</h3>
-                    <p className='mt-2 font-light'>Email: adrian.bauduin@gmail.com</p>
+                    <p className='mt-2 font-light'>Email: bauduin.adrian@gmail.com</p>
                     <p className='font-light'>Téléphone: +33 6 23 28 42 37</p>
                 </div>
             </div>

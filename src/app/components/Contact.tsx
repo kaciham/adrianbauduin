@@ -114,16 +114,17 @@ export default function Contact() {
 
   return (
     <>
-      <section id="contact" className="bg-white justify-center items-center py-18 ">
-        <div className="flex flex-col  px-4 sm:px-6 lg:px-8 justify-center items-center">
+      <section id="contact" className="bg-[#6E849A] justify-center items-center py-18">
+        <div className="flex flex-col px-4 sm:px-6 lg:px-8 justify-center items-center">
           <div className="max-w-2xl flex flex-col justify-center items-center">
-            <h2 className="text-3xl sm:text-3xl lg:text-6xl font-semibold tracking-tight text-gray-900 m-4">Contact</h2>
-            <p className="mt-2 text-base sm:text-lg text-center text-gray-600 px-4">Une idée ? Un projet ? N&apos;hésitez pas à me contacter !</p>
+            <h2 className="text-3xl sm:text-3xl lg:text-6xl font-semibold tracking-tight text-white m-4">Coordonnées</h2>
+            <p className="mt-2 text-base sm:text-lg text-center text-white px-4">Cliquez sur les cartes pour copier mes coordonnées !</p>
           </div>
 
-          <div className="mt-8 sm:mt-10 w-full max-w-5xl  sm:px-0">
-            <div className="flex flex-col h-full items-center gap-4 sm:gap-6 lg:flex-row lg:justify-center lg:items-stretch">
-              <div className="group relative flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-gray-900 transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px] cursor-pointer"
+          {/* Coordonnées cards container shares same max width as form */}
+          <div className="mt-8 sm:mt-10 w-full max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full">
+              <div className="group relative flex flex-col justify-center rounded-md bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-gray-900 transition-colors duration-200 hover:bg-black/90 hover:text-white min-h-[96px] sm:min-h-[80px] cursor-pointer"
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
@@ -142,11 +143,11 @@ export default function Contact() {
                 <span id="phone-copy-tooltip" className="absolute top-0 right-0 mt-2 mr-2 px-2 py-1 text-xs bg-black text-white rounded opacity-0 transition-opacity">Copié!</span>
               </div>
 
-              <div className="group relative flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-gray-900 transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px] cursor-pointer"
+              <div className="group relative flex flex-col justify-center rounded-md bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-gray-900 transition-colors duration-200 hover:bg-black/90 hover:text-white min-h-[96px] sm:min-h-[80px] cursor-pointer"
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  navigator.clipboard.writeText("Ateliers LIDD, 30 rue Henri Regnault, 59000 LILLE");
+                  navigator.clipboard.writeText("Ateliers LIDD 30 rue Henri Regnault 59000 LILLE");
                   const el = document.getElementById("address-copy-tooltip");
                   if (el) {
                     el.classList.remove("opacity-0");
@@ -164,7 +165,7 @@ export default function Contact() {
                 <span id="address-copy-tooltip" className="absolute top-0 right-0 mt-2 mr-2 px-2 py-1 text-xs bg-black text-white rounded opacity-0 transition-opacity">Copié!</span>
               </div>
 
-              <div className="group relative flex flex-1 flex-col justify-center rounded-md border border-black bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-gray-900 transition-colors duration-200 hover:bg-black hover:text-white w-full lg:w-1/3 min-h-[96px] sm:min-h-[80px] cursor-pointer"
+              <div className="group relative flex flex-col justify-center rounded-md bg-white px-4 sm:px-6 py-4 sm:py-3 text-base font-semibold text-gray-900 transition-colors duration-200 hover:bg-black/90 hover:text-white min-h-[96px] sm:min-h-[80px] cursor-pointer"
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
@@ -187,7 +188,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <div className="flex flex-col w-full bg-white px-6 sm:px-6 lg:px-8 ">
+      <div className="flex flex-col w-full justify-center bg-white px-6 sm:px-6 lg:px-8 ">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -196,9 +197,14 @@ export default function Contact() {
             className="relative left-1/2 -z-10 aspect-[1155/678] w-[144.5rem] max-w-none -translate-x-1/2 rotate-30 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[288.75rem]"
           /> */}
         </div> 
+     
 
         {/* CONTACT FORM */}
         <div className="flex flex-col w-full max-w-4xl mx-auto justify-center items-center">
+            <div className="max-w-2xl w-full flex flex-col justify-center items-center my-8">
+                  <h2 className="text-3xl sm:text-3xl lg:text-6xl font-semibold tracking-tight text-gray-900 m-4">Contact</h2>
+                  <p className="mt-2 text-base sm:text-lg text-center text-gray-600 px-4">Une idée ? Un projet ? N&apos;hésitez pas à me contacter !</p>
+            </div>
           <div className="grid grid-cols-1 gap-x-6 sm:gap-x-8 gap-y-4 sm:gap-y-6 sm:grid-cols-2 w-full">
             <div>
               <label htmlFor="first-name" className="block text-sm sm:text-base font-semibold text-gray-900">

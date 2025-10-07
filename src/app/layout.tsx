@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   description: "Création de trophées en bois sur mesure dans la région de Lille",
   keywords: "trophée sur mesure, ébéniste Lille, trophée bois, création artisanale",
   openGraph: {
-    title: "Adrian Bauduin - Trophée en bois sur mesure",
+    title: "Adrian Bauduin - trophées en bois sur mesure",
     description: "Création de trophées en bois sur mesure dans la région de Lille",
     url: "https://adrianbauduin.com",
-    siteName: "Adrian Bauduin - Tropshées en bois sur mesure",
+    siteName: "Adrian Bauduin - Trophées en bois sur mesure",
     locale: "fr_FR",
     type: "website",
   },

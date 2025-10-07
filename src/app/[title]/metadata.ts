@@ -11,7 +11,7 @@ export function generateProjectMetadata(slug: string): Metadata {
     };
   }
 
-  const title = `${project.title} | Adrian Bauduin - Trophée en bois sur mesure`;
+  const title = `${project.title} | Adrian Bauduin - Trophées en bois sur mesure`;
   const description = project.description.slice(0, 160);
   const images = Array.isArray(project.imageProject) ? project.imageProject : [project.imageProject];
   const imageUrl = `https://adrianbauduin.com${images[0]}`;

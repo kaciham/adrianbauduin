@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Ébéniste créateur à Villeneuve d\'Ascq spécialisé dans les trophées en bois sur mesure. Proximité universités et entreprises, savoir-faire artisanal.',
   keywords: 'ébéniste Villeneuve d\'Ascq, trophée sur mesure Villeneuve d\'Ascq, menuisier Villeneuve d\'Ascq, artisan bois université Lille',
   openGraph: {
-    title: 'Adrian Bauduin - Trophée en bois sur mesure à Villeneuve d\'Ascq',
+    title: 'Adrian Bauduin - trophées en bois sur mesure à Villeneuve d\'Ascq',
     description: 'Créateur de trophées sur mesure à Villeneuve d\'Ascq près de Lille',
   }
 };

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Ébéniste passionné basé à Lille, spécialisé dans la création de trophées en bois sur mesure. Savoir-faire artisanal au service de vos événements dans les Hauts-de-France.',
   keywords: 'ébéniste Lille, menuisier Lille, artisan bois Nord, trophée sur mesure Lille, ébéniste Hauts-de-France, créateur bois Lambersart',
   openGraph: {
-    title: 'Adrian Bauduin - Trophée en bois sur mesure à Lille',
+    title: 'Adrian Bauduin - trophées en bois sur mesure à Lille',
     description: 'Découvrez l\'atelier d\'un ébéniste passionné spécialisé dans les trophées en bois sur mesure près de Lille',
     images: ['/projects/adrianprofile2.webp'],
   }

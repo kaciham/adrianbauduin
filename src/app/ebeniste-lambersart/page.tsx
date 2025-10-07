@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Ébéniste créateur à Lambersart spécialisé dans les trophées en bois sur mesure. Proximité de Lille, savoir-faire artisanal au service de vos événements.',
   keywords: 'ébéniste Lambersart, trophée sur mesure Lambersart, menuisier Lambersart, artisan bois Lambersart, création bois personnalisée',
   openGraph: {
-    title: 'Adrian Bauduin - Trophée en bois sur mesure à Lambersart',
+    title: 'Adrian Bauduin - trophées en bois sur mesure à Lambersart',
     description: 'Créateur de trophées sur mesure à Lambersart près de Lille',
   }
 };
