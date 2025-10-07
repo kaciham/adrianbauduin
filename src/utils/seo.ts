@@ -5,7 +5,7 @@ export function generateImageAlt(project: { title?: string; project?: string; ma
   const baseAlt = `Trophée ${project.title || project.project} en ${materials}`;
   
   if (imageIndex === 0) {
-    return `${baseAlt} - Trophé sur mesure par Adrian Bauduin, ébéniste à Lille`;
+    return `${baseAlt} - Trophée en bois sur mesure par Adrian Bauduin, ébéniste à Lille`;
   }
   
   return `${baseAlt} - Vue ${imageIndex + 1} - Technique ${techniques}`;

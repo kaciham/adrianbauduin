@@ -122,10 +122,6 @@ const ProjectPageClient = ({ project, slug }: ProjectPageClientProps) => {
 
           {/* Right: attributes and overview */}
           <div className="lg:w-1/2 w-full p-10">
-            <header>
-              <h1 className="text-2xl md:text-3xl font-bold mb-6">{project.title}</h1>
-            </header>
-
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-4">
               <div>
                 <div className="text-sm text-gray-600">Client:</div>
