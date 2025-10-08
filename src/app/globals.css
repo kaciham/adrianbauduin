@@ -19,6 +19,44 @@
   --nav-height: 80px;
 }
 
+/* iOS Safari background-attachment fix */
+@supports (-webkit-touch-callout: none) {
+  .bg-fixed {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Mobile background image optimization */
+@media (max-width: 768px) {
+  .bg-fixed {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+  
+  /* Force GPU acceleration for smoother rendering on mobile */
+  [style*="background-image"] {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+    /* iOS specific optimizations */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+}
+
+/* iOS specific fixes for background images */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  _::-webkit-full-page-media, _:future, :root [style*="background-image"] {
+    background-attachment: scroll !important;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 /* Amélioration LCP - Images critiques */
 .hero-image,
 .priority-image {

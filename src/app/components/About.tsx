@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import MobileBackgroundImage from './MobileBackgroundImage'
 
 const About = () => {
   return (
@@ -136,10 +137,10 @@ const About = () => {
         </div>
       
        
-        <div
-          className="relative flex flex-col md:flex-row justify-center items-center gap-4 min-h-[66vh] bg-cover bg-center bg-fixed w-full max-w-7xl mx-auto rounded-xl overflow-hidden"
-          style={{ backgroundImage: "url('/projects/trophees-bois-design-start-innovation-2024.webp')" }}
-          aria-label="trophees-bois-design-start-innovation-2024"
+        <MobileBackgroundImage
+          src="/projects/trophees-bois-design-start-innovation-2024.webp"
+          alt="Trophées bois design Start Innovation 2024"
+          className="relative flex flex-col md:flex-row justify-center items-center gap-4 min-h-[66vh] md:bg-fixed w-full max-w-7xl mx-auto rounded-xl overflow-hidden"
         >
           {/* mobile-only overlay: sits above the background image but below the content so text remains fully opaque */}
           <div className="absolute inset-0 bg-white/60 md:bg-transparent" aria-hidden="true" />
@@ -157,7 +158,7 @@ const About = () => {
               En choisissant un trophées en bois, vous optez pour une alternative écologique et durable aux trophées en plastique ou métal.
             </p>
           </div>
-        </div>
+        </MobileBackgroundImage>
       </div>    
     </div>
   )
