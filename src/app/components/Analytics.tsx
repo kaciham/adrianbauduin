@@ -2,12 +2,10 @@
 
 import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import Script from 'next/script';
 
 declare global {
   interface Window {
     gtag: (...args: unknown[]) => void;
-    dataLayer: unknown[];
   }
 }
 
@@ -15,7 +13,7 @@ export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX';
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string) => {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+  if (typeof window !== 'undefined') {
     window.gtag('config', GA_TRACKING_ID, {
       page_location: url,
     });
@@ -34,7 +32,7 @@ export const event = ({
   label?: string;
   value?: number;
 }) => {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+  if (typeof window !== 'undefined') {
     window.gtag('event', action, {
       event_category: category,
       event_label: label,
@@ -50,13 +48,8 @@ function AnalyticsContent() {
   useEffect(() => {
     if (!GA_TRACKING_ID || GA_TRACKING_ID === 'G-XXXXXXXXXX') return;
 
-    // Simple delay to ensure gtag is loaded
-    const timer = setTimeout(() => {
-      const url = pathname + (searchParams ? searchParams.toString() : '');
-      pageview(url);
-    }, 100);
-
-    return () => clearTimeout(timer);
+    const url = pathname + (searchParams ? searchParams.toString() : '');
+    pageview(url);
   }, [pathname, searchParams]);
 
   if (!GA_TRACKING_ID || GA_TRACKING_ID === 'G-XXXXXXXXXX') {
@@ -65,13 +58,11 @@ function AnalyticsContent() {
 
   return (
     <>
-      <Script
-        strategy="afterInteractive"
+      <script
+        async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
       />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
+      <script
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -80,6 +71,7 @@ function AnalyticsContent() {
             gtag('config', '${GA_TRACKING_ID}', {
               page_location: window.location.href,
               page_title: document.title,
+              // Respect de la confidentialité
               anonymize_ip: true,
               respect_dnt: true,
             });
