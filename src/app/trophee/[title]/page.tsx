@@ -108,14 +108,7 @@ const TropheePage = async ({ params }: Props) => {
       <div className="min-h-screen bg-gray-100 text-gray-900">
         <NavbarFixed />
         
-        <div className="flex justify-center px-4 sm:px-6 md:px-8 pt-8">
-          <Link
-            href="/#realisations"
-            className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 uppercase text-sm md:text-lg font-semibold tracking-widest text-center mx-auto mb-10 w-full max-w-xs sm:max-w-sm md:max-w-md"
-          > 
-            Réalisations
-          </Link>
-        </div>
+ 
         
         <div className="container mx-auto py-34  md:py-30  sm:py-30">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row">
@@ -175,7 +168,7 @@ const TropheePage = async ({ params }: Props) => {
                   <div className="mt-2">{project.techniques?.join(', ') || '-'}</div>
                 </div>
               </div>
-
+                      
               <div className="flex items-center space-x-4 mt-8">
                 {project.githubLink && (
                   <Link
@@ -201,7 +194,16 @@ const TropheePage = async ({ params }: Props) => {
                 )}
               </div>
             </div>
+            
           </div>
+                 <div className="flex justify-center px-4 sm:px-6 md:px-8 pt-8">
+          <Link
+            href="/#realisations"
+            className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 uppercase text-sm md:text-lg font-semibold tracking-widest text-center mx-auto mb-10 w-full max-w-xs sm:max-w-sm md:max-w-md"
+          > 
+            Retour aux autres réalisations
+          </Link>
+        </div>
         </div>
         <Footer />
       </div>

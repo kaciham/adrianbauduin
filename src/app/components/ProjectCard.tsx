@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: { project: typeof projects[0] }
     : project.description;
 
   return (
-    <Link href={`/${project.slug}`}>
+    <Link href={`/trophee/${project.slug}`}>
       <div className="bg-white  rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-102 cursor-pointer">
         <div className="relative w-full h-80">
           <Image
