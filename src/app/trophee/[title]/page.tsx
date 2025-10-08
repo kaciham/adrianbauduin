@@ -146,12 +146,12 @@ const TropheePage = async ({ params }: Props) => {
 
                 <div>
                   <div className="text-sm text-gray-600">Projet:</div>
-                  <div className="text-xl font-semibold mt-2 flex items-center justify-center h-full">{project.project || project.title}</div>
+                  <div className="text-xl font-semibold mt-2 flex items-center justify-center h-full"><h1>{project.project || project.title}</h1></div>
                 </div>
               </div>
 
               <div className="mt-6">
-                <h1 className="text-2xl font-bold mb-4">{project.title}</h1>
+                
                 <h2 className="text-lg font-medium mb-4">Description:</h2>
                 <p className="text-base text-gray-800">{project.description}</p>
               </div>

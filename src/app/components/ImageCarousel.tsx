@@ -30,7 +30,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, projectTitle }) =
         alt={`${projectTitle} - ${images[current].split('/').pop()?.split('.')[0] || `Image ${current + 1}`}`}
         fill
         style={{ objectFit: 'cover' }}
-        sizes="(min-width: 1024px) 50vw, 100vw"
+        sizes="(min-width: 1024px) 100vw, 100vw"
         priority
       />
 
