@@ -40,25 +40,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: projectLastModified,
         changeFrequency: 'monthly' as const,
         priority,
-      },
-      {
-        url: `${baseUrl}/trophee/${project.slug}`,
-        lastModified: projectLastModified,
-        changeFrequency: 'monthly' as const,
-        priority,
       }
     ]
   })
 
-  // Additional SEO pages
-  const seoRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/trophee`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    }
-  ]
-
-  return [...staticRoutes, ...projectRoutes, ...seoRoutes]
+  return [...staticRoutes, ...projectRoutes]
 }

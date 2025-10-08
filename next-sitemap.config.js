@@ -3,7 +3,7 @@ module.exports = {
   siteUrl: process.env.SITE_URL || 'https://adrianbauduin.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-  exclude: ['/api/*', '/admin/*'],
+  exclude: ['/api/*', '/admin/*', '/trophee/*'],
   
   // Configuration robots.txt
   robotsTxtOptions: {
@@ -31,7 +31,6 @@ module.exports = {
       '/': 1.0,
       '/collaboration': 0.8,
       '/devis': 0.8,
-      '/trophee': 0.9,
     }
 
     // Fréquence de changement personnalisée
@@ -39,15 +38,14 @@ module.exports = {
       '/': 'weekly',
       '/collaboration': 'monthly',
       '/devis': 'monthly',
-      '/trophee': 'weekly',
     }
 
     // Gestion spéciale pour les pages de projets
     let priority = customPriority[path] || 0.7
     let changefreq = customChangeFreq[path] || 'monthly'
 
-    // Boost de priorité pour les pages de trophées
-    if (path.includes('/trophee/') || path.match(/\/(ecoposs|formidables|dfcg|start-innovation)/)) {
+    // Boost de priorité pour les pages de projets récents
+    if (path.match(/\/(ecoposs|formidables|dfcg|start-innovation)/)) {
       priority = 0.8
       changefreq = 'monthly'
     }
@@ -74,14 +72,9 @@ module.exports = {
   // URLs additionnelles à inclure
   additionalPaths: async (config) => {
     const additionalPaths = [
-      '/trophee',
-      '/trophee/sur-mesure',
-      '/trophee/bois',
-      '/trophee/lille',
       '/ebeniste-lille',
       '/ebeniste-lambersart',
       '/ebeniste-villeneuve-ascq',
-      '/creation-trophee-personnalise',
       '/faq',
     ]
 
