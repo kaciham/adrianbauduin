@@ -1,9 +1,13 @@
+const fs = require('fs')
+const path = require('path')
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://adrianbauduin.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-  exclude: ['/api/*', '/admin/*', '/trophee/*'],
+  // We no longer exclude project pages; they should be in the sitemap
+  exclude: ['/api/*', '/admin/*'],
   
   // Configuration robots.txt
   robotsTxtOptions: {
@@ -69,7 +73,7 @@ module.exports = {
     }
   },
 
-  // URLs additionnelles à inclure
+  // URLs additionnelles à inclure (dont les pages projets dynamiques)
   additionalPaths: async (config) => {
     const additionalPaths = [
       '/ebeniste-lille',
@@ -78,10 +82,29 @@ module.exports = {
       '/faq',
     ]
 
-    return additionalPaths.map(path => ({
-      loc: path,
+    // Ajoute les pages projets /trophee/{slug} en parsant les slugs depuis src/contents/projects.tsx
+    try {
+      const projectsPath = path.join(process.cwd(), 'src', 'contents', 'projects.tsx')
+      const file = fs.readFileSync(projectsPath, 'utf8')
+      const slugRegex = /slug:\s*'([^']+)'/g
+      const slugs = []
+      let m
+      while ((m = slugRegex.exec(file)) !== null) {
+        if (m[1]) slugs.push(m[1])
+      }
+
+      slugs.forEach((slug) => {
+        additionalPaths.push(`/trophee/${slug}`)
+      })
+    } catch (e) {
+      // Si la lecture échoue, on n'ajoute pas les slugs, mais on ne casse pas la génération
+      console.warn('next-sitemap: impossible de lire les slugs depuis projects.tsx:', e?.message || e)
+    }
+
+    return additionalPaths.map(p => ({
+      loc: p,
       changefreq: 'monthly',
-      priority: path.includes('/ebeniste-') ? 0.8 : 0.7,
+      priority: p.startsWith('/ebeniste-') ? 0.8 : p.startsWith('/trophee/') ? 0.8 : 0.7,
       lastmod: new Date().toISOString(),
     }))
   }
