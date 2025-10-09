@@ -28,8 +28,8 @@ const Footer = () => {
             </div>
             
             {/* Copyright Section */}
-            <div className='w-full text-center mt-6 pt-4'>
-                <p className='text-sm'>© {new Date().getFullYear()} Kaci HAMROUN. Tous droits réservés.</p>
+            <div className='w-full text-center mt-6 pt-4 hover:scale-102 '>
+               <a href="https://kacihamroun.com"> <p className='text-sm'>© {new Date().getFullYear()} Kaci HAMROUN. Tous droits réservés.</p></a>
             </div>
         </footer>
     );
