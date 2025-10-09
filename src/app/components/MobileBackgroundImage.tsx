@@ -45,7 +45,7 @@ const MobileBackgroundImage: React.FC<MobileBackgroundImageProps> = ({
     backgroundRepeat: 'no-repeat',
     // On iOS or mobile, always use scroll; on desktop, allow fixed if requested
     backgroundAttachment: (isMobile || isIOS) ? 'scroll' : 
-      (className.includes('md:bg-fixed') && !isMobile) ? 'fixed' : 'scroll',
+      (className.includes('bg-fixed') && !isMobile) ? 'fixed' : 'scroll',
     // Optimize for iOS Safari
     ...(isIOS && {
       WebkitBackfaceVisibility: 'hidden' as any,
@@ -55,7 +55,7 @@ const MobileBackgroundImage: React.FC<MobileBackgroundImageProps> = ({
     ...style
   };
 
-  return (
+  return (  
     <div 
       className={className}
       style={combinedStyle}

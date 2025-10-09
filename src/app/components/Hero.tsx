@@ -9,7 +9,7 @@ const Hero = () => {
     <MobileBackgroundImage
       src="/projects/LMC_100_ans_de_vie_commune/trophée-design-contreplaqué-gravure-impression.webp"
       alt="Trophée design contreplaqué gravure impression"
-      className="flex flex-col justify-center items-center gap-4 h-[90vh] md:bg-fixed"
+      className="flex flex-col justify-center items-center gap-4 h-[90vh] bg-fixed"
     >
       <section id="hero" className="flex flex-col justify-center items-center gap-4 w-full h-full">
         <div className="w-full max-w-[500px] px-4 flex flex-col items-center">
