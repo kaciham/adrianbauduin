@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     //accueil navigation
     <MobileBackgroundImage
-      src="/projects/LMC_100_ans_de_vie_commune/trophée-design-contreplaqué-gravure-impression.webp"
+      src="/projects/trophée-design-contreplaqué-gravure-impression.webp"
       alt="Trophée design contreplaqué gravure impression"
       className="flex flex-col justify-center items-center gap-4 h-[90vh] bg-fixed"
     >
