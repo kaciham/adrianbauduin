@@ -115,7 +115,7 @@ const Collaborations: React.FC = () => {
                   onMouseLeave={() => handleLogoHover(false)}
                 >
                   {partnerProject ? (
-                    <Link href={`/${partnerProject.slug}`}>
+                    <Link href={`/trophee/${partnerProject.slug}`}>
                       <Image
                         src={logo}
                         alt={`Partner logo ${index + 1}`}
