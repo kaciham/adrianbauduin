@@ -53,11 +53,11 @@ export default function EbenisteLillePage() {
                   Ébéniste Créateur à <span className="text-amber-600">Lille</span>
                 </h1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                  Passionné par le <strong>travail du bois</strong>, je crée des <strong>trophées sur mesure</strong> 
-                  qui allient tradition artisanale et design contemporain. Mon atelier près de Lille 
+                  Passionné par le <strong>travail du bois</strong>, je crée des <strong>trophées sur mesure</strong>  
+                   qui allient tradition artisanale et design contemporain. Mon atelier près de Lille 
                   est au service de vos projets les plus ambitieux.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                {/* <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/devis"
                     className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
@@ -70,7 +70,7 @@ export default function EbenisteLillePage() {
                   >
                     Voir Mes Créations
                   </Link>
-                </div>
+                </div> */}
               </div>
               <div className="relative">
                 <Image
@@ -169,7 +169,7 @@ export default function EbenisteLillePage() {
         </section>
 
         {/* Témoignages */}
-        <section className="py-16 bg-white">
+        {/* <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Ce Que Disent Mes Clients</h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -193,7 +193,7 @@ export default function EbenisteLillePage() {
               </blockquote>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Contact local */}
         <section className="py-16 bg-amber-50">
@@ -204,18 +204,19 @@ export default function EbenisteLillePage() {
               qui valorisera votre événement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/collaboration"
-                className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
-              >
-                Prendre Contact
-              </Link>
-              <Link
-                href="/trophee"
+               <Link
+                href="/#realisations"
                  className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
               >
                 Voir Mes Créations
               </Link>
+              <Link
+                href="/#contact"
+                className="inline-block bg-white md:w-auto text-gray-900 px-4 py-2 rounded-full transition-colors border-2 border-black hover:bg-black hover:text-white mt-4 text-center uppercase text-sm md:text-lg font-semibold tracking-widest"
+              >
+                Prendre Contact
+              </Link>
+             
             </div>
           </div>
         </section>
