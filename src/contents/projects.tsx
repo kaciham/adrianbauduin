@@ -3,9 +3,9 @@ import { Projects } from '@/types';
 export const projects: Projects[] = [
   {
     project: 'Biennale Ecoposs',
-    title: 'Trophée Ecoposs Concours De Nouvelles',
+    title: 'Ecoposs Concours De Nouvelles',
     slug: 'ecoposs-concours-de-nouvelles',
-    description: "Trophée Ecoposs Concours de nouvelles 2022. Réalisé en chêne massif imprimé, aux couleurs bleu et jaune, ce trophée symbolise l'innovation, l'écriture et l'avenir durable. Remis lors de la Biennale Ecoposs à Lille, il récompense les lauréats du concours littéraire « Bonnes nouvelles du futur ».",
+    description: "Ecoposs Concours de nouvelles 2022. Réalisé en chêne massif imprimé, aux couleurs bleu et jaune, ce trophée symbolise l'innovation, l'écriture et l'avenir durable. Remis lors de la Biennale Ecoposs à Lille, il récompense les lauréats du concours littéraire « Bonnes nouvelles du futur ».",
     year: 2022,
     materials: ['Chêne massif', 'Médium', 'Contreplaqué bouleau 2mm', 'Vitrificateur 1919 by Mauler'],
     techniques: ['Impression UV', 'Laquage bombe', 'Découpe laser'],
@@ -16,7 +16,7 @@ export const projects: Projects[] = [
   },
   {
     project: 'Concours Court Métrage - Cpam Lille Douai',
-    title: 'Trophée Cpam Lille-Douai',
+    title: 'Cpam Lille-Douai',
     slug: 'cpam-lille-douai',
     description: "À l'occasion de la Journée mondiale de lutte contre le sida, la Cpam Lille-Douai a remis un trophée original en bois lors d'un concours de courts-métrages. Sculpté en forme de ruban de solidarité, symbole universel, il incarne engagement, prévention et créativité pour sensibiliser le public à la lutte contre le VIH.",
     year: 2024,
@@ -29,7 +29,7 @@ export const projects: Projects[] = [
   },
   {
     project: 'Les Formidables',
-    title: 'Trophée Les Formidables',
+    title: 'Les Formidables',
     slug: 'les-formidables',
     description: "Les Formidables 16/30 ans récompensent l'engagement des jeunes en Hauts-de-France. Organisé avec La Voix du Nord, ce concours distingue des initiatives solidaires, culturelles et entrepreneuriales. Le trophées en bois, au design symbolisant une montée d'escaliers vers l'avenir, valorise créativité, audace et implication citoyenne des lauréats.",
     year: 2022,
@@ -42,7 +42,7 @@ export const projects: Projects[] = [
   },
   {
     project: 'Lmc 100 Ans De Vie Commune',
-    title: 'Trophée Lmc 100 Ans',
+    title: 'Lmc 100 Ans',
     slug: 'lmc-100-ans',
     description: "Pour célébrer ses 100 ans de vie commune (1925-2025), Lmc a organisé un événement exceptionnel récompensant ses 100 meilleurs clients. Un trophées en bois au design épuré, personnalisable par gravure, a été remis à chaque lauréat. Symbole de fidélité et de partenariat durable, il incarne un siècle d'histoire, d'engagement et de confiance partagée entre Lmc et ses clients.",
     year: 2025,
@@ -55,7 +55,7 @@ export const projects: Projects[] = [
   },
   {
     project: 'Mon Héros Local',
-    title: 'Trophée Mon Héros Local',
+    title: 'Mon Héros Local',
     slug: 'mon-heros-local',
     description: "Le concours Mon Héros Local, organisé en partenariat avec le Cic Nord Ouest depuis 4 ans, met en lumière celles et ceux qui entreprennent et agissent positivement dans leur territoire. Les lauréats reçoivent un trophées en bois au design moderne, gravé et coloré, symbole d'ancrage local et d'innovation. Cet événement valorise l'impact économique, sociétal et environnemental des initiatives locales, et s'impose comme un rendez-vous incontournable en Hauts-de-France et Normandie.",
     year: 2025,
@@ -69,7 +69,7 @@ export const projects: Projects[] = [
 
     {
       project: 'Energic',
-      title: 'Trophée Energic',
+      title: 'Energic',
       slug: 'energic',
       description: "Ces trophées en forme de totem, inspirés du logo d’Energic (entreprise lilloise spécialisée dans l’animation de challenges RSE), sont réalisés en bois avec un travail d’incrustation graphique unique. Depuis plus de 6 ans, je collabore avec Energic pour concevoir et produire ces récompenses originales, offertes aux participants et lauréats de leurs défis autour de l’écologie, de l’innovation et de la transition durable. Ces pièces symbolisent à la fois engagement collectif et esprit d’équipe.",
       year: 2025,
@@ -82,7 +82,7 @@ export const projects: Projects[] = [
     },
     {
       project: 'Trophées Dfcg',
-      title: 'Trophée Finance & Gestion Dfcg HDF',
+      title: 'Finance & Gestion Dfcg HDF',
       slug: 'finance-gestion-dfcg-hauts-de-france',
       description: "Les trophées Finance & Gestion Dfcg Hauts-de-France récompensent chaque année les dirigeants financiers qui innovent et s’engagent dans la performance durable. En partenariat avec le Cic, l’événement met en lumière les talents de la région. J’ai conçu le design il y a 3 ans et depuis ils me font confiance pour la réalisation : des pièces uniques en bois massif, au design élégant et contemporain, associant gravure et couleurs sobres. Ces récompenses incarnent professionnalisme, excellence et innovation, valeurs partagées par la Dfcg, le Cic et l’écosystème financier régional.",
       year: 2025,
@@ -95,7 +95,7 @@ export const projects: Projects[] = [
     },
         {
       project: 'Start Innovation',
-      title: 'Trophée Start Innovation CIC Business Awards',
+      title: 'Start Innovation CIC Business Awards',
       slug: 'start-innovation-cic-business-awards',
       description: "Le concours Start Innovation CIC Business Awards, porté par le Cic Nord Ouest, met chaque année en lumière les start-ups et entreprises innovantes des Hauts-de-France et de Normandie. Les lauréats sont récompensés par un trophée unique en bois massif, au design moderne et durable. Gravés et colorés de flèches dynamiques symbolisant la croissance et l’élan entrepreneurial, ces trophées incarnent audace, innovation et ancrage territorial. Ce partenariat durable avec le Cic en fait un rendez-vous majeur de l’écosystème entrepreneurial régional.",
       year: 2024,
