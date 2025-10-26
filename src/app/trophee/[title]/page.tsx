@@ -178,10 +178,26 @@ const TropheePage = async ({ params }: Props) => {
   };
 
   // Product Schema for commercial aspect
+  // Build offers only when a price is available to avoid Search Console errors
+  const offers = project.price
+    ? {
+        "@type": "Offer",
+        "price": typeof project.price === 'number' ? project.price.toString() : project.price,
+        "priceCurrency": project.priceCurrency || 'EUR',
+        "availability": "https://schema.org/PreOrder",
+        "description": "Trophée sur mesure - Devis personnalisé",
+        "url": `${baseUrl}/devis`,
+        "seller": {
+          "@type": "Organization",
+          "name": "Adrian Bauduin - Ébéniste"
+        }
+      }
+    : undefined;
+
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-  "@id": `${baseUrl}/trophee/${project.slug}#product`,
+    "@id": `${baseUrl}/trophee/${project.slug}#product`,
     "name": `Trophée ${project.title}`,
     "description": `Trophée personnalisé en ${project.materials?.join(' et ') || 'bois'} créé sur mesure par Adrian Bauduin`,
     "category": "Trophées et récompenses artisanales",
@@ -196,17 +212,8 @@ const TropheePage = async ({ params }: Props) => {
     },
     "material": project.materials?.join(', '),
     "image": fullImageUrl,
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/PreOrder",
-      "priceCurrency": "EUR",
-      "description": "Trophée sur mesure - Devis personnalisé",
-      "url": `${baseUrl}/devis`,
-      "seller": {
-        "@type": "Organization",
-        "name": "Adrian Bauduin - Ébéniste"
-      }
-    },
+    // only include offers when defined
+    ...(offers ? { offers } : {}),
     "additionalProperty": [
       {
         "@type": "PropertyValue",

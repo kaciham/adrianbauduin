@@ -8,6 +8,9 @@ export interface Projects {
     techniques?: string[];
     partenaires?: string[];
     technologies: string[];
+    // optional commercial fields for structured data
+    price?: number | string;
+    priceCurrency?: string;
     githubLink?: string;
     demoLink?: string;
     imageProject: string[] | string;
