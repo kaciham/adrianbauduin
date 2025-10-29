@@ -101,7 +101,7 @@ const LoginForm = ({ onSuccess, onSwitchToRegister }: LoginFormProps) => {
           </button>
         </form>
 
-        {onSwitchToRegister && (
+        {/* {onSwitchToRegister && (
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
               Pas encore de compte ?{' '}
@@ -113,7 +113,7 @@ const LoginForm = ({ onSuccess, onSwitchToRegister }: LoginFormProps) => {
               </button>
             </p>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
