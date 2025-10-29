@@ -17,6 +17,25 @@ export interface Projects {
     imagePartner: string;
 }
 
+// Database project interface
+export interface DatabaseProject {
+    id: string;
+    title: string;
+    slug: string;
+    description: string;
+    client?: string;
+    clientLogo?: string;
+    images: string[];
+    tags: string[];
+    year?: number;
+    materials?: string;
+    techniques?: string;
+    technologies?: string;
+    createdAt: string;
+    updatedAt?: string;
+    createdBy: any;
+}
+
 export interface Blogs {
     title: string;
     excerpt: string;

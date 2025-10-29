@@ -3,22 +3,34 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { projects } from '@/contents/projects';
+import { DatabaseProject } from '@/types';
 
 const MAX_DESC_LENGTH = 60;
 
-export default function ProjectCard({ project }: { project: typeof projects[0] }) {
+export default function ProjectCard({ project }: { project: DatabaseProject }) {
   const [expanded, setExpanded] = useState(false);
   const shortDesc = project.description.length > MAX_DESC_LENGTH && !expanded
     ? project.description.slice(0, MAX_DESC_LENGTH) + '...'
     : project.description;
 
+  const handleReadMoreClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setExpanded(true);
+  };
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Don't prevent default - let Link handle navigation
+    console.log('Card clicked, navigating to:', `/trophee/${project.slug}`);
+    console.log('Project data:', project);
+  };
+
   return (
-    <Link href={`/trophee/${project.slug}`}>
-      <div className="bg-white  rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-102 cursor-pointer">
+    <Link href={`/trophee/${project.slug}`} onClick={handleCardClick} className="block">
+      <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 cursor-pointer">
         <div className="relative w-full h-80">
           <Image
-            src={Array.isArray(project.imageProject) ? project.imageProject[0] : project.imageProject}
+            src={project.images && project.images.length > 0 ? project.images[0] : '/placeholder-image.svg'}
             alt={project.slug}
             fill={true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -34,19 +46,16 @@ export default function ProjectCard({ project }: { project: typeof projects[0] }
               <button
                 className="text-gray-900 underline ml-2 text-sm cursor-pointer"
                 type="button"
-                onClick={e => {
-                  e.preventDefault();
-                  setExpanded(true);
-                }}
+                onClick={handleReadMoreClick}
               >
                 Lire plus ...
               </button>
             )}
           </p>
           {/* <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Année:</span> {project.year}</div>
-          <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Matériaux:</span> {project.materials?.join(', ')}</div>
-          <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Techniques:</span> {project.techniques?.join(', ')}</div>
-          <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Partenaires:</span> {project.partenaires?.join(', ')}</div> */}
+          <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Matériaux:</span> {project.materials}</div>
+          <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Techniques:</span> {project.techniques}</div>
+          <div className="text-sm text-gray-900 mb-1"><span className="font-bold">Partenaires:</span> {project.client}</div> */}
         </div>
       </div>
     </Link>

@@ -20,6 +20,7 @@ export function generateRichKeywords(project: {
   project?: string; 
   materials?: string[]; 
   techniques?: string[];
+  technologies?: string[];
   partenaires?: string[];
   year?: number;
 }): string[] {
@@ -43,6 +44,7 @@ export function generateRichKeywords(project: {
     project.year ? `trophée bois sur mesure ${project.year}` : '',
     ...(project.materials?.map(m => m.toLowerCase()) || []),
     ...(project.techniques?.map(t => t.toLowerCase()) || []),
+    ...(project.technologies?.map(t => `trophée ${t.toLowerCase()}`) || []),
     ...(project.partenaires?.map(p => `trophée ${p.toLowerCase()}`) || [])
   ].filter(Boolean);
 

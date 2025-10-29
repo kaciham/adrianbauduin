@@ -9,6 +9,7 @@ User-agent: Googlebot
 Allow: /
 Disallow: /api/
 Disallow: /admin/
+Disallow: /login/
 
 # Host
 Host: https://adrianbauduin.com

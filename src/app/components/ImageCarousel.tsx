@@ -12,6 +12,8 @@ interface ImageCarouselProps {
     project?: string;
     materials?: string[];
     techniques?: string[];
+    year?: number;
+    client?: string;
   };
 }
 
@@ -32,19 +34,71 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, projectTitle, pro
 
   const projectData = project || { title: projectTitle };
 
+  // Generate enhanced SEO-optimized alt text for current image
+  const generateEnhancedAlt = (index: number): string => {
+    const materials = projectData.materials?.join(' et ') || 'bois';
+    const baseTitle = projectData.title || projectData.project || projectTitle;
+    const year = projectData.year ? ` ${projectData.year}` : '';
+    const client = projectData.client ? ` pour ${projectData.client}` : '';
+    
+    if (index === 0) {
+      return `Trophée ${baseTitle} en ${materials}${year} - Création artisanale par Adrian Bauduin, ébéniste à Lille${client}`;
+    } else {
+      const views = ['détail du fini', 'vue d\'ensemble', 'détail technique', 'angle alternatif'];
+      const viewType = views[index % views.length] || `vue ${index + 1}`;
+      return `${baseTitle} - ${viewType} - Artisanat en ${materials} par Adrian Bauduin`;
+    }
+  };
+
+  // Generate structured data for the current image
+  const generateImageStructuredData = (imageUrl: string, index: number) => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "url": imageUrl,
+      "name": generateEnhancedAlt(index),
+      "description": `Image ${index + 1} du trophée ${projectData.title || projectTitle} créé par Adrian Bauduin`,
+      "creator": {
+        "@type": "Person",
+        "name": "Adrian Bauduin"
+      },
+      "copyrightHolder": {
+        "@type": "Person", 
+        "name": "Adrian Bauduin"
+      },
+      "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "acquireLicensePage": "https://adrianbauduin.com/contact",
+      "creditText": "Adrian Bauduin - Ébéniste créateur",
+      "width": "800",
+      "height": "600",
+      "encodingFormat": "image/webp"
+    };
+  };
+
   return (
-    <div className="relative w-full h-full" role="region" aria-label={`Galerie de ${projectTitle}`}>
-      <Image
-        src={images[current]}
-        alt={generateImageAlt(projectData, current)}
-        title={generateImageTitle(projectData)}
-        fill
-        style={{ objectFit: 'cover' }}
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
-        priority={current === 0}
-        loading={current === 0 ? 'eager' : 'lazy'}
-        quality={90}
+    <>
+      {/* Add structured data for the current image */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateImageStructuredData(images[current], current))
+        }}
       />
+      
+      <div className="relative w-full h-full" role="region" aria-label={`Galerie de ${projectTitle}`}>
+        <Image
+          src={images[current]}
+          alt={generateEnhancedAlt(current)}
+          title={`${projectData.title || projectTitle} - Image ${current + 1} sur ${length} - Adrian Bauduin Ébéniste`}
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+          priority={current === 0}
+          loading={current === 0 ? 'eager' : 'lazy'}
+          quality={90}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+        />
 
       {length > 1 && (
         <>
@@ -95,6 +149,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, projectTitle, pro
         </>
       )}
     </div>
+    </>
   );
 };
 

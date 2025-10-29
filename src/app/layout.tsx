@@ -3,6 +3,7 @@ import "./globals.css";
 import { localBusinessSchema, businessInfo } from './next-seo.config';
 import { geistSans, geistMono } from './lib/fonts';
 import Analytics from './components/Analytics';
+import { AuthProvider } from '../contexts/AuthContext';
 
 // Metadata pour Next.js App Router
 export const metadata: Metadata = {
@@ -59,8 +60,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
-        <Analytics />
-        {children}
+        <AuthProvider>
+          <Analytics />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
