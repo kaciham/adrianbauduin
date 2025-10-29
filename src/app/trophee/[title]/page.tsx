@@ -139,7 +139,7 @@ const TropheePage = async ({ params }: Props) => {
       <div className="min-h-screen bg-gray-100 text-gray-900">
         <NavbarFixed />
         
-        <main className="container mx-auto py-24 md:py-20 px-4 sm:px-6 lg:px-8">
+        <main className="container mx-auto py-24 md:py-28 px-4 sm:px-16 lg:px-8">
           <article className="bg-white rounded-2xl shadow-xl overflow-hidden lg:flex">
             {/* Image Section */}
             <section className="lg:w-1/2 w-full h-96 lg:h-[70vh] relative bg-gradient-to-br from-gray-100 to-gray-200">
@@ -161,7 +161,7 @@ const TropheePage = async ({ params }: Props) => {
 
             {/* Content Section */}
 
-            <section className="lg:w-1/2 w-full p-6 lg:p-10">
+            <section className="lg:w-1/2 w-full p-6 lg:p-12">
               <header className="mb-8">
                 {/* Project Title */}
                 <div className="mb-6">
@@ -176,7 +176,7 @@ const TropheePage = async ({ params }: Props) => {
                 </div>
 
                 {/* Project Metadata */}
-                <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-50 rounded-lg">
+                <div className="grid grid-cols-2 lg:grid-cols-2 gap-6 p-6 bg-gray-50 rounded-lg">
                   {project.clientLogo && (
                     <div className="flex flex-col items-center">
                       <h3 className="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-3">
@@ -189,6 +189,7 @@ const TropheePage = async ({ params }: Props) => {
                           fill
                           className="object-contain rounded-lg"
                           loading="lazy"
+
                         />
                       </div>
                     </div>
@@ -206,14 +207,14 @@ const TropheePage = async ({ params }: Props) => {
                     </time>
                   </div>
 
-                  <div className="flex flex-col items-center col-span-2 lg:col-span-1">
+                  {/* <div className="flex flex-col items-center col-span-2 lg:col-span-1">
                     <h3 className="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-3">
                       Type
                     </h3>
                     <span className="text-lg font-semibold text-gray-900 text-center">
                       Trophée sur mesure
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </header>
 
@@ -236,7 +237,7 @@ const TropheePage = async ({ params }: Props) => {
                   Spécifications techniques
                 </h2>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-2">
                       Matériaux
@@ -296,9 +297,9 @@ const TropheePage = async ({ params }: Props) => {
               )}
 
               {/* Project Statistics */}
-              <section className="mt-8" aria-label="Statistiques du projet">
+              {/* <section className="mt-8" aria-label="Statistiques du projet">
                 <ProjectStats project={project} />
-              </section>
+              </section> */}
             </section>
           </article>
           
