@@ -8,6 +8,7 @@ import Realisation from "./components/Realisation";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Collaborations from "./components/Collaborations";
+import GoogleReviews from "./components/GoogleReviews";
 import TopIcon from "./components/TopIcon";
 
 export default function Home() {
@@ -55,6 +56,7 @@ export default function Home() {
           <About />
           <Realisation />
           <Collaborations />
+          <GoogleReviews />
           <Contact />
         </main>
         <Footer />
