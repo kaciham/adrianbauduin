@@ -63,6 +63,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <script src="https://widgets.sociablekit.com/google-reviews/widget.js" defer></script>
         <script
+          defer
+          data-website-id="dfid_v7DsPZXhGzoaO3hO0OTEP"
+          data-domain="adrianbauduin.com"
+          src="https://datafa.st/js/script.js"
+        ></script>
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
