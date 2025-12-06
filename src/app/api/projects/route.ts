@@ -208,7 +208,8 @@ export async function POST(request: NextRequest) {
 
     // Revalidate sitemap and project-related caches
     try {
-      revalidateTag('projects-sitemap');
+      // Next.js v16 requires a second argument for revalidateTag
+      revalidateTag('projects-sitemap', 'max');
       console.log('✅ Sitemap cache revalidated');
     } catch (revalidateError) {
       console.warn('⚠️ Failed to revalidate cache:', revalidateError);
