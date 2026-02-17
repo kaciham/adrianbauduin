@@ -19,22 +19,16 @@ export default function ProjectCard({ project }: { project: DatabaseProject }) {
     setExpanded(true);
   };
 
-  const handleCardClick = (e: React.MouseEvent) => {
-    // Don't prevent default - let Link handle navigation
-    console.log('Card clicked, navigating to:', `/trophee/${project.slug}`);
-    console.log('Project data:', project);
-  };
-
   return (
-    <Link href={`/trophee/${project.slug}`} onClick={handleCardClick} className="block">
+    <Link href={`/trophee/${project.slug}`} className="block">
       <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 cursor-pointer">
         <div className="relative w-full h-80">
           <Image
             src={project.images && project.images.length > 0 ? project.images[0] : '/placeholder-image.svg'}
-            alt={project.slug}
+            alt={`${project.title} - ${project.client || 'trophée sur mesure'}`}
             fill={true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority={true}
+            loading="lazy"
             className="object-cover"
           />
         </div>

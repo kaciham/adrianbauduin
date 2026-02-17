@@ -26,7 +26,7 @@ const Collaborations: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [clients, setClients] = useState<DatabaseClient[]>([]);
   const [loading, setLoading] = useState(true);
-  const [isVisible, setIsVisible] = useState(true); // Set to true by default for debugging
+  const [isVisible, setIsVisible] = useState(true);
   const logoRowRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -50,35 +50,21 @@ const Collaborations: React.FC = () => {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []); // Remove isVisible dependency to avoid re-creating observer
+  }, []);
 
   // Fetch projects and extract unique clients
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        console.log('🔍 Fetching clients data from projects...');
-        
         const response = await fetch('/api/projects?limit=50');
         const data = await response.json();
-        
-        console.log('📡 Projects API response:', data);
-        
+
         if (data.success && data.projects) {
-          console.log(`📊 Found ${data.projects.length} projects`);
-          
           // Extract unique clients with logos from projects
           const clientMap = new Map<string, DatabaseClient>();
-          
-          data.projects.forEach((project: DatabaseProject, index: number) => {
-            console.log(`🎯 Project ${index + 1}:`, {
-              title: project.title,
-              client: project.client,
-              clientLogo: project.clientLogo,
-              hasClient: !!project.client,
-              hasLogo: !!project.clientLogo
-            });
-            
+
+          data.projects.forEach((project: DatabaseProject) => {
             if (project.client && project.clientLogo) {
               const clientKey = project.client.toLowerCase();
               if (!clientMap.has(clientKey)) {
@@ -88,18 +74,11 @@ const Collaborations: React.FC = () => {
                   logo: project.clientLogo,
                   projectSlug: project.slug
                 });
-                console.log(`✅ Added client: ${project.client} with logo: ${project.clientLogo}`);
-              } else {
-                console.log(`⚠️ Client ${project.client} already exists, skipping`);
               }
-            } else {
-              console.log(`❌ Project ${project.title} missing client or logo`);
             }
           });
-          
+
           const clientsArray = Array.from(clientMap.values());
-          console.log('🎨 Final extracted clients:', clientsArray);
-          console.log(`📈 Total unique clients with logos: ${clientsArray.length}`);
           setClients(clientsArray);
         } else {
           console.error('Failed to load projects:', data.error);
@@ -111,9 +90,8 @@ const Collaborations: React.FC = () => {
       }
     };
 
-    // Load immediately on component mount
     fetchData();
-  }, []); // Remove dependency on isVisible for debugging
+  }, []);
 
   // Adjust animation speed based on screen width for responsive behavior
   useEffect(() => {
@@ -147,37 +125,17 @@ const Collaborations: React.FC = () => {
 
   // Don't render if no clients or still loading
   if (loading || clients.length === 0) {
-    console.log('🚨 Collaborations render state:', {
-      loading,
-      clientsLength: clients.length,
-      isVisible,
-      clients: clients
-    });
-    
     return (
       <section id='collaborations' className="bg-white">
         <div className="container mx-auto text-center py-4">
           <h2 className="text-3xl md:text-6xl font-bold mb-16 text-gray-900">Partenaires</h2>
           {loading ? (
             <div className="text-gray-500">Chargement des partenaires...</div>
-          ) : (
-            <div className="text-gray-500">
-              Aucun partenaire trouvé (Clients: {clients.length}, IsVisible: {isVisible.toString()})
-              <br />
-              <button 
-                onClick={() => window.location.reload()} 
-                className="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
-              >
-                Recharger
-              </button>
-            </div>
-          )}
+          ) : null}
         </div>
       </section>
     );
   }
-
-  console.log('✅ Collaborations rendering with clients:', clients);
 
   return (
     <section id='collaborations' className="bg-white" ref={sectionRef}>

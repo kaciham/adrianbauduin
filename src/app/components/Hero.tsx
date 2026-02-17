@@ -10,6 +10,7 @@ const Hero = () => {
       src="/projects/trophée-design-contreplaqué-gravure-impression.webp"
       alt="Trophée design contreplaqué gravure impression"
       className="flex flex-col justify-center items-center gap-4 h-[90vh] bg-fixed"
+      priority={true}
     >
       <section id="hero" className="flex flex-col justify-center items-center gap-4 w-full h-full">
         <div className="w-full max-w-[500px] px-4 flex flex-col items-center">

@@ -34,8 +34,6 @@ export default function Contact() {
     const companyVal = read(companyName);
     if (companyVal) payload.company = companyVal;
 
-    console.log('Submitting contact form', payload);
-
     // Client-side validation: require first name, last name, email and message
     const firstNameVal = read(fname);
     const lastNameVal = read(lname);

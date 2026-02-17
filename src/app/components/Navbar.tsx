@@ -103,11 +103,14 @@ export default function Navbar() {
             onClick={toggleMobileMenu}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           >
             {isMobileMenuOpen ? (
-              <XMarkIcon className="h-6 w-6 text-white" />
+              <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
             ) : (
-              <Bars3Icon className="h-6 w-6 text-white" />
+              <Bars3Icon className="h-6 w-6 text-white" aria-hidden="true" />
             )}
           </motion.button>
         </div>
@@ -115,6 +118,9 @@ export default function Navbar() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
+              id="mobile-menu"
+              role="navigation"
+              aria-label="Menu mobile"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}

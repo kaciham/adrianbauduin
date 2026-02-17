@@ -3,6 +3,9 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
+Disallow: /login/
+Disallow: /projects/
+Disallow: /devis/
 
 # Googlebot
 User-agent: Googlebot
@@ -10,6 +13,8 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 Disallow: /login/
+Disallow: /projects/
+Disallow: /devis/
 
 # Host
 Host: https://adrianbauduin.com
