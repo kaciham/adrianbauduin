@@ -51,7 +51,7 @@ export default function Home() {
       />
       <div className="scroll-smooth">
         <Navbar />
-        <main>
+        <main id="main-content">
           <Hero />
           <About />
           <Realisation />

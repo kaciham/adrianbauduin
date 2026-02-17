@@ -40,26 +40,19 @@ const Realisation = () => {
     try {
       setLoading(true);
       setError(null);
-      console.log('Fetching projects from:', '/api/projects?limit=20');
-      
       // Fetch all projects, sorted by creation date
       const response = await fetch('/api/projects?limit=20', {
-        cache: 'no-store' // Don't cache to ensure we get latest projects
+        cache: 'no-store'
       });
-      
-      console.log('Response status:', response.status);
-      console.log('Response ok:', response.ok);
-      
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       const data = await response.json();
-      console.log('Response data:', data);
-      
+
       if (data.success) {
         setProjects(data.projects);
-        console.log(`Loaded ${data.projects.length} projects`);
       } else {
         setError(`Failed to load projects: ${data.error || 'Unknown error'}`);
       }

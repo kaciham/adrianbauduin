@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ReactNode, useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface MobileBackgroundImageProps {
   src: string;
@@ -8,61 +9,55 @@ interface MobileBackgroundImageProps {
   className?: string;
   children: ReactNode;
   style?: React.CSSProperties;
+  priority?: boolean;
 }
 
 const MobileBackgroundImage: React.FC<MobileBackgroundImageProps> = ({
   src,
-  alt,
+  alt = "",
   className = "",
   children,
-  style = {}
+  style = {},
+  priority = false
 }) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isIOS, setIsIOS] = useState(false);
+  const [useParallax, setUseParallax] = useState(false);
 
   useEffect(() => {
-    // Detect mobile devices
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isMobile = window.innerWidth <= 768;
+    const wantsFixed = className.includes('bg-fixed');
+    setUseParallax(wantsFixed && !isMobile && !isIOS);
+
+    const handleResize = () => {
+      setUseParallax(wantsFixed && window.innerWidth > 768 && !isIOS);
     };
 
-    // Detect iOS devices
-    const checkIOS = () => {
-      setIsIOS(/iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream);
-    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [className]);
 
-    checkMobile();
-    checkIOS();
-
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const combinedStyle: React.CSSProperties = {
-    backgroundImage: `url('${src}')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    // On iOS or mobile, always use scroll; on desktop, allow fixed if requested
-    backgroundAttachment: (isMobile || isIOS) ? 'scroll' : 
-      (className.includes('bg-fixed') && !isMobile) ? 'fixed' : 'scroll',
-    // Optimize for iOS Safari
-    ...(isIOS && {
-      WebkitBackfaceVisibility: 'hidden' as any,
-      WebkitTransform: 'translate3d(0, 0, 0)' as any,
-      transform: 'translate3d(0, 0, 0)',
-    }),
-    ...style
-  };
-
-  return (  
-    <div 
-      className={className}
-      style={combinedStyle}
-      role={alt ? "img" : undefined}
-      aria-label={alt}
+  return (
+    <div
+      className={`relative ${className}`}
+      style={{
+        // Clip le contenu fixe à la zone du composant
+        ...(useParallax ? { clipPath: 'inset(0)' } : {}),
+        ...style,
+      }}
     >
-      {children}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes="100vw"
+        quality={80}
+        className="object-cover"
+        style={useParallax ? { position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh' } : {}}
+      />
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   );
 };

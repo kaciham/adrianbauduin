@@ -14,6 +14,29 @@ interface Props {
   params: Promise<{ title: string }>;
 }
 
+async function getRelatedProjects(currentSlug: string): Promise<DatabaseProject[]> {
+  try {
+    const baseUrl = process.env.NODE_ENV === 'production'
+      ? 'https://adrianbauduin.com'
+      : 'http://localhost:3000';
+
+    const response = await fetch(`${baseUrl}/api/projects?limit=20`, {
+      next: { revalidate: 60 }
+    });
+
+    if (!response.ok) return [];
+
+    const data = await response.json();
+    if (!data.success || !data.projects) return [];
+
+    return data.projects
+      .filter((p: DatabaseProject) => p.slug !== currentSlug)
+      .slice(0, 3);
+  } catch {
+    return [];
+  }
+}
+
 async function getProject(slug: string): Promise<DatabaseProject | null> {
   try {
     const baseUrl = process.env.NODE_ENV === 'production' 
@@ -110,7 +133,10 @@ export async function generateStaticParams(): Promise<{ title: string }[]> {
 
 const TropheePage = async ({ params }: Props) => {
   const { title } = await params;
-  const project = await getProject(title);
+  const [project, relatedProjects] = await Promise.all([
+    getProject(title),
+    getRelatedProjects(title),
+  ]);
 
   if (!project) {
     notFound();
@@ -303,6 +329,47 @@ const TropheePage = async ({ params }: Props) => {
             </section>
           </article>
           
+          {/* Projets similaires */}
+          {relatedProjects.length > 0 && (
+            <section className="mt-16" aria-label="Autres réalisations">
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">Découvrez aussi</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {relatedProjects.map((related) => (
+                  <Link
+                    key={related.id}
+                    href={`/trophee/${related.slug}`}
+                    className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+                  >
+                    <div className="relative h-48 w-full">
+                      {related.images && related.images.length > 0 ? (
+                        <Image
+                          src={related.images[0]}
+                          alt={`${related.title} - ${related.client || 'trophée sur mesure'}`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                          <span className="text-gray-400">Pas d&apos;image</span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                        {related.title}
+                      </h3>
+                      {related.client && (
+                        <p className="text-sm text-gray-500 mt-1">{related.client}</p>
+                      )}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* Navigation */}
           <nav className="mt-12 space-y-6">
             {/* Breadcrumb */}

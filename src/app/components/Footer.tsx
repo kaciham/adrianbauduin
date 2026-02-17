@@ -14,8 +14,8 @@ const Footer = () => {
                 <div className='flex flex-col items-center'>
                     <h3 className='text-lg font-semibold'>Suivez-moi</h3>
                     <div className='flex mt-2 space-x-4  justify-center'>
-                        <a href='https://www.instagram.com/adrianbauduin/' className='text-xl hover:text-gray-400 transition' target='_blank' rel='noreferrer'><FaInstagram /></a>
-                        <a href='https://www.linkedin.com/in/adrian-bauduin-1b152b220/' className='text-xl hover:text-gray-400 transition' target='_blank' rel='noreferrer'><FaLinkedinIn /></a>
+                        <a href='https://www.instagram.com/adrianbauduin/' className='text-xl hover:text-gray-400 transition' target='_blank' rel='noopener noreferrer'><FaInstagram /></a>
+                        <a href='https://www.linkedin.com/in/adrian-bauduin-1b152b220/' className='text-xl hover:text-gray-400 transition' target='_blank' rel='noopener noreferrer'><FaLinkedinIn /></a>
                     </div>
                 </div>
                 

@@ -58,18 +58,6 @@ const getStaticRoutes = (): MetadataRoute.Sitemap => {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/devis`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9, // Higher priority for conversion page
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9, // High priority for gallery page
-    },
-    {
       url: `${baseUrl}/faq`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -77,18 +65,6 @@ const getStaticRoutes = (): MetadataRoute.Sitemap => {
     },
     {
       url: `${baseUrl}/ebeniste-lille`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/ebeniste-lambersart`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/ebeniste-villeneuve-ascq`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
