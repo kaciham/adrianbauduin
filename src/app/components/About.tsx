@@ -151,7 +151,7 @@ const About = () => {
        <h3 className='font-extrabold text-2xl md:text-3xl m-4 mb-8'>Matériaux nobles & durables</h3>
           </div>
 
-            <p className='text-right px-4 sm:px-6 md:px-10'>
+            <p className='text-center px-4 sm:px-6 md:px-10'>
               J&apos;utilise principalement du bois massif (chêne, hêtre, érable, noyer) ainsi que du contreplaqué de qualité selon
               les besoins esthétiques et techniques. Chaque essence de bois est choisie pour son grain, sa teinte et sa durabilité.
               <br /><br />
