@@ -5,7 +5,7 @@ import MobileBackgroundImage from './MobileBackgroundImage'
 
 const About = () => {
   return (
-    <div className='bg-white'>
+    <div className='bg-white/20'>
       <div className="flex flex-col justify-center items-center min-h-screen px-4 sm:px-6 md:px-8">
         {/* <p className="text-gray-900 text-justify my-8 px-4 md:mx-4 max-w-4xl">
           Je suis designer ébéniste spécialisé dans la création de trophées sur mesure en bois. &nbsp;
@@ -146,7 +146,7 @@ const About = () => {
           <div className="absolute inset-0 bg-white/60 md:bg-transparent" aria-hidden="true" />
 
           <div className="flex-1" />
-          <div className="relative z-10 flex flex-col justify-end items-end bg-opacity-50 p-6 rounded-lg max-w-2xl text-gray-900 m-4 w-full md:w-1/2 lg:w-1/3 sm:w-1/3 self-end md:self-auto">
+          <div className="relative z-1 flex flex-col justify-end items-end bg-opacity-50 p-6 rounded-lg max-w-2xl text-gray-900 m-4 w-full md:w-1/2 lg:w-1/3 sm:w-1/3 self-end md:self-auto">
           <div className='text-center w-full md:w-auto'>
        <h3 className='font-extrabold  text-2xl text-center md:text-3xl m-4 mb-8'>Matériaux nobles & durables</h3>
           </div>
