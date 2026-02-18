@@ -1,38 +1,33 @@
 import { MetadataRoute } from 'next'
+import connectToDatabase from '@/lib/mongodb'
+import { Project } from '@/models/Project'
 import { DatabaseProject } from '@/types'
 
 async function getProjects(): Promise<DatabaseProject[]> {
   try {
-    // During build time, try to connect to database with fallback
-    const isProduction = process.env.NODE_ENV === 'production'
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
-    
-    // Only attempt fetch during runtime or if database is available
-    if (process.env.MONGODB_URI) {
-      const response = await fetch(`${baseUrl}/api/projects?limit=100`, {
-        next: { 
-          revalidate: isProduction ? 1800 : 30, // 30 minutes in prod, 30 seconds in dev
-          tags: ['projects-sitemap'] 
-        },
-        headers: {
-          'User-Agent': 'Sitemap-Generator/1.0'
-        }
-      })
-      
-      if (!response.ok) {
-        console.warn('Failed to fetch projects for sitemap, using fallback')
-        return []
-      }
-      
-      const data = await response.json()
-      if (!data.success || !data.projects) {
-        return []
-      }
-      
-      return data.projects
+    if (!process.env.MONGODB_URI) {
+      return []
     }
-    
-    return []
+
+    await connectToDatabase()
+    const projects = await Project.find({})
+      .sort({ createdAt: -1 })
+      .limit(100)
+      .lean()
+
+    return projects.map((project: any) => ({
+      id: project._id.toString(),
+      title: project.title,
+      slug: project.slug,
+      description: project.description,
+      client: project.client,
+      images: project.images,
+      tags: project.tags,
+      year: project.year,
+      technologies: project.technologies,
+      createdAt: project.createdAt,
+      updatedAt: project.updatedAt,
+    })) as DatabaseProject[]
   } catch (error) {
     console.warn('Error fetching projects for sitemap:', error)
     return []
