@@ -45,17 +45,21 @@ const MobileBackgroundImage: React.FC<MobileBackgroundImageProps> = ({
         ...style,
       }}
     >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        priority={priority}
-        sizes="100vw"
-        quality={80}
-        className="object-cover"
+      <div
+        className="absolute inset-0"
         style={useParallax ? { position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh' } : {}}
-      />
-      <div className="relative z-10">
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={priority}
+          sizes="100vw"
+          quality={80}
+          className="object-cover"
+        />
+      </div>
+      <div className="relative z-10 w-full">
         {children}
       </div>
     </div>

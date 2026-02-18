@@ -140,18 +140,19 @@ const About = () => {
         <MobileBackgroundImage
           src="/projects/trophees-bois-design-start-innovation-2024.webp"
           alt="Trophées bois design Start Innovation 2024"
-          className="relative flex items-center justify-end min-h-[66vh] bg-fixed w-full max-w-7xl mx-auto rounded-xl overflow-hidden"
+          className="min-h-[66vh] bg-fixed w-full max-w-7xl mx-auto rounded-xl overflow-hidden"
         >
-          <div className="absolute inset-0 bg-white/50" aria-hidden="true" />
-
-          <div className="relative z-10 p-6 md:p-10 text-gray-900 w-full md:w-1/3">
-            <h3 className='font-extrabold text-2xl md:text-3xl mb-8 text-center'>Matériaux nobles & durables</h3>
-            <p className='text-justify'>
-              J&apos;utilise principalement du bois massif (chêne, hêtre, érable, noyer) ainsi que du contreplaqué de qualité selon
-              les besoins esthétiques et techniques. Chaque essence de bois est choisie pour son grain, sa teinte et sa durabilité.
-              <br /><br />
-              En choisissant un trophées en bois, vous optez pour une alternative écologique et durable aux trophées en plastique ou métal.
-            </p>
+          <div className="flex items-stretch min-h-[66vh]">
+            <div className="hidden md:block flex-1" />
+            <div className="w-full md:max-w-sm flex flex-col justify-center bg-white/50 backdrop-blur-sm p-6 md:p-10 text-gray-900">
+              <h3 className='font-extrabold text-2xl md:text-3xl mb-8 text-center'>Matériaux nobles & durables</h3>
+              <p className='text-justify'>
+                J&apos;utilise principalement du bois massif (chêne, hêtre, érable, noyer) ainsi que du contreplaqué de qualité selon
+                les besoins esthétiques et techniques. Chaque essence de bois est choisie pour son grain, sa teinte et sa durabilité.
+                <br /><br />
+                En choisissant un trophées en bois, vous optez pour une alternative écologique et durable aux trophées en plastique ou métal.
+              </p>
+            </div>
           </div>
         </MobileBackgroundImage>
       </div>    
