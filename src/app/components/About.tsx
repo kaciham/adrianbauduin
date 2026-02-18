@@ -148,7 +148,7 @@ const About = () => {
           <div className="flex-1" />
           <div className="relative z-1 flex flex-col justify-end items-end bg-opacity-50 p-6 rounded-lg max-w-2xl text-gray-900 m-4 w-full md:w-1/2 lg:w-1/3 sm:w-1/3 ml-auto">
           <div className='text-right w-full'>
-       <h3 className='font-extrabold text-2xl md:text-3xl m-4 mb-8'>Matériaux nobles & durables</h3>
+       <h3 className='font-extrabold text-center text-2xl md:text-3xl m-4 mb-8'>Matériaux nobles & durables</h3>
           </div>
 
             <p className='text-center px-4 sm:px-6 md:px-10'>
