@@ -146,12 +146,12 @@ const About = () => {
           <div className="absolute inset-0 bg-white/60 md:bg-transparent" aria-hidden="true" />
 
           <div className="flex-1" />
-          <div className="relative z-1 flex flex-col justify-end items-end bg-opacity-50 p-6 rounded-lg max-w-2xl text-gray-900 m-4 w-full md:w-1/2 lg:w-1/3 sm:w-1/3 self-end md:self-auto">
-          <div className='text-center w-full md:w-auto'>
-       <h3 className='font-extrabold  text-2xl text-center md:text-3xl m-4 mb-8'>Matériaux nobles & durables</h3>
+          <div className="relative z-1 flex flex-col justify-end items-end bg-opacity-50 p-6 rounded-lg max-w-2xl text-gray-900 m-4 w-full md:w-1/2 lg:w-1/3 sm:w-1/3 ml-auto">
+          <div className='text-right w-full'>
+       <h3 className='font-extrabold text-2xl md:text-3xl m-4 mb-8'>Matériaux nobles & durables</h3>
           </div>
-            
-            <p className='text-justify px-4 sm:px-6 md:px-10 '>
+
+            <p className='text-right px-4 sm:px-6 md:px-10'>
               J&apos;utilise principalement du bois massif (chêne, hêtre, érable, noyer) ainsi que du contreplaqué de qualité selon
               les besoins esthétiques et techniques. Chaque essence de bois est choisie pour son grain, sa teinte et sa durabilité.
               <br /><br />
