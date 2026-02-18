@@ -140,23 +140,19 @@ const About = () => {
         <MobileBackgroundImage
           src="/projects/trophees-bois-design-start-innovation-2024.webp"
           alt="Trophées bois design Start Innovation 2024"
-          className="relative flex flex-col md:flex-row justify-center items-center gap-4 min-h-[66vh] bg-fixed w-full max-w-7xl mx-auto rounded-xl overflow-hidden"
+          className="min-h-[66vh] bg-fixed w-full max-w-7xl mx-auto rounded-xl overflow-hidden"
         >
-          {/* mobile-only overlay: sits above the background image but below the content so text remains fully opaque */}
-          <div className="absolute inset-0 bg-white/60 md:bg-transparent" aria-hidden="true" />
-
-          <div className="flex-1" />
-          <div className="relative z-10 flex flex-col justify-end items-end bg-opacity-50 p-6 rounded-lg max-w-2xl text-gray-900 m-4 w-full md:w-1/2 lg:w-1/3 sm:w-1/3 self-end md:self-auto">
-          <div className='text-center w-full md:w-auto'>
-       <h3 className='font-extrabold  text-2xl text-center md:text-3xl m-4 mb-8'>Matériaux nobles & durables</h3>
-          </div>
-            
-            <p className='text-justify px-4 sm:px-6 md:px-10 '>
-              J&apos;utilise principalement du bois massif (chêne, hêtre, érable, noyer) ainsi que du contreplaqué de qualité selon
-              les besoins esthétiques et techniques. Chaque essence de bois est choisie pour son grain, sa teinte et sa durabilité.
-              <br /><br />
-              En choisissant un trophées en bois, vous optez pour une alternative écologique et durable aux trophées en plastique ou métal.
-            </p>
+          <div className="flex items-stretch min-h-[66vh]">
+            <div className="hidden md:block flex-1" />
+            <div className="w-full md:max-w-sm flex flex-col justify-center bg-white/50 backdrop-blur-sm p-6 md:p-10 text-gray-900">
+              <h3 className='font-extrabold text-2xl md:text-3xl mb-8 text-center'>Matériaux nobles & durables</h3>
+              <p className='text-justify'>
+                J&apos;utilise principalement du bois massif (chêne, hêtre, érable, noyer) ainsi que du contreplaqué de qualité selon
+                les besoins esthétiques et techniques. Chaque essence de bois est choisie pour son grain, sa teinte et sa durabilité.
+                <br /><br />
+                En choisissant un trophées en bois, vous optez pour une alternative écologique et durable aux trophées en plastique ou métal.
+              </p>
+            </div>
           </div>
         </MobileBackgroundImage>
       </div>    
