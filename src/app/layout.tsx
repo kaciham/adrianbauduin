@@ -9,17 +9,17 @@ import { AuthProvider } from '../contexts/AuthContext';
 // Metadata pour Next.js App Router
 export const metadata: Metadata = {
   metadataBase: new URL("https://adrianbauduin.com"),
-  title: "Adrian Bauduin - Trophées en bois sur mesure",
-  description: "Ébéniste créateur à Lille, spécialisé dans la conception de trophées en bois sur mesure. Gravure laser, impression UV et usinage CNC pour vos événements d'entreprise, sportifs et culturels.",
+  title: "Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille",
+  description: "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d’entreprise, sportifs et culturels.",
   keywords: "trophée sur mesure, ébéniste Lille, trophée bois, création artisanale",
   alternates: {
     canonical: "https://adrianbauduin.com",
   },
   openGraph: {
-    title: "Adrian Bauduin - trophées en bois sur mesure",
-    description: "Ébéniste créateur à Lille, spécialisé dans la conception de trophées en bois sur mesure. Gravure laser, impression UV et usinage CNC pour vos événements d'entreprise, sportifs et culturels.",
+    title: "Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille",
+    description: "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d’entreprise, sportifs et culturels.",
     url: "https://adrianbauduin.com",
-    siteName: "Adrian Bauduin - Trophées en bois sur mesure",
+    siteName: "Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille",
     locale: "fr_FR",
     type: "website",
     images: [
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adrian Bauduin - trophées en bois sur mesure",
-    description: "Ébéniste créateur à Lille, spécialisé dans la conception de trophées en bois sur mesure. Gravure laser, impression UV et usinage CNC pour vos événements d'entreprise, sportifs et culturels.",
+    title: "Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille",
+    description: "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d’entreprise, sportifs et culturels.",
     images: [businessInfo.twitterImage],
   },
   // Preconnect pour améliorer LCP

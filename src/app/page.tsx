@@ -39,7 +39,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Adrian Bauduin - Ébéniste créateur de trophées sur mesure",
-    "description": "Ébéniste passionné spécialisé dans la création de trophées sur mesure, alliant savoir-faire traditionnel et design contemporain pour valoriser vos événements dans la région de Lille",
+    "description": "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d'entreprise, sportifs et culturels.",
     "url": "https://adrianbauduin.com"
   };
 

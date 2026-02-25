@@ -90,7 +90,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: seoData.openGraph.title,
       description: seoData.openGraph.description,
       url: seoData.canonical,
-      siteName: 'Adrian Bauduin - Trophées en bois sur mesure',
+      siteName: 'Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille',
       locale: 'fr_FR',
       type: 'article' as const,
       publishedTime: project.createdAt ? new Date(project.createdAt).toISOString() : `${project.year || new Date().getFullYear()}-12-31T12:00:00.000Z`,

@@ -4,11 +4,11 @@ import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Ébéniste à Lille | Adrian Bauduin - Créateur de Trophées Sur Mesure',
-  description: 'Ébéniste passionné basé à Lille, spécialisé dans la création de trophées en bois sur mesure. Savoir-faire artisanal au service de vos événements dans les Hauts-de-France.',
+  description: "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d'entreprise, sportifs et culturels.",
   keywords: 'ébéniste Lille, menuisier Lille, artisan bois Nord, trophée sur mesure Lille, ébéniste Hauts-de-France, créateur bois Lambersart',
   openGraph: {
-    title: 'Adrian Bauduin - trophées en bois sur mesure à Lille',
-    description: 'Découvrez l\'atelier d\'un ébéniste passionné spécialisé dans les trophées en bois sur mesure près de Lille',
+    title: 'Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille',
+    description: "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d'entreprise, sportifs et culturels.",
     images: ['/projects/adrianprofile2.webp'],
   }
 };
@@ -17,8 +17,8 @@ export default function EbenisteLillePage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Adrian Bauduin - trophées en bois sur mesure à Lille",
-    "description": "Service d'ébénisterie spécialisé dans les trophées sur mesure près de Lille",
+    "name": "Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille",
+    "description": "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d'entreprise, sportifs et culturels.",
     "url": "https://adrianbauduin.com/ebeniste-lille",
     "provider": {
       "@type": "Person",

@@ -2,8 +2,8 @@ const url = 'https://adrianbauduin.com';
 
 // Configuration centralisée des données business
 const businessInfo = {
-  name: "Adrian Bauduin - Trophées en bois sur mesure",
-  description: "Ébéniste passionné spécialisé dans la création de trophées en bois sur mesure, alliant savoir-faire traditionnel et design contemporain, opérant dans lille et sa région",
+  name: "Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille",
+  description: "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d'entreprise, sportifs et culturels.",
   image: `${url}/projects/createur-trophee-design-ecoposs.webp`,
   twitterImage: `${url}/projects/createur-trophee-design-ecoposs.webp`,
   url: url,

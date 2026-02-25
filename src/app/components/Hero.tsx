@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="w-full max-w-[500px] px-4 flex flex-col items-center">
           <Image
             src="/projects/logo_adrian_bauduin_blanc.svg"
-            alt="Adrian Bauduin - trophées en bois sur mesure"
+            alt="Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille"
             width={400}
             height={100}
             style={{ width: 'auto', height: 'auto' }}
