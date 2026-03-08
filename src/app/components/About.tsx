@@ -102,7 +102,7 @@ const About = () => {
 
       <div>
         {/* <h2 className="font-extrabold  text-2xl md:text-3xl mb-4 text-gray-900 text-center px-4 sm:px-6 md:px-8">Des techniques modernes</h2> */}
-    <h2 className="font-extrabold text-2xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 text-gray-900 text-center px-4 sm:px-6 md:px-8">Des techniques modernes</h2>
+    <h2 className="font-extrabold text-2xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 text-gray-900 text-center px-4 sm:px-6 md:px-8 py-4">Des techniques modernes</h2>
         <div className="text-gray-900 mx-4 sm:mx-8 md:mx-12">
             <div className="flex flex-col sm:flex-row justify-evenly items-center gap-4 my-4 px-4 md:px-0 text-gray-900 w-full max-w-7xl mx-auto">
             <div className="w-full sm:w-2/3 h-48 md:h-64 lg:h-80 overflow-hidden rounded-lg">

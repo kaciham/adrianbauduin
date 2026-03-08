@@ -21,7 +21,7 @@ export default function ProjectCard({ project }: { project: DatabaseProject }) {
 
   return (
     <Link href={`/trophee/${project.slug}`} className="block">
-      <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 cursor-pointer">
+      <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-102 cursor-pointer">
         <div className="relative w-full h-80">
           <Image
             src={project.images && project.images.length > 0 ? project.images[0] : '/placeholder-image.svg'}
