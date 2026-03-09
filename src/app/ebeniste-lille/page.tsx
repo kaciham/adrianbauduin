@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Ébéniste à Lille | Adrian Bauduin - Créateur de Trophées Sur Mesure',
   description: "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d'entreprise, sportifs et culturels.",
   keywords: 'ébéniste Lille, menuisier Lille, artisan bois Nord, trophée sur mesure Lille, ébéniste Hauts-de-France, créateur bois Lambersart',
+  alternates: {
+    canonical: 'https://adrianbauduin.com/ebeniste-lille',
+  },
   openGraph: {
     title: 'Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille',
     description: "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d'entreprise, sportifs et culturels.",

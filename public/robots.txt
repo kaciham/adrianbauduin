@@ -4,7 +4,6 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 Disallow: /login/
-Disallow: /projects/
 Disallow: /devis/
 
 # Googlebot
@@ -13,7 +12,6 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 Disallow: /login/
-Disallow: /projects/
 Disallow: /devis/
 
 # Host

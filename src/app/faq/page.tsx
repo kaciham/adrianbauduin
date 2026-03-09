@@ -4,6 +4,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'FAQ - Questions Fréquentes | Adrian Bauduin Ébéniste',
   description: 'Toutes les réponses à vos questions sur la création de trophées en bois sur mesure. Délais, matériaux, processus de création...',
+  alternates: {
+    canonical: 'https://adrianbauduin.com/faq',
+  },
   openGraph: {
     title: 'FAQ - Adrian Bauduin - Designer et ébéniste, créateur de trophées en bois sur mesure à Lille',
     description: 'Réponses aux questions fréquentes sur nos créations de trophées sur mesure',

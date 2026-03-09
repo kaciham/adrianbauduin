@@ -1,6 +1,16 @@
+import { Metadata } from 'next';
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://adrianbauduin.com/collaboration',
+  },
+  robots: {
+    index: false,
+  },
+};
 
 const page = () => {
   return (
