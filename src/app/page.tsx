@@ -1,6 +1,3 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -9,40 +6,17 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Collaborations from "./components/Collaborations";
 import GoogleReviews from "./components/GoogleReviews";
-import TopIcon from "./components/TopIcon";
+import ScrollToTop from "./components/ScrollToTop";
+
+const homePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Adrian Bauduin - Ébéniste créateur de trophées sur mesure",
+  "description": "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d'entreprise, sportifs et culturels.",
+  "url": "https://adrianbauduin.com"
+};
 
 export default function Home() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  // JSON-LD pour la page d'accueil
-  const homePageSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Adrian Bauduin - Ébéniste créateur de trophées sur mesure",
-    "description": "Ébéniste créateur à Lille, spécialisé en trophées bois sur mesure : gravure laser, impression UV et CNC pour événements d'entreprise, sportifs et culturels.",
-    "url": "https://adrianbauduin.com"
-  };
-
   return (
     <>
       <script
@@ -60,15 +34,7 @@ export default function Home() {
           <Contact />
         </main>
         <Footer />
-        {showScrollTop && (
-          <button
-            onClick={scrollToTop}
-            className='w-14 h-14 sm:w-18 sm:h-18 fixed bottom-5 rounded-full right-5 z-50 bg-slate-200 opacity-90 border-4 p-2 shadow-custom cursor-pointer transition-transform duration-300 ease-in-out hover:delay-200 hover:-translate-y-2'
-            aria-label="Retour en haut de la page"
-          >
-            <TopIcon />
-          </button>
-        )}
+        <ScrollToTop />
       </div>
     </>
   );
